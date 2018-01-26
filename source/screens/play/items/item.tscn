@@ -1,7 +1,11 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=8 format=1]
 
 [ext_resource path="res://screens/play/items/abstract_item.gd" type="Script" id=1]
 [ext_resource path="res://screens/play/items/keypad.png" type="Texture" id=2]
+[ext_resource path="res://fonts/bold_48.fnt" type="BitmapFont" id=3]
+[ext_resource path="res://screens/play/items/keypad_button.png" type="Texture" id=4]
+[ext_resource path="res://screens/play/scripts/keypad_button.gd" type="Script" id=5]
+[ext_resource path="res://screens/play/scripts/keypad_buttonC.gd" type="Script" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -32,5 +36,519 @@ texture = ExtResource( 2 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
+
+[node name="Screen" type="Label" parent="Area2D"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -75.0
+margin/top = -129.0
+margin/right = 81.0
+margin/bottom = -86.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Button1" type="TextureButton" parent="Area2D/Screen"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 66.0
+margin/right = 40.0
+margin/bottom = 106.0
+toggle_mode = false
+click_on_press = true
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 4 )
+params/resize_mode = 0
+params/stretch_mode = 0
+script/script = ExtResource( 5 )
+normal = Color( 1, 1, 1, 1 )
+hover = Color( 0.757804, 0.757813, 0.757813, 1 )
+pressed = Color( 0.46875, 0.46875, 0.46875, 1 )
+value = "1"
+
+[node name="Label 2" type="Label" parent="Area2D/Screen/Button1"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 45.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "1"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Button2" type="TextureButton" parent="Area2D/Screen"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 56.0
+margin/top = 66.0
+margin/right = 96.0
+margin/bottom = 106.0
+toggle_mode = false
+click_on_press = true
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 4 )
+params/resize_mode = 0
+params/stretch_mode = 0
+script/script = ExtResource( 5 )
+normal = Color( 1, 1, 1, 1 )
+hover = Color( 0.757804, 0.757813, 0.757813, 1 )
+pressed = Color( 0.46875, 0.46875, 0.46875, 1 )
+value = "2"
+
+[node name="Label 2" type="Label" parent="Area2D/Screen/Button2"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 45.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "2"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Button3" type="TextureButton" parent="Area2D/Screen"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 112.0
+margin/top = 66.0
+margin/right = 152.0
+margin/bottom = 106.0
+toggle_mode = false
+click_on_press = true
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 4 )
+params/resize_mode = 0
+params/stretch_mode = 0
+script/script = ExtResource( 5 )
+normal = Color( 1, 1, 1, 1 )
+hover = Color( 0.757804, 0.757813, 0.757813, 1 )
+pressed = Color( 0.46875, 0.46875, 0.46875, 1 )
+value = "3"
+
+[node name="Label 3" type="Label" parent="Area2D/Screen/Button3"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 45.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "3"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Button4" type="TextureButton" parent="Area2D/Screen"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 110.0
+margin/right = 40.0
+margin/bottom = 150.0
+toggle_mode = false
+click_on_press = true
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 4 )
+params/resize_mode = 0
+params/stretch_mode = 0
+script/script = ExtResource( 5 )
+normal = Color( 1, 1, 1, 1 )
+hover = Color( 0.757804, 0.757813, 0.757813, 1 )
+pressed = Color( 0.46875, 0.46875, 0.46875, 1 )
+value = "4"
+
+[node name="Label 4" type="Label" parent="Area2D/Screen/Button4"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 45.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "4"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Button5" type="TextureButton" parent="Area2D/Screen"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 56.0
+margin/top = 110.0
+margin/right = 96.0
+margin/bottom = 150.0
+toggle_mode = false
+click_on_press = true
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 4 )
+params/resize_mode = 0
+params/stretch_mode = 0
+script/script = ExtResource( 5 )
+normal = Color( 1, 1, 1, 1 )
+hover = Color( 0.757804, 0.757813, 0.757813, 1 )
+pressed = Color( 0.46875, 0.46875, 0.46875, 1 )
+value = "5"
+
+[node name="Label 5" type="Label" parent="Area2D/Screen/Button5"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 45.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "5"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Button6" type="TextureButton" parent="Area2D/Screen"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 112.0
+margin/top = 110.0
+margin/right = 152.0
+margin/bottom = 150.0
+toggle_mode = false
+click_on_press = true
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 4 )
+params/resize_mode = 0
+params/stretch_mode = 0
+script/script = ExtResource( 5 )
+normal = Color( 1, 1, 1, 1 )
+hover = Color( 0.757804, 0.757813, 0.757813, 1 )
+pressed = Color( 0.46875, 0.46875, 0.46875, 1 )
+value = "6"
+
+[node name="Label 6" type="Label" parent="Area2D/Screen/Button6"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 45.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "6"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Button7" type="TextureButton" parent="Area2D/Screen"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 155.0
+margin/right = 40.0
+margin/bottom = 195.0
+toggle_mode = false
+click_on_press = true
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 4 )
+params/resize_mode = 0
+params/stretch_mode = 0
+script/script = ExtResource( 5 )
+normal = Color( 1, 1, 1, 1 )
+hover = Color( 0.757804, 0.757813, 0.757813, 1 )
+pressed = Color( 0.46875, 0.46875, 0.46875, 1 )
+value = "7"
+
+[node name="Label 7" type="Label" parent="Area2D/Screen/Button7"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 45.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "7"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Button8" type="TextureButton" parent="Area2D/Screen"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 56.0
+margin/top = 155.0
+margin/right = 96.0
+margin/bottom = 195.0
+toggle_mode = false
+click_on_press = true
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 4 )
+params/resize_mode = 0
+params/stretch_mode = 0
+script/script = ExtResource( 5 )
+normal = Color( 1, 1, 1, 1 )
+hover = Color( 0.757804, 0.757813, 0.757813, 1 )
+pressed = Color( 0.46875, 0.46875, 0.46875, 1 )
+value = "8"
+
+[node name="Label 8" type="Label" parent="Area2D/Screen/Button8"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 45.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "8"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Button9" type="TextureButton" parent="Area2D/Screen"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 112.0
+margin/top = 155.0
+margin/right = 152.0
+margin/bottom = 195.0
+toggle_mode = false
+click_on_press = true
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 4 )
+params/resize_mode = 0
+params/stretch_mode = 0
+script/script = ExtResource( 5 )
+normal = Color( 1, 1, 1, 1 )
+hover = Color( 0.757804, 0.757813, 0.757813, 1 )
+pressed = Color( 0.46875, 0.46875, 0.46875, 1 )
+value = "9"
+
+[node name="Label 9" type="Label" parent="Area2D/Screen/Button9"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 45.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "9"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Button0" type="TextureButton" parent="Area2D/Screen"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 56.0
+margin/top = 199.0
+margin/right = 96.0
+margin/bottom = 239.0
+toggle_mode = false
+click_on_press = true
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 4 )
+params/resize_mode = 0
+params/stretch_mode = 0
+script/script = ExtResource( 5 )
+normal = Color( 1, 1, 1, 1 )
+hover = Color( 0.757804, 0.757813, 0.757813, 1 )
+pressed = Color( 0.46875, 0.46875, 0.46875, 1 )
+value = "0"
+
+[node name="Label 10" type="Label" parent="Area2D/Screen/Button0"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 45.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "0"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="ButtonC" type="TextureButton" parent="Area2D/Screen"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 200.0
+margin/right = 40.0
+margin/bottom = 240.0
+toggle_mode = false
+click_on_press = true
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 4 )
+params/resize_mode = 0
+params/stretch_mode = 0
+script/script = ExtResource( 6 )
+normal = Color( 1, 1, 1, 1 )
+hover = Color( 0.757804, 0.757813, 0.757813, 1 )
+pressed = Color( 0.46875, 0.46875, 0.46875, 1 )
+value = null
+
+[node name="Label 11" type="Label" parent="Area2D/Screen/ButtonC"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 45.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "C"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="ButtonS" type="TextureButton" parent="Area2D/Screen"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 113.0
+margin/top = 199.0
+margin/right = 153.0
+margin/bottom = 239.0
+toggle_mode = false
+click_on_press = true
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 4 )
+params/resize_mode = 0
+params/stretch_mode = 0
+
+[node name="Label 12" type="Label" parent="Area2D/Screen/ButtonS"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 45.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 
