@@ -5,6 +5,7 @@ var map_orientation             = 0
 var screen_res                  = Vector2()
 var update_res                  = true
 var is_clicked                  = false
+var mouse_pos                   = Vector2(0,0)
 
 
 var map_packed = preload("res://screens/play/map/map.tscn")
