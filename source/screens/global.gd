@@ -4,6 +4,8 @@ var map_pos                     = Vector2(5,5)
 var map_orientation             = 0
 var screen_res                  = Vector2()
 var update_res                  = true
+var is_clicked                  = false
+
 
 var map_packed = preload("res://screens/play/map/map.tscn")
 onready var map = map_packed.instance()
