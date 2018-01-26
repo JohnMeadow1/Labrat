@@ -1,8 +1,16 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=8 format=1]
 
 [ext_resource path="res://screens/play/main.gd" type="Script" id=1]
 [ext_resource path="res://screens/play/locations/cell.png" type="Texture" id=2]
 [ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://screens/play/items/keypad.png" type="Texture" id=4]
+[ext_resource path="res://screens/shader_button.gd" type="Script" id=5]
+[ext_resource path="res://screens/play/scripts/keypad_scene.gd" type="Script" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 47.6585, 18.648 )
 
 [node name="main" type="Node2D"]
 
@@ -16,5 +24,54 @@ centered = false
 [node name="mouse_clicked" type="Sprite" parent="."]
 
 texture = ExtResource( 3 )
+
+[node name="KeypadScene" type="TextureButton" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 641.0
+margin/top = 397.0
+margin/right = 704.0
+margin/bottom = 480.25
+toggle_mode = false
+click_on_press = true
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 4 )
+params/resize_mode = 0
+params/scale = Vector2( 0.25, 0.25 )
+params/stretch_mode = 0
+script/script = ExtResource( 5 )
+normal = Color( 1, 1, 1, 1 )
+hover = Color( 0.757804, 0.757813, 0.757813, 1 )
+pressed = Color( 0.46875, 0.46875, 0.46875, 1 )
+
+[node name="Keypad" type="Area2D" parent="KeypadScene"]
+
+transform/scale = Vector2( 3.2384, 4.34654 )
+input/pickable = true
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 0.647187, 0, 0, 1.73811, 0, -1.22166 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+script/script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="KeypadScene/Keypad"]
+
+transform/scale = Vector2( 0.303072, 0.22964 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KeypadScene/Keypad"]
+
+transform/pos = Vector2( 0, -1.22166 )
+transform/scale = Vector2( 0.647187, 1.73811 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
 
 
