@@ -10,7 +10,6 @@ func _ready():
 	self.connect("mouse_exit",self,"_on_mouse_exit")
 	self.connect("button_down",self,"_on_button_down")
 	self.connect("button_up",self,"_on_button_up")
-	set_process_input(true)
 
 func _on_mouse_exit():
 	set_modulate(normal)
@@ -19,7 +18,6 @@ func _on_mouse_enter():
 	set_modulate(hover)
 
 func _on_button_down():
-	find_node("Keypad").show()
 	set_modulate(pressed)
 
 func _on_button_up():
