@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://screens/title/title.gd" type="Script" id=1]
 [ext_resource path="res://images/background.png" type="Texture" id=2]
 [ext_resource path="res://screens/play/shaders/ball_material.tres" type="CanvasItemMaterial" id=3]
-[ext_resource path="res://screens/title/play_button.png" type="Texture" id=4]
-[ext_resource path="res://screens/shader_button.gd" type="Script" id=5]
+[ext_resource path="res://screens/play/Scripts/button.tscn" type="PackedScene" id=4]
 
 [node name="TitleScreen" type="Control"]
 
@@ -95,27 +94,10 @@ margin/right = 1216.0
 margin/bottom = 656.0
 alignment = 1
 
-[node name="Play" type="TextureButton" parent="TextureFrame/MarginContainer/HBoxContainer"]
+[node name="Play" parent="TextureFrame/MarginContainer/HBoxContainer" instance=ExtResource( 4 )]
 
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 571.0
 margin/top = 294.0
-margin/right = 633.0
 margin/bottom = 362.0
-toggle_mode = false
-click_on_press = true
-enabled_focus_mode = 2
-shortcut = null
-textures/normal = ExtResource( 4 )
-params/resize_mode = 0
-params/stretch_mode = 0
-script/script = ExtResource( 5 )
-normal = Color( 1, 1, 1, 1 )
-hover = Color( 0.757804, 0.757813, 0.757813, 1 )
-pressed = Color( 0.46875, 0.46875, 0.46875, 1 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TextureFrame/MarginContainer/HBoxContainer"]
 

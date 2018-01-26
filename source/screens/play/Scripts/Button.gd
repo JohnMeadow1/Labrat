@@ -18,7 +18,6 @@ func _on_mouse_enter():
 	set_modulate(hover)
 
 func _on_button_down():
-	get_node("Keypad").show()
 	set_modulate(pressed)
 
 func _on_button_up():
