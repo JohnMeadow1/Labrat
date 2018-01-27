@@ -198,8 +198,14 @@ func pick_start():
 	get_node("room/walls").set_pos(Vector2(1,0) * 1920 * GLOBAL.map_orientation + Vector2(960,540))
 
 func set_trap(room):
-	if room.get_room_type() == 3:
+	if room.get_trap_type() > 0:
 		get_node("room/Trap").set_hidden(false)
+		if room.get_trap_type() == 1:
+			get_node("room/Trap/Sprite").set_texture(load("res://screens/play/map/decor/small/liquid.png"))
+			get_node("room/Trap/Sprite").set_modulate(Color(0.2,0.7,0.2))
+		elif room.get_trap_type() == 2:
+			get_node("room/Trap/Sprite").set_texture(load("res://screens/play/map/decor/small/stain.png"))
+			get_node("room/Trap/Sprite").set_modulate(Color(0.7,0.2,0.5))
 	else:
 		get_node("room/Trap").set_hidden(true)
 		
