@@ -26,7 +26,7 @@ __meta__ = {
 transform/pos = Vector2( 361, 281 )
 sector = 1
 walls = 13
-doors = 8
+doors = 9
 locked_doors = 1
 room_type = null
 
@@ -35,7 +35,7 @@ room_type = null
 transform/pos = Vector2( 441, 281 )
 sector = 1
 walls = 6
-doors = null
+doors = 2
 locked_doors = null
 room_type = null
 
@@ -44,7 +44,7 @@ room_type = null
 transform/pos = Vector2( 441, 361 )
 sector = 1
 walls = 11
-doors = null
+doors = 0
 locked_doors = null
 room_type = 1
 
@@ -56,6 +56,24 @@ walls = 15
 doors = 4
 locked_doors = null
 room_type = 2
+
+[node name="room4" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 281, 281 )
+sector = 1
+walls = 15
+doors = 2
+locked_doors = null
+room_type = 1
+
+[node name="room5" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 521, 281 )
+sector = 1
+walls = 15
+doors = 1
+locked_doors = null
+room_type = 1
 
 [node name="selector" type="Sprite" parent="."]
 

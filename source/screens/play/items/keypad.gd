@@ -13,11 +13,13 @@ func process_item():
 	if is_open:
 		if animate == false:
 			get_parent().unlock()
+			set_fixed_process(false)
 		else:
 			animate            = true
 			target_scale       = 0.25
 			is_enabled         = false
 			GLOBAL.item_active = false
+
 	
 func enable():
 	if(!is_open):
@@ -39,4 +41,7 @@ func validateCode(code):
 		is_enabled         = false
 		GLOBAL.item_active = false
 		get_node("Area2D/buttons").set_hidden(true)
-	pass
+
+func lock():
+	get_node("Area2D/Screen").set_text("")
+	

@@ -34,7 +34,7 @@ __meta__ = {
 
 [node name="Door" parent="room/walls/wall_right" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 968.02, 556.774 )
+transform/pos = Vector2( 970, 560 )
 z/z = 1
 z/relative = false
 valid_code = "4444"
@@ -51,6 +51,11 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="Door" parent="room/walls/wall_bottom" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 960, 560 )
+valid_code = "4444"
+
 [node name="wall_left" type="Sprite" parent="room/walls"]
 
 transform/pos = Vector2( -3840, 0 )
@@ -61,6 +66,11 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="Door" parent="room/walls/wall_left" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 970, 560 )
+valid_code = "4444"
+
 [node name="wall_top" type="Sprite" parent="room/walls"]
 
 transform/pos = Vector2( -1920, 0 )
@@ -70,6 +80,11 @@ centered = false
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Door" parent="room/walls/wall_top" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 970, 560 )
+valid_code = "4444"
 
 [node name="Pickups" type="Node2D" parent="room"]
 

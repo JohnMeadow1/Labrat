@@ -2,6 +2,7 @@ extends Node
 
 var map_pos                     = Vector2(3,3)
 var map_orientation             = 0
+var map_orientation_vect       = Vector2()
 var screen_res                  = Vector2()
 var update_res                  = true
 var is_clicked                  = false

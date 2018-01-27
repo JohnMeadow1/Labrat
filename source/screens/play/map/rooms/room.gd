@@ -2,12 +2,14 @@ tool
 extends Node2D
 
 var color_array        = [Color(.39,.68,.21),Color(1,1,.32),Color(.98,.6,.07),Color(1,.15,.07),Color(.51,0,.65),Color(.07,.27,.98)]
-export(int, "Cell_block", "Lab_G-32", "Lab_X_03", "Animal testing") var sector =0 setget set_sector, get_sector
+export(int, "Cell_block", "Lab_G-32", "Lab_X_03", "Animal testing") var sector = 0 setget set_sector, get_sector
 export(int, FLAGS, "Left", "Right", "Top", "Bottom") var walls setget set_walls, get_walls
 export(int, FLAGS, "Left", "Right", "Top", "Bottom") var doors setget set_doors, get_doors
 export(int, FLAGS, "Left", "Right", "Top", "Bottom") var locked_doors setget set_locked_doors, get_locked_doors
 
 export(int, "Isolation", "Corridor", "Decontamination", "Trap") var room_type  setget set_room_type, get_room_type
+
+var doors_state = 0
 
 var wall_textures = []
 
@@ -63,9 +65,10 @@ func get_walls():
 	return walls
 	
 func set_doors( new_value ):
-	if new_value !=null:
+	if new_value != null:
 		doors = new_value
-		if new_value & 1 == 1: get_node("room_bg/door_left").set_hidden(false)
+		if new_value & 1 == 1: 
+			get_node("room_bg/door_left").set_hidden(false)
 		else:                  get_node("room_bg/door_left").set_hidden(true)
 		if new_value & 2 == 2: get_node("room_bg/door_right").set_hidden(false)
 		else:                  get_node("room_bg/door_right").set_hidden(true)
@@ -75,5 +78,11 @@ func set_doors( new_value ):
 		else:                  get_node("room_bg/door_bottom").set_hidden(true)
 	
 func get_doors( side ):
-	if doors & side == side: return true
+	if doors && (doors & side) == side: return true
 	return false
+
+func unlock_door(side):
+	doors_state += side
+	
+func get_door_state(side):
+	if (doors_state & side) == side: return true

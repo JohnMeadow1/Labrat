@@ -4,7 +4,7 @@ var mouse_click_pos   = Vector2()
 #var animate_rotation  = false
 
 func _input(ev):
-	if ev.type == InputEvent.MOUSE_BUTTON && ev.button_index == BUTTON_LEFT && !ev.pressed :
+	if ev.type == InputEvent.MOUSE_BUTTON && ev.button_index == BUTTON_LEFT && !ev.is_pressed() :
 		mouse_click_pos = ev.pos
 		GLOBAL.is_clicked = true
 	elif (ev.type == InputEvent.MOUSE_MOTION):
@@ -19,7 +19,6 @@ func _fixed_process(delta):
 	get_node("room/walls").set_pos(get_node("room/walls").get_pos().linear_interpolate( Vector2(1,0) * 1920 * GLOBAL.map_orientation,0.1 ))
 	
 func process_movement():
-
 	if GLOBAL.mouse_pos.y < 100:
 		get_node("gui_overlay/Control/Container/HBoxContainer/turn_arrow2").set_opacity( 0.5 )
 		get_node("gui_overlay/Control/Container/HBoxContainer/turn_arrow1").set_opacity( 0 )
@@ -46,6 +45,7 @@ func process_movement():
 	
 func turn( value ):
 	GLOBAL.map_orientation += value
+
 #	print(GLOBAL.map_orientation, " ", get_node("room/walls").get_pos() )
 	if GLOBAL.map_orientation < 0:
 		GLOBAL.map_orientation = 3
@@ -60,51 +60,70 @@ func turn( value ):
 	else:
 		get_node("room/walls/wall_right").set_pos(Vector2(0,0) )
 		get_node("room/walls/wall_bottom").set_pos(Vector2(-5760,0) )
+		
+	get_orientation_vector()
+func get_orientation_vector():
 
+	if GLOBAL.map_orientation == 0:
+		GLOBAL.map_orientation_vect = Vector2(1,0)
+	if GLOBAL.map_orientation == 1:
+		GLOBAL.map_orientation_vect = Vector2(0,-1)
+	if GLOBAL.map_orientation == 2:
+		GLOBAL.map_orientation_vect = Vector2(-1,0)
+	if GLOBAL.map_orientation == 3:
+		GLOBAL.map_orientation_vect = Vector2(0,1)
+	print(GLOBAL.map_orientation_vect )
 	
 func move_in_room():
 	if GLOBAL.map_orientation == 1 || GLOBAL.map_orientation == 3:
 		if GLOBAL.map.grid[GLOBAL.map_pos.x][GLOBAL.map_pos.y +  GLOBAL.map_orientation - 2 ] != null:
-			GLOBAL.map_pos += Vector2( 0, GLOBAL.map_orientation - 2 )
+			GLOBAL.map_pos += GLOBAL.map_orientation_vect
 			load_room(GLOBAL.map.grid[GLOBAL.map_pos.x][GLOBAL.map_pos.y])
 	else:
 		if GLOBAL.map.grid[GLOBAL.map_pos.x - (GLOBAL.map_orientation - 1)][ GLOBAL.map_pos.y ] != null:
-			GLOBAL.map_pos -= Vector2( GLOBAL.map_orientation - 1, 0 )
-			load_room(GLOBAL.map.grid[GLOBAL.map_pos.x][GLOBAL.map_pos.y])
+			GLOBAL.map_pos += GLOBAL.map_orientation_vect
+			load_room( GLOBAL.map.grid[GLOBAL.map_pos.x][GLOBAL.map_pos.y] )
 	
 #func reload_room():
 #	if GLOBAL.map.grid[GLOBAL.map_pos.x][GLOBAL.map_pos.y] != null:
-		unload_room()
+#		unload_room()
 #		load_room(GLOBAL.map.grid[GLOBAL.map_pos.x][GLOBAL.map_pos.y])
 		
 func load_room(room):
-	print(room.get_wall(1))
-	if room.get_wall(1):
-		get_node("room/walls/wall_left").set_texture(GLOBAL.map.walls['wall'])
+#	print(GLOBAL.map_pos)
+	load_wall(room, get_node("room/walls/wall_left"), 1)
+	load_wall(room, get_node("room/walls/wall_right"), 2)
+	load_wall(room, get_node("room/walls/wall_top"), 4)
+	load_wall(room, get_node("room/walls/wall_bottom"), 8)
+
+	load_door(room,get_node("room/walls/wall_left/Door")  , 1)
+	load_door(room,get_node("room/walls/wall_right/Door") , 2)
+	load_door(room,get_node("room/walls/wall_top/Door")   , 4)
+	load_door(room,get_node("room/walls/wall_bottom/Door"), 8)
+
+func load_wall(room, node, side):
+	if room.get_wall(side):
+		node.set_texture(GLOBAL.map.walls['wall'])
 	else:
-		get_node("room/walls/wall_left").set_texture(null)
-	if room.get_wall(2):
-		get_node("room/walls/wall_right").set_texture(GLOBAL.map.walls['wall'])
+		node.set_texture(GLOBAL.map.walls['deep_wall'])
+		
+func load_door(room, node, side):
+	if room.get_doors(side):
+#		print("doors")
+		node.door_side = side
+		if room.get_door_state(side):
+#			print("unlocked")
+			node.unlock()
+		else:
+#			print("locked")
+			node.lock()
+		node.set_hidden(false)
 	else:
-		get_node("room/walls/wall_right").set_texture(null)
-	if room.get_wall(4):
-		get_node("room/walls/wall_top").set_texture(GLOBAL.map.walls['wall'])
-	else:
-		get_node("room/walls/wall_top").set_texture(null)
-	if room.get_wall(8):
-		get_node("room/walls/wall_bottom").set_texture(GLOBAL.map.walls['wall'])
-	else:
-		get_node("room/walls/wall_bottom").set_texture(null)
-	pass
-	
-func unload_room():
-#	for object in get_node("room").get_children():
-#		object.queue_free()
-	pass
+		node.set_hidden(true)
 
 func _ready():
 	GLOBAL.map.load_grid()
 	set_fixed_process(true)
 	set_process_input(true)
-	
-	
+	load_room( GLOBAL.map.grid[GLOBAL.map_pos.x][GLOBAL.map_pos.y] )
+	get_orientation_vector()
