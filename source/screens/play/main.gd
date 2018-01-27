@@ -183,6 +183,7 @@ func pick_start():
 		if room.get_room_type() == 0:
 			list.append(room)
 	var room = list[randi() % list.size()]
-	GLOBAL.map_pos = room.coordinates
-	GLOBAL.map_orientation = randi() % 4
+	GLOBAL.map_pos = Vector2(0,4)
+#	GLOBAL.map_pos = room.coordinates
+#	GLOBAL.map_orientation = randi() % 4
 	get_node("room/walls").set_pos(Vector2(1,0) * 1920 * GLOBAL.map_orientation + Vector2(960,540))

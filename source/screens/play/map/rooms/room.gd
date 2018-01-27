@@ -11,6 +11,8 @@ export(int, "Isolation", "Corridor", "Decontamination", "Trap") var room_type  s
 
 var doors_state = 0
 
+
+
 #var wall_textures = []
 var furnitures = []
 
@@ -43,6 +45,14 @@ func get_sector():
 func set_locked_doors( new_value ):
 	if new_value !=null:
 		locked_doors = new_value
+		if new_value & 1 == 1: get_node("room_bg/door_left_locked").set_hidden(false)
+		else:                  get_node("room_bg/door_left_locked").set_hidden(true)
+		if new_value & 2 == 2: get_node("room_bg/door_right_locked").set_hidden(false)
+		else:                  get_node("room_bg/door_right_locked").set_hidden(true)
+		if new_value & 4 == 4: get_node("room_bg/door_top_locked").set_hidden(false)
+		else:                  get_node("room_bg/door_top_locked").set_hidden(true)
+		if new_value & 8 == 8: get_node("room_bg/door_bottom_locked").set_hidden(false)
+		else:                  get_node("room_bg/door_bottom_locked").set_hidden(true)
 
 func get_locked_doors( side ):
 	if locked_doors & side == side: return true
