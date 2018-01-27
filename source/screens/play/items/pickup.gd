@@ -33,7 +33,7 @@ func _on_mouse_enter():
 		set_modulate(hover)
 
 func _on_button_down():
-	print (GLOBAL.selected_item_index)
+#	print (GLOBAL.selected_item_index)
 	if GLOBAL.selected_item_index > -1:
 		GLOBAL.picked_items[GLOBAL.selected_item_index].selected = false
 		GLOBAL.picked_items[GLOBAL.selected_item_index].set_modulate(normal)

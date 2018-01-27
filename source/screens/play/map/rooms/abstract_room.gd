@@ -21,12 +21,14 @@ func _fixed_process(delta):
 		target_scale       = 1
 		is_enabled         = true
 		GLOBAL.item_active = true
+		GLOBAL.is_clicked  = false
 		enable()
 	elif GLOBAL.is_clicked && mouse_inside == false:
 		animate            = true
 		target_scale       = 0.25
 		is_enabled         = false
 		GLOBAL.item_active = false
+		GLOBAL.is_clicked  = false
 		dissable()
 		
 	if animate:

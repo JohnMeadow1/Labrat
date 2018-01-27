@@ -9,8 +9,8 @@ var dead        = {"dead0": load("res://images/game_over1.png"),
                    "dead1": load("res://images/game_over2.png"),
                    "dead2": load("res://images/game_over3.png"),
                    "dead3": load("res://images/game_over4.png")}
-var is_alive    = true
-
+var is_alive     = true
+var mouse_inside = false
 func _input(ev):
 	if is_alive:
 		if ev.is_action_released("click"):
@@ -62,15 +62,21 @@ func process_movement():
 		get_node("gui_overlay/Control/Container/HBoxContainer/turn_arrow").set_opacity( 0 )
 		if GLOBAL.is_clicked:
 			move_in_room()
+	elif mouse_inside:
+		if GLOBAL.is_clicked:
+			get_node("gui_overlay/Control/Container/HBoxContainer/turn_arrow2").set_opacity( 0 )
+			get_node("gui_overlay/Control/Container/HBoxContainer/turn_arrow1").set_opacity( 0 )
+			get_node("gui_overlay/Control/Container/HBoxContainer/turn_arrow").set_opacity( 0 )
+			move_in_room()
 	else:
 		get_node("gui_overlay/Control/Container/HBoxContainer/turn_arrow2").set_opacity( 0 )
-		if GLOBAL.mouse_pos.x > 1600:
+		if GLOBAL.mouse_pos.x > 1500:
 			get_node("gui_overlay/Control/Container/HBoxContainer/turn_arrow1").set_opacity( 0.5 )
 			if GLOBAL.is_clicked:
 				turn(-1)
 		else:
 			get_node("gui_overlay/Control/Container/HBoxContainer/turn_arrow1").set_opacity( 0 )
-		if GLOBAL.mouse_pos.x < 200:
+		if GLOBAL.mouse_pos.x < 300:
 			get_node("gui_overlay/Control/Container/HBoxContainer/turn_arrow").set_opacity( 0.5 )
 			if GLOBAL.is_clicked:
 				turn(1)
@@ -115,7 +121,6 @@ func get_orientation_vector():
 	
 func move_in_room():
 #	print("move into")
-
 	GLOBAL.is_clicked = false
 	animate_through_door = true
 	
@@ -159,21 +164,46 @@ func load_furniture(room, node, side):
 func load_wall(room, node, side):
 	if room.get_wall(side):
 		node.set_texture(GLOBAL.map.walls['wall'])
+		node.get_node("Area2D").set_hidden(true)
 	else:
 		node.set_texture(GLOBAL.map.walls['deep_wall'])
+		node.get_node("Area2D").set_hidden(false)
 		
 func load_door(room, node, side):
 	if room.get_doors(side):
 		node.door_side = side
 		node.set_hidden(false)
+		var lock_node = null 
+		if room.get_lock_type(side) == 1:
+			node.get_node("HandLock").set_hidden(false)
+			node.get_node("Keypad").set_hidden(true)
+			node.get_node("Cardlock").set_hidden(true)
+			lock_node = node.get_node("HandLock")
+		elif room.get_lock_type(side) == 2:
+			node.get_node("HandLock").set_hidden(true)
+			node.get_node("Keypad").set_hidden(true)
+			node.get_node("Cardlock").set_hidden(false)
+			lock_node = node.get_node("Cardlock")
+		elif room.get_lock_type(side) == 0:
+			node.get_node("HandLock").set_hidden(true)
+			node.get_node("Keypad").set_hidden(false)
+#				node.get_node("Keypad").valid_code = room.passwords[str(side)]
+			node.get_node("Cardlock").set_hidden(true)
+			lock_node = node.get_node("Keypad")
+	
 		if room.get_locked_doors(side): 
+#			print(room.get_lock_type(side))
 			if room.get_door_state(side):
-				node.unlock()
+				node.unlock(lock_node)
 			else:
-				node.lock()
+				node.lock(lock_node)
 		else:
 			node.get_node("Keypad").set_hidden(true)
 			node.get_node("HandLock").set_hidden(true)
+			node.get_node("Cardlock").set_hidden(true)
+			if lock_node:
+				lock_node.set_hidden(false)
+				lock_node.get_node("Area2D").set_hidden(true)
 			node.get_node("Area2D").set_hidden(false)
 	else:
 		node.set_hidden(true)
@@ -185,6 +215,19 @@ func _ready():
 	pick_start()
 	load_room( GLOBAL.map.grid[GLOBAL.map_pos.x][GLOBAL.map_pos.y] )
 	get_orientation_vector()
+	get_node("room/walls/wall_left/Area2D").connect("mouse_enter",self, 'mouse_enter')
+	get_node("room/walls/wall_left/Area2D").connect("mouse_exit",self, 'mouse_exit')
+	get_node("room/walls/wall_right/Area2D").connect("mouse_enter",self, 'mouse_enter')
+	get_node("room/walls/wall_right/Area2D").connect("mouse_exit",self, 'mouse_exit')
+	get_node("room/walls/wall_top/Area2D").connect("mouse_enter",self, 'mouse_enter')
+	get_node("room/walls/wall_top/Area2D").connect("mouse_exit",self, 'mouse_exit')
+	get_node("room/walls/wall_bottom/Area2D").connect("mouse_enter",self, 'mouse_enter')
+	get_node("room/walls/wall_bottom/Area2D").connect("mouse_exit",self, 'mouse_exit')
+
+func mouse_enter():
+	mouse_inside = true
+func mouse_exit():
+	mouse_inside = false
 	
 func pick_start():
 	var list = []
@@ -201,10 +244,10 @@ func set_trap(room):
 	if room.get_trap_type() > 0:
 		get_node("room/Trap").set_hidden(false)
 		if room.get_trap_type() == 1:
-			get_node("room/Trap/Sprite").set_texture(load("res://screens/play/map/decor/small/liquid.png"))
+			get_node("room/Trap/Sprite").set_texture(load("res://screens/play/map/decor/liquid.png"))
 			get_node("room/Trap/Sprite").set_modulate(Color(0.2,0.7,0.2))
 		elif room.get_trap_type() == 2:
-			get_node("room/Trap/Sprite").set_texture(load("res://screens/play/map/decor/small/stain.png"))
+			get_node("room/Trap/Sprite").set_texture(load("res://screens/play/map/decor/stain.png"))
 			get_node("room/Trap/Sprite").set_modulate(Color(0.7,0.2,0.5))
 	else:
 		get_node("room/Trap").set_hidden(true)

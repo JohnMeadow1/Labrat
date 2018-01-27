@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=1]
 
-[ext_resource path="res://screens/play/map/decor/furniture/desk_sm.png" type="Texture" id=1]
-[ext_resource path="res://screens/play/map/decor/small/probes.png" type="Texture" id=2]
-[ext_resource path="res://screens/play/map/decor/small/glass2.png" type="Texture" id=3]
-[ext_resource path="res://screens/play/map/decor/small/glass_3.png" type="Texture" id=4]
-[ext_resource path="res://screens/play/map/decor/small/glass1.png" type="Texture" id=5]
-[ext_resource path="res://screens/play/map/decor/small/bottle.png" type="Texture" id=6]
+[ext_resource path="res://screens/play/map/decor/desk_sm.png" type="Texture" id=1]
+[ext_resource path="res://screens/play/map/decor/probes.png" type="Texture" id=2]
+[ext_resource path="res://screens/play/map/decor/glass2.png" type="Texture" id=3]
+[ext_resource path="res://screens/play/map/decor/glass3.png" type="Texture" id=4]
+[ext_resource path="res://screens/play/map/decor/glass1.png" type="Texture" id=5]
+[ext_resource path="res://screens/play/map/decor/bottle.png" type="Texture" id=6]
 [ext_resource path="res://screens/play/items/lab_result.tscn" type="PackedScene" id=7]
 
 [node name="Lab" type="Node2D"]

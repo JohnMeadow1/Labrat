@@ -1,10 +1,10 @@
 extends "res://screens/play/items/abstract_item.gd"
 
-var valid_code = ""
+var valid_code = "2"
 var is_open = false
 
 func set_variables():
-	valid_code = get_parent().get("valid_code")
+#	valid_code = get_parent().get("valid_code")
 	mini_scale    = 0.25
 	current_scale = 0.25
 	pass
@@ -19,7 +19,6 @@ func process_item():
 			target_scale       = 0.25
 			is_enabled         = false
 			GLOBAL.item_active = false
-
 	
 func enable():
 	if(!is_open):
@@ -33,15 +32,13 @@ func dissable():
 
 func validateCode(code):
 	if (code == valid_code):
-#		GLOBAL.is_clicked = false
-		get_node("Area2D/Screen").set_text("open")
+		GLOBAL.picked_items[GLOBAL.selected_item_index].use_item()
 		is_open            = true
 		animate            = true
 		target_scale       = 0.25
 		is_enabled         = false
 		GLOBAL.item_active = false
 		get_node("Area2D/buttons").set_hidden(true)
-
+	pass
 func lock():
-	get_node("Area2D/Screen").set_text("")
-	
+	pass

@@ -16,6 +16,11 @@ extents = Vector2( 150, 200 )
 
 script/script = ExtResource( 1 )
 
+[node name="keypad1" type="Sprite" parent="."]
+
+transform/scale = Vector2( 0.1875, 0.1875 )
+texture = ExtResource( 2 )
+
 [node name="Area2D" type="Area2D" parent="."]
 
 transform/scale = Vector2( 0.25, 0.25 )

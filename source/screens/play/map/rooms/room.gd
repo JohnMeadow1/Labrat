@@ -11,9 +11,13 @@ export(int, FLAGS, "Left", "Right", "Top", "Bottom") var danger_doors setget set
 export(int, "Isolation", "Corridor", "Decontamination") var room_type  setget set_room_type, get_room_type
 export(int, "None", "Acid", "Monster") var trap_type setget set_trap_type, get_trap_type
 
-var doors_state = 0
-var door_type
+export(int, "None", "Finger", "Card") var unique_pad_left   setget set_unique_lock_left ,get_lock_type
+export(int, "None", "Finger", "Card") var unique_pad_right  setget set_unique_lock_right ,get_lock_type
+export(int, "None", "Finger", "Card") var unique_pad_top    setget set_unique_lock_top   ,get_lock_type
+export(int, "None", "Finger", "Card") var unique_pad_bottom setget set_unique_lock_bottom,get_lock_type
 
+var doors_state = 0
+var passwords = {}
 
 #var wall_textures = []
 var furnitures = []
@@ -50,7 +54,36 @@ func set_sector(new_value):
 
 func get_sector():
 	return sector
+func set_unique_lock_left(new_value):
+	if new_value != null:
+		unique_pad_left = new_value
+		
+func set_unique_lock_right(new_value):
+	if new_value != null:
+		unique_pad_right = new_value
+		
+func set_unique_lock_top(new_value):
+	if new_value != null:
+		unique_pad_top = new_value
+		
+func set_unique_lock_bottom(new_value):
+	if new_value != null:
+		unique_pad_bottom = new_value
 	
+func get_lock_type(side):
+#	print(unique_pad_left)
+#	print(unique_pad_right)
+#	print(unique_pad_top)
+#	print(unique_pad_bottom)
+	if side == 1:
+		return unique_pad_left
+	if side == 2:
+		return unique_pad_right
+	if side == 4:
+		return unique_pad_top
+	if side == 8:
+		return unique_pad_bottom
+
 func set_locked_doors( new_value ):
 	if new_value !=null:
 		locked_doors = new_value
@@ -83,8 +116,6 @@ func set_danger_doors( new_value ):
 		else:                  get_node("room_bg/door_top_danger").set_hidden(true)
 		if new_value & 8 == 8: get_node("room_bg/door_bottom_danger").set_hidden(false)
 		else:                  get_node("room_bg/door_bottom_danger").set_hidden(true)
-
-	pass
 	
 func get_danger_doors( side ):
 	if danger_doors & side == side: return true
@@ -126,7 +157,8 @@ func get_doors( side ):
 
 func unlock_door(side):
 	doors_state += side
-	locked_doors -= side
+	if locked_doors:
+		locked_doors -= side
 	
 func get_door_state(side):
 	if (doors_state & side) == side: return true
