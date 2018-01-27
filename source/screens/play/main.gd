@@ -15,6 +15,7 @@ func _input(ev):
 	if is_alive:
 		if ev.is_action_released("click"):
 			GLOBAL.is_clicked = true
+			
 		else:
 			GLOBAL.is_clicked = false
 		if (ev.type == InputEvent.MOUSE_MOTION):
@@ -60,7 +61,6 @@ func process_movement():
 		get_node("gui_overlay/Control/Container/HBoxContainer/turn_arrow1").set_opacity( 0 )
 		get_node("gui_overlay/Control/Container/HBoxContainer/turn_arrow").set_opacity( 0 )
 		if GLOBAL.is_clicked:
-			
 			move_in_room()
 	else:
 		get_node("gui_overlay/Control/Container/HBoxContainer/turn_arrow2").set_opacity( 0 )
@@ -81,6 +81,8 @@ func process_movement():
 	get_node("minimap/map/selector").set_rot( GLOBAL.map_orientation * ( PI/2 ) )
 	
 func turn( value ):
+	GLOBAL.is_clicked = false
+#	print(GLOBAL.map_orientation, " ", value)
 	GLOBAL.map_orientation += value
 
 #	print(GLOBAL.map_orientation, " ", get_node("room/walls").get_pos() )
@@ -113,6 +115,8 @@ func get_orientation_vector():
 	
 func move_in_room():
 #	print("move into")
+
+	GLOBAL.is_clicked = false
 	animate_through_door = true
 	
 func enter_the_room():
@@ -160,15 +164,13 @@ func load_wall(room, node, side):
 		
 func load_door(room, node, side):
 	if room.get_doors(side):
-#		print("doors")
 		node.door_side = side
+		node.set_hidden(false)
+#		if room.get_locked_doors(side): 
 		if room.get_door_state(side):
-#			print("unlocked")
 			node.unlock()
 		else:
-#			print("locked")
 			node.lock()
-		node.set_hidden(false)
 	else:
 		node.set_hidden(true)
 
@@ -186,8 +188,9 @@ func pick_start():
 		if room.get_room_type() == 0:
 			list.append(room)
 	var room = list[randi() % list.size()]
-	GLOBAL.map_pos = room.coordinates
-	GLOBAL.map_orientation = randi() % 4
+	GLOBAL.map_pos = Vector2(0,4)
+#	GLOBAL.map_pos = room.coordinates
+#	GLOBAL.map_orientation = randi() % 4
 	get_node("room/walls").set_pos(Vector2(1,0) * 1920 * GLOBAL.map_orientation + Vector2(960,540))
 
 func set_trap(room):

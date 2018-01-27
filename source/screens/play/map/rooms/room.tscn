@@ -1,13 +1,21 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://screens/play/map/rooms/room.gd" type="Script" id=1]
 [ext_resource path="res://screens/play/map/rooms/room.png" type="Texture" id=2]
 [ext_resource path="res://screens/play/map/rooms/wall.png" type="Texture" id=3]
 [ext_resource path="res://screens/play/map/rooms/door.png" type="Texture" id=4]
+[ext_resource path="res://screens/play/map/rooms/keypad.png" type="Texture" id=5]
+[ext_resource path="res://screens/play/map/rooms/locked.png" type="Texture" id=6]
 
 [node name="room" type="Node2D"]
 
 script/script = ExtResource( 1 )
+sector = null
+walls = null
+doors = null
+locked_doors = null
+danger_doors = null
+room_type = null
 
 [node name="room_bg" type="Sprite" parent="."]
 
@@ -61,6 +69,54 @@ visibility/visible = false
 transform/rot = 90.0
 texture = ExtResource( 4 )
 flip_h = true
+
+[node name="door_bottom_locked" type="Sprite" parent="room_bg"]
+
+visibility/visible = false
+transform/rot = 90.0
+texture = ExtResource( 5 )
+flip_h = true
+
+[node name="door_top_locked" type="Sprite" parent="room_bg"]
+
+visibility/visible = false
+transform/rot = 90.0
+texture = ExtResource( 5 )
+
+[node name="door_left_locked" type="Sprite" parent="room_bg"]
+
+visibility/visible = false
+texture = ExtResource( 5 )
+flip_h = true
+
+[node name="door_right_locked" type="Sprite" parent="room_bg"]
+
+visibility/visible = false
+texture = ExtResource( 5 )
+
+[node name="door_bottom_danger" type="Sprite" parent="room_bg"]
+
+visibility/visible = false
+transform/rot = 90.0
+texture = ExtResource( 6 )
+flip_h = true
+
+[node name="door_top_danger" type="Sprite" parent="room_bg"]
+
+visibility/visible = false
+transform/rot = 90.0
+texture = ExtResource( 6 )
+
+[node name="door_left_danger" type="Sprite" parent="room_bg"]
+
+visibility/visible = false
+texture = ExtResource( 6 )
+flip_h = true
+
+[node name="door_right_danger" type="Sprite" parent="room_bg"]
+
+visibility/visible = false
+texture = ExtResource( 6 )
 
 [node name="Label" type="Label" parent="."]
 
