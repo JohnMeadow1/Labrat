@@ -27,9 +27,9 @@ func _on_button_up():
 	set_modulate(hover)
 
 func addValue():
-	var text = get_parent().get_text()
+	var text = get_node("../../Screen").get_text()
 	if text.length() < 3:
-		get_parent().set_text(text + value)
+		get_node("../../Screen").set_text(text + value)
 	elif text.length() == 3:
+		get_node("../../Screen").set_text("")
 		get_node("../../..").validateCode(text + value)
-		get_parent().set_text("")

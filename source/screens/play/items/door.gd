@@ -1,17 +1,8 @@
-extends "res://screens/play/items/abstract_item.gd"
-
-func set_variables():
-	mini_scale    = 1
-	current_scale = 1
-	pass
+extends "res://screens/play/items/abstract_door.gd"
 
 func process_item():
-	pass
-	
-func enable():
-	target_scale = 1
-	if(get_node("Keypad").get("is_open")):
+	if GLOBAL.is_clicked && mouse_inside:
 		get_tree().get_root().get_node("main").move_in_room()
 	
-func dissable():
-	target_scale = 1
+func unlock():
+		get_node("Area2D").set_hidden(false)

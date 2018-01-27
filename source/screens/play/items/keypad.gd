@@ -9,21 +9,34 @@ func set_variables():
 	pass
 
 func process_item():
-	pass
+	if is_open:
+		if animate == false:
+			get_parent().unlock()
+		else:
+			animate            = true
+			target_scale       = 0.25
+			is_enabled         = false
+			GLOBAL.item_active = false
 	
 func enable():
 	if(!is_open):
 		target_scale = 1
-		get_node("Area2D/Screen").set_hidden(false)
+#		get_node("Area2D/Screen").set_hidden(false)
+		get_node("Area2D/buttons").set_hidden(false)
 	
 func dissable():
 	target_scale = 0.25
-	get_node("Area2D/Screen").set_hidden(true)
+	get_node("Area2D/buttons").set_hidden(true)
 
 func validateCode(code):
 	if (code == valid_code):
-		is_open = true
+#		GLOBAL.is_clicked = false
+		get_node("Area2D/Screen").set_text("open")
 		get_node("Light").set_modulate(Color(0,255,0))
-		dissable()
-		animate = true;
+		is_open            = true
+		animate            = true
+		target_scale       = 0.25
+		is_enabled         = false
+		GLOBAL.item_active = false
+		get_node("Area2D/buttons").set_hidden(true)
 	pass

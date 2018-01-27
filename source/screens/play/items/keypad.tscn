@@ -33,15 +33,8 @@ angular_damp = 1.0
 
 texture = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-
-shape = SubResource( 1 )
-trigger = false
-_update_shape_index = 0
-
 [node name="Screen" type="Label" parent="Area2D"]
 
-visibility/visible = false
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -56,16 +49,35 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Button1" type="TextureButton" parent="Area2D/Screen"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="buttons" type="Control" parent="Area2D"]
+
+visibility/visible = false
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 40.0
+
+[node name="Button1" type="TextureButton" parent="Area2D/buttons"]
+
+editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 0.0
-margin/top = 66.0
-margin/right = 40.0
-margin/bottom = 106.0
+margin/left = -75.0
+margin/top = -63.0
+margin/right = -35.0
+margin/bottom = -23.0
 toggle_mode = false
 click_on_press = true
 enabled_focus_mode = 2
@@ -79,7 +91,7 @@ hover = Color( 0.757804, 0.757813, 0.757813, 1 )
 pressed = Color( 0.46875, 0.46875, 0.46875, 1 )
 value = "1"
 
-[node name="Label 2" type="Label" parent="Area2D/Screen/Button1"]
+[node name="Label 2" type="Label" parent="Area2D/buttons/Button1"]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -98,16 +110,17 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Button2" type="TextureButton" parent="Area2D/Screen"]
+[node name="Button2" type="TextureButton" parent="Area2D/buttons"]
 
+editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 56.0
-margin/top = 66.0
-margin/right = 96.0
-margin/bottom = 106.0
+margin/left = -19.0
+margin/top = -63.0
+margin/right = 21.0
+margin/bottom = -23.0
 toggle_mode = false
 click_on_press = true
 enabled_focus_mode = 2
@@ -121,7 +134,7 @@ hover = Color( 0.757804, 0.757813, 0.757813, 1 )
 pressed = Color( 0.46875, 0.46875, 0.46875, 1 )
 value = "2"
 
-[node name="Label 2" type="Label" parent="Area2D/Screen/Button2"]
+[node name="Label 2" type="Label" parent="Area2D/buttons/Button2"]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -140,16 +153,17 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Button3" type="TextureButton" parent="Area2D/Screen"]
+[node name="Button3" type="TextureButton" parent="Area2D/buttons"]
 
+editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 112.0
-margin/top = 66.0
-margin/right = 152.0
-margin/bottom = 106.0
+margin/left = 37.0
+margin/top = -63.0
+margin/right = 77.0
+margin/bottom = -23.0
 toggle_mode = false
 click_on_press = true
 enabled_focus_mode = 2
@@ -163,7 +177,7 @@ hover = Color( 0.757804, 0.757813, 0.757813, 1 )
 pressed = Color( 0.46875, 0.46875, 0.46875, 1 )
 value = "3"
 
-[node name="Label 3" type="Label" parent="Area2D/Screen/Button3"]
+[node name="Label 3" type="Label" parent="Area2D/buttons/Button3"]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -182,16 +196,17 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Button4" type="TextureButton" parent="Area2D/Screen"]
+[node name="Button4" type="TextureButton" parent="Area2D/buttons"]
 
+editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 0.0
-margin/top = 110.0
-margin/right = 40.0
-margin/bottom = 150.0
+margin/left = -75.0
+margin/top = -19.0
+margin/right = -35.0
+margin/bottom = 21.0
 toggle_mode = false
 click_on_press = true
 enabled_focus_mode = 2
@@ -205,7 +220,7 @@ hover = Color( 0.757804, 0.757813, 0.757813, 1 )
 pressed = Color( 0.46875, 0.46875, 0.46875, 1 )
 value = "4"
 
-[node name="Label 4" type="Label" parent="Area2D/Screen/Button4"]
+[node name="Label 4" type="Label" parent="Area2D/buttons/Button4"]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -224,16 +239,17 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Button5" type="TextureButton" parent="Area2D/Screen"]
+[node name="Button5" type="TextureButton" parent="Area2D/buttons"]
 
+editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 56.0
-margin/top = 110.0
-margin/right = 96.0
-margin/bottom = 150.0
+margin/left = -19.0
+margin/top = -19.0
+margin/right = 21.0
+margin/bottom = 21.0
 toggle_mode = false
 click_on_press = true
 enabled_focus_mode = 2
@@ -247,7 +263,7 @@ hover = Color( 0.757804, 0.757813, 0.757813, 1 )
 pressed = Color( 0.46875, 0.46875, 0.46875, 1 )
 value = "5"
 
-[node name="Label 5" type="Label" parent="Area2D/Screen/Button5"]
+[node name="Label 5" type="Label" parent="Area2D/buttons/Button5"]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -266,16 +282,17 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Button6" type="TextureButton" parent="Area2D/Screen"]
+[node name="Button6" type="TextureButton" parent="Area2D/buttons"]
 
+editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 112.0
-margin/top = 110.0
-margin/right = 152.0
-margin/bottom = 150.0
+margin/left = 37.0
+margin/top = -19.0
+margin/right = 77.0
+margin/bottom = 21.0
 toggle_mode = false
 click_on_press = true
 enabled_focus_mode = 2
@@ -289,7 +306,7 @@ hover = Color( 0.757804, 0.757813, 0.757813, 1 )
 pressed = Color( 0.46875, 0.46875, 0.46875, 1 )
 value = "6"
 
-[node name="Label 6" type="Label" parent="Area2D/Screen/Button6"]
+[node name="Label 6" type="Label" parent="Area2D/buttons/Button6"]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -308,16 +325,17 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Button7" type="TextureButton" parent="Area2D/Screen"]
+[node name="Button7" type="TextureButton" parent="Area2D/buttons"]
 
+editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 0.0
-margin/top = 155.0
-margin/right = 40.0
-margin/bottom = 195.0
+margin/left = -75.0
+margin/top = 26.0
+margin/right = -35.0
+margin/bottom = 66.0
 toggle_mode = false
 click_on_press = true
 enabled_focus_mode = 2
@@ -331,7 +349,7 @@ hover = Color( 0.757804, 0.757813, 0.757813, 1 )
 pressed = Color( 0.46875, 0.46875, 0.46875, 1 )
 value = "7"
 
-[node name="Label 7" type="Label" parent="Area2D/Screen/Button7"]
+[node name="Label 7" type="Label" parent="Area2D/buttons/Button7"]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -350,16 +368,17 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Button8" type="TextureButton" parent="Area2D/Screen"]
+[node name="Button8" type="TextureButton" parent="Area2D/buttons"]
 
+editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 56.0
-margin/top = 155.0
-margin/right = 96.0
-margin/bottom = 195.0
+margin/left = -19.0
+margin/top = 26.0
+margin/right = 21.0
+margin/bottom = 66.0
 toggle_mode = false
 click_on_press = true
 enabled_focus_mode = 2
@@ -373,7 +392,7 @@ hover = Color( 0.757804, 0.757813, 0.757813, 1 )
 pressed = Color( 0.46875, 0.46875, 0.46875, 1 )
 value = "8"
 
-[node name="Label 8" type="Label" parent="Area2D/Screen/Button8"]
+[node name="Label 8" type="Label" parent="Area2D/buttons/Button8"]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -392,16 +411,17 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Button9" type="TextureButton" parent="Area2D/Screen"]
+[node name="Button9" type="TextureButton" parent="Area2D/buttons"]
 
+editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 112.0
-margin/top = 155.0
-margin/right = 152.0
-margin/bottom = 195.0
+margin/left = 37.0
+margin/top = 26.0
+margin/right = 77.0
+margin/bottom = 66.0
 toggle_mode = false
 click_on_press = true
 enabled_focus_mode = 2
@@ -415,7 +435,7 @@ hover = Color( 0.757804, 0.757813, 0.757813, 1 )
 pressed = Color( 0.46875, 0.46875, 0.46875, 1 )
 value = "9"
 
-[node name="Label 9" type="Label" parent="Area2D/Screen/Button9"]
+[node name="Label 9" type="Label" parent="Area2D/buttons/Button9"]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -434,16 +454,17 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Button0" type="TextureButton" parent="Area2D/Screen"]
+[node name="Button0" type="TextureButton" parent="Area2D/buttons"]
 
+editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 56.0
-margin/top = 199.0
-margin/right = 96.0
-margin/bottom = 239.0
+margin/left = -19.0
+margin/top = 70.0
+margin/right = 21.0
+margin/bottom = 110.0
 toggle_mode = false
 click_on_press = true
 enabled_focus_mode = 2
@@ -457,7 +478,7 @@ hover = Color( 0.757804, 0.757813, 0.757813, 1 )
 pressed = Color( 0.46875, 0.46875, 0.46875, 1 )
 value = "0"
 
-[node name="Label 10" type="Label" parent="Area2D/Screen/Button0"]
+[node name="Label 10" type="Label" parent="Area2D/buttons/Button0"]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -476,16 +497,17 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="ButtonC" type="TextureButton" parent="Area2D/Screen"]
+[node name="ButtonC" type="TextureButton" parent="Area2D/buttons"]
 
+editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 0.0
-margin/top = 200.0
-margin/right = 40.0
-margin/bottom = 240.0
+margin/left = -75.0
+margin/top = 71.0
+margin/right = -35.0
+margin/bottom = 111.0
 toggle_mode = false
 click_on_press = true
 enabled_focus_mode = 2
@@ -499,7 +521,7 @@ hover = Color( 0.757804, 0.757813, 0.757813, 1 )
 pressed = Color( 0.46875, 0.46875, 0.46875, 1 )
 value = null
 
-[node name="Label 11" type="Label" parent="Area2D/Screen/ButtonC"]
+[node name="Label 11" type="Label" parent="Area2D/buttons/ButtonC"]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -518,16 +540,17 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="ButtonS" type="TextureButton" parent="Area2D/Screen"]
+[node name="ButtonS" type="TextureButton" parent="Area2D/buttons"]
 
+editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 113.0
-margin/top = 199.0
-margin/right = 153.0
-margin/bottom = 239.0
+margin/left = 38.0
+margin/top = 70.0
+margin/right = 78.0
+margin/bottom = 110.0
 toggle_mode = false
 click_on_press = true
 enabled_focus_mode = 2
@@ -536,7 +559,7 @@ textures/normal = ExtResource( 4 )
 params/resize_mode = 0
 params/stretch_mode = 0
 
-[node name="Label 12" type="Label" parent="Area2D/Screen/ButtonS"]
+[node name="Label 12" type="Label" parent="Area2D/buttons/ButtonS"]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
