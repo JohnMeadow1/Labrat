@@ -15,9 +15,11 @@ extents = Vector2( 150, 200 )
 [node name="item" type="Node2D"]
 
 script/script = ExtResource( 1 )
+valid_code = null
 
 [node name="Area2D" type="Area2D" parent="."]
 
+transform/scale = Vector2( 0.25, 0.25 )
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -551,5 +553,11 @@ valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+
+[node name="Light" type="Sprite" parent="."]
+
+transform/pos = Vector2( -156.683, -133.713 )
+texture = ExtResource( 4 )
+modulate = Color( 1, 0, 0, 1 )
 
 

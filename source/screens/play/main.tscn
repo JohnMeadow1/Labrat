@@ -6,7 +6,7 @@
 [ext_resource path="res://images/arrow_left.png" type="Texture" id=4]
 [ext_resource path="res://images/arrow_front.png" type="Texture" id=5]
 [ext_resource path="res://images/arrow_right.png" type="Texture" id=6]
-[ext_resource path="res://screens/play/items/keypad.tscn" type="PackedScene" id=7]
+[ext_resource path="res://screens/play/items/door.tscn" type="PackedScene" id=7]
 
 [node name="main" type="Node2D"]
 
@@ -130,8 +130,13 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="item" parent="." instance=ExtResource( 7 )]
+[node name="Door" parent="." instance=ExtResource( 7 )]
 
-transform/pos = Vector2( 664.377, 430.615 )
+transform/pos = Vector2( 509.407, 389.464 )
+
+[node name="Keypad" parent="Door"]
+
+valid_code = "1234"
 
 
+[editable path="Door"]
