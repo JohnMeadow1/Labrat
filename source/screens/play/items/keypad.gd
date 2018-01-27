@@ -1,9 +1,10 @@
 extends "res://screens/play/items/abstract_item.gd"
 
-export (String) var valid_code
+var valid_code = ""
 var is_open = false
 
 func set_variables():
+	valid_code = get_parent().get("valid_code")
 	mini_scale    = 0.25
 	current_scale = 0.25
 	pass

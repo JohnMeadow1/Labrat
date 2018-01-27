@@ -12,6 +12,7 @@ extents = Vector2( 125, 167 )
 [node name="Door" type="Node2D"]
 
 script/script = ExtResource( 1 )
+valid_code = null
 
 [node name="door" type="Sprite" parent="."]
 

@@ -15,7 +15,6 @@ extents = Vector2( 150, 200 )
 [node name="item" type="Node2D"]
 
 script/script = ExtResource( 1 )
-valid_code = null
 
 [node name="Area2D" type="Area2D" parent="."]
 
