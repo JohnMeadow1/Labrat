@@ -7,6 +7,8 @@ var update_res                  = true
 var is_clicked                  = false
 var mouse_pos                   = Vector2(0,0)
 var item_active                 = false
+var picked_item                 = null
+var picked_item_name            = ""
 
 var map_packed  = preload("res://screens/play/map/map.tscn")
 onready var map = map_packed.instance()

@@ -1,7 +1,6 @@
 extends Node2D
 
 var mouse_click_pos   = Vector2()
-
 func _input(ev):
 	if ev.type == InputEvent.MOUSE_BUTTON && ev.button_index == BUTTON_LEFT && !ev.pressed :
 		mouse_click_pos = ev.pos
@@ -57,5 +56,4 @@ func move_in_room():
 func _ready():
 	set_fixed_process(true)
 	set_process_input(true)
-	
 	
