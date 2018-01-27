@@ -162,6 +162,7 @@ func load_furniture(room, node, side):
 	
 	pass
 func load_wall(room, node, side):
+#	print(room.get_name(), node.get_name(), side)
 	if room.get_wall(side):
 		node.set_texture(GLOBAL.map.walls['wall'])
 		node.get_node("Area2D").set_hidden(true)
