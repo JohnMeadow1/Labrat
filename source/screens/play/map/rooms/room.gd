@@ -7,7 +7,8 @@ export(int, FLAGS, "Left", "Right", "Top", "Bottom") var walls setget set_walls,
 export(int, FLAGS, "Left", "Right", "Top", "Bottom") var doors setget set_doors, get_doors
 export(int, FLAGS, "Left", "Right", "Top", "Bottom") var locked_doors setget set_locked_doors, get_locked_doors
 
-export(int, "Isolation", "Corridor", "Decontamination", "Trap") var room_type  setget set_room_type, get_room_type
+export(int, "Isolation", "Corridor", "Decontamination") var room_type  setget set_room_type, get_room_type
+export(int, "None", "Acid", "Monster") var trap_type setget set_trap_type, get_trap_type
 
 var doors_state = 0
 
@@ -31,7 +32,14 @@ func set_room_type(new_value):
 		
 func get_room_type():
 	return room_type
-	
+
+func set_trap_type(new_value):
+	if new_value !=null:
+		trap_type = new_value
+		
+func get_trap_type():
+	return trap_type
+
 func set_sector(new_value):
 	if new_value !=null:
 		sector = new_value
