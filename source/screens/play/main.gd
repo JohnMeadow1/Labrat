@@ -21,8 +21,7 @@ func _input(ev):
 			GLOBAL.mouse_pos = ev.pos
 
 func die():
-	is_alive    = false
-#	print(get_node("game_over"))
+	is_alive = false
 	get_node("game_over").set_texture(dead['dead'+str(randi()%4) ])
 	
 func _fixed_process(delta):
@@ -127,8 +126,7 @@ func enter_the_room():
 			GLOBAL.map_pos += GLOBAL.map_orientation_vect
 			load_room( GLOBAL.map.grid[GLOBAL.map_pos.x][GLOBAL.map_pos.y] )
 	
-	if get_node("room/Trap").is_visible():
-		print ("It's a Trap")
+	check_trap()
 	
 #func reload_room():
 #	if GLOBAL.map.grid[GLOBAL.map_pos.x][GLOBAL.map_pos.y] != null:
@@ -197,3 +195,7 @@ func set_trap(room):
 		get_node("room/Trap").set_hidden(false)
 	else:
 		get_node("room/Trap").set_hidden(true)
+		
+func check_trap():
+	if get_node("room/Trap").is_visible():
+		die()
