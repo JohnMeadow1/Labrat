@@ -10,6 +10,9 @@
 
 [node name="Lab" type="Node2D"]
 
+transform/pos = Vector2( -16.6475, 16.6475 )
+transform/scale = Vector2( 0.479766, 0.479766 )
+
 [node name="desk_sm" type="Sprite" parent="."]
 
 texture = ExtResource( 1 )
