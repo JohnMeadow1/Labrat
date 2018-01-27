@@ -41,6 +41,14 @@
 [ext_resource path="res://images/arrow_right.png" type="Texture" id=39]
 [ext_resource path="res://screens/play/map/map.tscn" type="PackedScene" id=40]
 [ext_resource path="res://images/background_bottom.png" type="Texture" id=41]
+<<<<<<< HEAD
+=======
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 600, 350 )
+>>>>>>> f347462c0d6c4b133112e7e1ff572cc15ca97a84
 
 [node name="main" type="Node2D"]
 
@@ -63,6 +71,7 @@ texture = ExtResource( 2 )
 
 [node name="Decors" type="Node2D" parent="room"]
 
+editor/display_folded = true
 z/z = 2
 
 [node name="wall1" type="Node2D" parent="room/Decors"]
@@ -451,6 +460,7 @@ texture = ExtResource( 15 )
 
 [node name="HoldingCell" type="Node2D" parent="room"]
 
+editor/display_folded = true
 z/z = 2
 
 [node name="Bed" type="Node2D" parent="room/HoldingCell"]
@@ -516,6 +526,7 @@ flip_h = true
 
 [node name="Lab" type="Node2D" parent="room"]
 
+editor/display_folded = true
 z/z = 1
 
 [node name="Station" type="Node2D" parent="room/Lab"]
@@ -580,11 +591,28 @@ __meta__ = {
 
 editor/display_folded = true
 transform/pos = Vector2( 0, 20 )
-z/z = 1
-z/relative = false
 valid_code = "4444"
 
 [node name="door" type="Sprite" parent="room/walls/wall_right/Door"]
+
+[node name="Area2D" type="Area2D" parent="room/walls/wall_right"]
+
+editor/display_folded = true
+input/pickable = true
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, -60 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="room/walls/wall_right/Area2D"]
+
+transform/pos = Vector2( 0, -60 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
 
 [node name="wall_bottom" type="Sprite" parent="room/walls"]
 
@@ -597,8 +625,29 @@ __meta__ = {
 
 [node name="Door" parent="room/walls/wall_bottom" instance=ExtResource( 33 )]
 
+editor/display_folded = true
 transform/pos = Vector2( 0, 20 )
 valid_code = "4444"
+
+[node name="Area2D" type="Area2D" parent="room/walls/wall_bottom"]
+
+editor/display_folded = true
+transform/pos = Vector2( 5760, 0 )
+input/pickable = true
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, -60 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="room/walls/wall_bottom/Area2D"]
+
+transform/pos = Vector2( 0, -60 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
 
 [node name="wall_left" type="Sprite" parent="room/walls"]
 
@@ -614,6 +663,26 @@ __meta__ = {
 transform/pos = Vector2( 0, 20 )
 valid_code = "4444"
 
+[node name="Area2D" type="Area2D" parent="room/walls/wall_left"]
+
+editor/display_folded = true
+transform/pos = Vector2( 3840, 0 )
+input/pickable = true
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, -60 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="room/walls/wall_left/Area2D"]
+
+transform/pos = Vector2( 0, -60 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
 [node name="wall_top" type="Sprite" parent="room/walls"]
 
 transform/pos = Vector2( -1920, 0 )
@@ -627,6 +696,26 @@ __meta__ = {
 
 transform/pos = Vector2( 0, 20 )
 valid_code = "4444"
+
+[node name="Area2D" type="Area2D" parent="room/walls/wall_top"]
+
+editor/display_folded = true
+transform/pos = Vector2( 1920, 0 )
+input/pickable = true
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, -60 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="room/walls/wall_top/Area2D"]
+
+transform/pos = Vector2( 0, -60 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
 
 [node name="Pickups" type="Node2D" parent="room"]
 
