@@ -33,7 +33,7 @@ func _on_button_down():
 		if GLOBAL.picked_item != null:
 			GLOBAL.picked_item.move_to = GLOBAL.picked_item.original_position
 			GLOBAL.picked_item.animate = true
-		move_to = Vector2(450, 630)	
+		move_to = Vector2(850, 900)	
 		GLOBAL.picked_item = self
 		GLOBAL.picked_item_name = name
 		animate = true
