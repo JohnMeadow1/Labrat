@@ -1,8 +1,8 @@
 extends TextureButton
 
-export (Color) var normal
-export (Color) var hover
-export (Color) var pressed
+var normal = Color(1, 1, 1)
+var hover = Color(0.75, 0.75, 0.75)
+var pressed = Color(0.5, 0.5, 0.5)
 export (String) var name
 
 var original_position = get_pos()
@@ -29,14 +29,11 @@ func _on_mouse_enter():
 	set_modulate(hover)
 
 func _on_button_down():
-	if GLOBAL.picked_item != self:
-		if GLOBAL.picked_item != null:
-			GLOBAL.picked_item.move_to = GLOBAL.picked_item.original_position
-			GLOBAL.picked_item.animate = true
-		move_to = Vector2(850, 900)	
-		GLOBAL.picked_item = self
-		GLOBAL.picked_item_name = name
-		animate = true
+	var item_index = GLOBAL.picked_items.find(self)
+	if item_index == -1:
+		pick_item()
+	GLOBAL.selected_item_index = item_index
+	
 	set_modulate(pressed)
 
 func _on_button_up():
@@ -51,3 +48,23 @@ func _fixed_process(delta):
 		if pos == move_to:
 			animate = false
 			value = 0
+
+func pick_item():
+	GLOBAL.picked_items.append(self)
+	move_item(self)
+
+func use_item():
+	self.queue_free();
+#	GLOBAL.picked_items.remove(GLOBAL.selected_item_index);
+	GLOBAL.picked_items.erase(self)
+	GLOBAL.selected_item_index = -1
+	if GLOBAL.picked_items.size() > 0:
+		print("Ok")
+		GLOBAL.picked_items.sort()
+		for item in GLOBAL.picked_items:
+			move_item(item)
+			
+func move_item(item):
+	var item_index = GLOBAL.picked_items.find(item)
+	item.move_to = Vector2(650, 975) + Vector2(150, 0) * item_index
+	item.animate = true;

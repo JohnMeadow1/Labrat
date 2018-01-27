@@ -26,6 +26,6 @@ func _on_button_up():
 	set_modulate(hover)
 
 func checkItem():
-	if GLOBAL.picked_item != null:
-		get_node("../../..").validateCode(GLOBAL.picked_item_name)
+	if GLOBAL.selected_item_index > -1:
+		get_node("../../..").validateCode(GLOBAL.picked_items[GLOBAL.selected_item_index].name)
 	pass

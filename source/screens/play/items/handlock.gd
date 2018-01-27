@@ -31,8 +31,7 @@ func dissable():
 
 func validateCode(code):
 	if (code == valid_code):
-		if GLOBAL.picked_item != null:
-			 GLOBAL.picked_item.set_hidden(true);
+		GLOBAL.picked_items[GLOBAL.selected_item_index].use_item()
 		is_open            = true
 		animate            = true
 		target_scale       = 0.25
