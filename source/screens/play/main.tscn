@@ -1,6 +1,7 @@
 [gd_scene load_steps=15 format=1]
 
 [ext_resource path="res://screens/play/main.gd" type="Script" id=1]
+<<<<<<< HEAD
 [ext_resource path="res://screens/play/map/decor/small/liquid.png" type="Texture" id=2]
 [ext_resource path="res://screens/play/locations/wall.png" type="Texture" id=3]
 [ext_resource path="res://screens/play/items/door.tscn" type="PackedScene" id=4]
@@ -14,6 +15,21 @@
 [ext_resource path="res://images/arrow_right.png" type="Texture" id=12]
 [ext_resource path="res://screens/play/map/map.tscn" type="PackedScene" id=13]
 [ext_resource path="res://images/background_bottom.png" type="Texture" id=14]
+=======
+[ext_resource path="res://screens/play/locations/wall.png" type="Texture" id=2]
+[ext_resource path="res://screens/play/items/door.tscn" type="PackedScene" id=3]
+[ext_resource path="res://screens/play/map/decor/furniture/cupboard.png" type="Texture" id=4]
+[ext_resource path="res://screens/play/map/decor/furniture/chair2.png" type="Texture" id=5]
+[ext_resource path="res://screens/play/map/decor/small/hand.png" type="Texture" id=6]
+[ext_resource path="res://screens/play/items/pickup.gd" type="Script" id=7]
+[ext_resource path="res://screens/play/map/decor/small/glass1.png" type="Texture" id=8]
+[ext_resource path="res://images/arrow_left.png" type="Texture" id=9]
+[ext_resource path="res://images/arrow_front.png" type="Texture" id=10]
+[ext_resource path="res://images/arrow_right.png" type="Texture" id=11]
+[ext_resource path="res://screens/play/map/map.tscn" type="PackedScene" id=12]
+[ext_resource path="res://images/background_bottom.png" type="Texture" id=13]
+[ext_resource path="res://images/game_over1.png" type="Texture" id=14]
+>>>>>>> 9e02478d16d26f204946cd94924fe4b652bcdfbd
 
 [node name="main" type="Node2D"]
 
@@ -306,6 +322,16 @@ centered = false
 modulate = Color( 1, 1, 1, 0 )
 region = true
 region_rect = Rect2( 0, 0, 1920, 1080 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="game_over" type="Sprite" parent="."]
+
+z/z = 100
+texture = ExtResource( 14 )
+centered = false
+modulate = Color( 1, 1, 1, 0 )
 __meta__ = {
 "_edit_lock_": true
 }

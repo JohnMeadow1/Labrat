@@ -3,22 +3,36 @@ extends Node2D
 var mouse_click_pos   = Vector2()
 #var animate_rotation  = false
 var animate_through_door  = false
-var timer = 1
+var timer       = 1
+
+var dead        = {"dead0": load("res://images/game_over1.png"),
+                   "dead1": load("res://images/game_over2.png"),
+                   "dead2": load("res://images/game_over3.png"),
+                   "dead3": load("res://images/game_over4.png")}
+var is_alive    = true
 
 func _input(ev):
-	if ev.is_action_released("click"):
-		GLOBAL.is_clicked = true
-	else:
-		GLOBAL.is_clicked = false
-	if (ev.type == InputEvent.MOUSE_MOTION):
-		GLOBAL.mouse_pos = ev.pos
+	if is_alive:
+		if ev.is_action_released("click"):
+			GLOBAL.is_clicked = true
+		else:
+			GLOBAL.is_clicked = false
+		if (ev.type == InputEvent.MOUSE_MOTION):
+			GLOBAL.mouse_pos = ev.pos
 
-
+func die():
+	is_alive    = false
+#	print(get_node("game_over"))
+	get_node("game_over").set_texture(dead['dead'+str(randi()%4) ])
+	
 func _fixed_process(delta):
 	if GLOBAL.item_active == false:
 		process_movement()
 	get_node("room/walls").set_pos(get_node("room/walls").get_pos().linear_interpolate( Vector2(1,0) * 1920 * GLOBAL.map_orientation + Vector2(960,540),0.1 ))
-	
+	if !is_alive:
+		timer -= delta/2
+		get_node("game_over").set_modulate( Color(1,1,1,1-timer) )
+		
 	if animate_through_door:
 		timer -= delta * 2
 		get_node("Sprite").set_modulate( Color(1,1,1,1-timer) )
