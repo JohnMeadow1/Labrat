@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=1]
+[gd_scene load_steps=15 format=1]
 
 [ext_resource path="res://screens/play/main.gd" type="Script" id=1]
 [ext_resource path="res://screens/play/locations/wall.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://images/arrow_right.png" type="Texture" id=11]
 [ext_resource path="res://screens/play/map/map.tscn" type="PackedScene" id=12]
 [ext_resource path="res://images/background_bottom.png" type="Texture" id=13]
+[ext_resource path="res://images/game_over1.png" type="Texture" id=14]
 
 [node name="main" type="Node2D"]
 
@@ -292,6 +293,16 @@ centered = false
 modulate = Color( 1, 1, 1, 0 )
 region = true
 region_rect = Rect2( 0, 0, 1920, 1080 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="game_over" type="Sprite" parent="."]
+
+z/z = 100
+texture = ExtResource( 14 )
+centered = false
+modulate = Color( 1, 1, 1, 0 )
 __meta__ = {
 "_edit_lock_": true
 }
