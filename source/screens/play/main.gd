@@ -168,7 +168,6 @@ func pick_start():
 	for room in GLOBAL.map.get_node("map").get_children():
 		if room.get_room_type() == 0:
 			list.append(room)
-	randomize ( )
 	var room = list[randi() % list.size()]
 	GLOBAL.map_pos = room.coordinates
 	GLOBAL.map_orientation = randi() % 4

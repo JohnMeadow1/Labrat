@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=1]
+
+[ext_resource path="res://screens/play/map/decor/furniture/desk_sm.png" type="Texture" id=1]
+[ext_resource path="res://screens/play/map/decor/small/probes.png" type="Texture" id=2]
+[ext_resource path="res://screens/play/map/decor/small/glass2.png" type="Texture" id=3]
+[ext_resource path="res://screens/play/map/decor/small/glass_3.png" type="Texture" id=4]
+[ext_resource path="res://screens/play/map/decor/small/glass1.png" type="Texture" id=5]
+[ext_resource path="res://screens/play/map/decor/small/bottle.png" type="Texture" id=6]
+[ext_resource path="res://screens/play/items/lab_result.tscn" type="PackedScene" id=7]
+
+[node name="Lab" type="Node2D"]
+
+[node name="desk_sm" type="Sprite" parent="."]
+
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="probes" type="Sprite" parent="desk_sm"]
+
+transform/pos = Vector2( 288.085, -392.772 )
+transform/scale = Vector2( 0.318114, 0.318114 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="glass2" type="Sprite" parent="desk_sm"]
+
+transform/pos = Vector2( -295.22, -357.039 )
+transform/scale = Vector2( 0.213623, 0.213623 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="glass_3" type="Sprite" parent="desk_sm"]
+
+transform/pos = Vector2( -274.726, -331.169 )
+transform/scale = Vector2( 0.181672, 0.181672 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="glass1" type="Sprite" parent="desk_sm"]
+
+transform/pos = Vector2( -322.498, -317.94 )
+transform/scale = Vector2( 0.147368, 0.147368 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="bottle" type="Sprite" parent="desk_sm"]
+
+transform/pos = Vector2( 55.8166, -317.775 )
+transform/scale = Vector2( 0.13907, 0.13907 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LabResult" parent="." instance=ExtResource( 7 )]
+
+transform/pos = Vector2( -97.5148, -328.872 )
+
+
