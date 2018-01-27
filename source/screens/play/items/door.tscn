@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://screens/play/items/door.gd" type="Script" id=1]
 [ext_resource path="res://screens/play/locations/door2.png" type="Texture" id=2]
 [ext_resource path="res://screens/play/items/keypad.tscn" type="PackedScene" id=3]
+[ext_resource path="res://screens/play/map/decor/light/lamp.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -12,7 +13,7 @@ extents = Vector2( 232.134, 438.741 )
 [node name="Door" type="Node2D"]
 
 script/script = ExtResource( 1 )
-valid_code = null
+valid_code = "444"
 
 [node name="door" type="Sprite" parent="."]
 
@@ -21,10 +22,12 @@ texture = ExtResource( 2 )
 
 [node name="Keypad" parent="." instance=ExtResource( 3 )]
 
+editor/display_folded = true
 transform/pos = Vector2( 90.5484, 66.2007 )
 
 [node name="Area2D" type="Area2D" parent="."]
 
+visibility/visible = false
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -45,6 +48,12 @@ _update_shape_index = 0
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="lamp" type="Sprite" parent="."]
+
+transform/pos = Vector2( -673.496, -337.265 )
+transform/scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 4 )
 
 
 [editable path="Keypad"]

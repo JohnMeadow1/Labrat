@@ -33,7 +33,6 @@ func validateCode(code):
 	if (code == valid_code):
 #		GLOBAL.is_clicked = false
 		get_node("Area2D/Screen").set_text("open")
-		get_node("Light").set_modulate(Color(0,255,0))
 		is_open            = true
 		animate            = true
 		target_scale       = 0.25

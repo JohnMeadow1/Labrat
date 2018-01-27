@@ -8,3 +8,4 @@ func process_item():
 	
 func unlock():
 		get_node("Area2D").set_hidden(false)
+		get_node("lamp").set_modulate(Color(0.5,1,0.5))

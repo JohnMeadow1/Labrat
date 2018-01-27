@@ -56,7 +56,6 @@ func set_walls( new_value ):
 		else:                  get_node("room_bg/wall_bottom").set_hidden(true)
 
 func get_wall( side ):
-#	print(walls, " ", side)
 	if walls & side == side: return true
 	return false
 	

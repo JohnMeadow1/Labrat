@@ -16,7 +16,8 @@ func _input(ev):
 func _fixed_process(delta):
 	if GLOBAL.item_active == false:
 		process_movement()
-	get_node("room/walls").set_pos(get_node("room/walls").get_pos().linear_interpolate( Vector2(1,0) * 1024 * GLOBAL.map_orientation,0.1 ))
+	get_node("room/walls").set_pos(get_node("room/walls").get_pos().linear_interpolate( Vector2(1,0) * 1920 * GLOBAL.map_orientation,0.1 ))
+	
 func process_movement():
 
 	if GLOBAL.mouse_pos.y < 100:
@@ -27,7 +28,7 @@ func process_movement():
 			move_in_room()
 	else:
 		get_node("gui_overlay/Control/Container/HBoxContainer/turn_arrow2").set_opacity( 0 )
-		if GLOBAL.mouse_pos.x > 800:
+		if GLOBAL.mouse_pos.x > 1600:
 			get_node("gui_overlay/Control/Container/HBoxContainer/turn_arrow1").set_opacity( 0.5 )
 			if GLOBAL.is_clicked:
 				turn(-1)
@@ -48,17 +49,17 @@ func turn( value ):
 #	print(GLOBAL.map_orientation, " ", get_node("room/walls").get_pos() )
 	if GLOBAL.map_orientation < 0:
 		GLOBAL.map_orientation = 3
-		get_node("room/walls/wall_right").set_pos(Vector2(-4096,0) )
-		get_node("room/walls/wall_bottom").set_pos(Vector2(-3072,0) )
-		get_node("room/walls").set_pos( Vector2(4096,0) )
+		get_node("room/walls/wall_right").set_pos(Vector2(-7680,0) )
+		get_node("room/walls/wall_bottom").set_pos(Vector2(-5760,0) )
+		get_node("room/walls").set_pos( Vector2(7680,0) )
 	elif GLOBAL.map_orientation > 3:
 		GLOBAL.map_orientation = 0
-		get_node("room/walls/wall_bottom").set_pos(Vector2(1024,0) )
+		get_node("room/walls/wall_bottom").set_pos(Vector2(1920,0) )
 		get_node("room/walls/wall_right").set_pos(Vector2(0,0) )
-		get_node("room/walls").set_pos( Vector2(-1024,0) )
+		get_node("room/walls").set_pos( Vector2(-1920,0) )
 	else:
 		get_node("room/walls/wall_right").set_pos(Vector2(0,0) )
-		get_node("room/walls/wall_bottom").set_pos(Vector2(-3072,0) )
+		get_node("room/walls/wall_bottom").set_pos(Vector2(-5760,0) )
 
 	
 func move_in_room():
@@ -77,21 +78,21 @@ func move_in_room():
 #		load_room(GLOBAL.map.grid[GLOBAL.map_pos.x][GLOBAL.map_pos.y])
 		
 func load_room(room):
-	print(room.get_wall(2))
-	if room.get_wall(2):
-		get_node("room/walls/wall_right").set_texture(GLOBAL.map.walls['cell'])
-	else:
-		get_node("room/walls/wall_right").set_texture(null)
+	print(room.get_wall(1))
 	if room.get_wall(1):
-		get_node("room/walls/wall_left").set_texture(GLOBAL.map.walls['cell'])
+		get_node("room/walls/wall_left").set_texture(GLOBAL.map.walls['wall'])
 	else:
 		get_node("room/walls/wall_left").set_texture(null)
+	if room.get_wall(2):
+		get_node("room/walls/wall_right").set_texture(GLOBAL.map.walls['wall'])
+	else:
+		get_node("room/walls/wall_right").set_texture(null)
 	if room.get_wall(4):
-		get_node("room/walls/wall_top").set_texture(GLOBAL.map.walls['cell'])
+		get_node("room/walls/wall_top").set_texture(GLOBAL.map.walls['wall'])
 	else:
 		get_node("room/walls/wall_top").set_texture(null)
 	if room.get_wall(8):
-		get_node("room/walls/wall_bottom").set_texture(GLOBAL.map.walls['cell'])
+		get_node("room/walls/wall_bottom").set_texture(GLOBAL.map.walls['wall'])
 	else:
 		get_node("room/walls/wall_bottom").set_texture(null)
 	pass
