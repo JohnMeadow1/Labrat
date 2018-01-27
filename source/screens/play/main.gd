@@ -166,11 +166,15 @@ func load_door(room, node, side):
 	if room.get_doors(side):
 		node.door_side = side
 		node.set_hidden(false)
-#		if room.get_locked_doors(side): 
-		if room.get_door_state(side):
-			node.unlock()
+		if room.get_locked_doors(side): 
+			if room.get_door_state(side):
+				node.unlock()
+			else:
+				node.lock()
 		else:
-			node.lock()
+			node.get_node("Keypad").set_hidden(true)
+			node.get_node("HandLock").set_hidden(true)
+			node.get_node("Area2D").set_hidden(false)
 	else:
 		node.set_hidden(true)
 
