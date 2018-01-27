@@ -16,12 +16,11 @@ valid_code = null
 
 [node name="door" type="Sprite" parent="."]
 
-transform/scale = Vector2( 0.75, 0.75 )
 texture = ExtResource( 2 )
 
 [node name="Keypad" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 90.5484, 66.2007 )
+transform/pos = Vector2( 75.5842, 0.902496 )
 
 [node name="Area2D" type="Area2D" parent="."]
 
