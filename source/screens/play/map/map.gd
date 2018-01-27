@@ -1,11 +1,17 @@
+tool
 extends Node2D
 
 var grid                    = []
-
+var walls                   = {"cell": load("res://screens/play/locations/cell.png")}
+#var walls["cell"] = load("res://screens/play/locations/cell.png")
 func _ready():
 #	load_grid()
+	load_walls()
 	pass
-
+	
+func load_walls():
+	pass
+	
 func load_grid():
 	for i in range(10):
 		grid.append([])

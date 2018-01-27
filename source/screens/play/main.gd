@@ -63,18 +63,38 @@ func turn( value ):
 	
 func move_in_room():
 	if GLOBAL.map_orientation == 1 || GLOBAL.map_orientation == 3:
-		GLOBAL.map_pos += Vector2( 0, GLOBAL.map_orientation - 2 )
+		if GLOBAL.map.grid[GLOBAL.map_pos.x][GLOBAL.map_pos.y +  GLOBAL.map_orientation - 2 ] != null:
+			GLOBAL.map_pos += Vector2( 0, GLOBAL.map_orientation - 2 )
+			load_room(GLOBAL.map.grid[GLOBAL.map_pos.x][GLOBAL.map_pos.y])
 	else:
-		GLOBAL.map_pos -= Vector2( GLOBAL.map_orientation -1, 0 )
-	reload_room()
+		if GLOBAL.map.grid[GLOBAL.map_pos.x - (GLOBAL.map_orientation - 1)][ GLOBAL.map_pos.y ] != null:
+			GLOBAL.map_pos -= Vector2( GLOBAL.map_orientation - 1, 0 )
+			load_room(GLOBAL.map.grid[GLOBAL.map_pos.x][GLOBAL.map_pos.y])
 	
-func reload_room():
-	if GLOBAL.map.grid[GLOBAL.map_pos.x][GLOBAL.map_pos.y] != null:
-#		unload_room()
-		load_room(GLOBAL.map.grid[GLOBAL.map_pos.x][GLOBAL.map_pos.y])
+#func reload_room():
+#	if GLOBAL.map.grid[GLOBAL.map_pos.x][GLOBAL.map_pos.y] != null:
+		unload_room()
+#		load_room(GLOBAL.map.grid[GLOBAL.map_pos.x][GLOBAL.map_pos.y])
 		
 func load_room(room):
-	get_node("room/wall").set_texture(room.wall)
+	print(room.get_wall(2))
+	if room.get_wall(2):
+		get_node("room/walls/wall_right").set_texture(GLOBAL.map.walls['cell'])
+	else:
+		get_node("room/walls/wall_right").set_texture(null)
+	if room.get_wall(1):
+		get_node("room/walls/wall_left").set_texture(GLOBAL.map.walls['cell'])
+	else:
+		get_node("room/walls/wall_left").set_texture(null)
+	if room.get_wall(4):
+		get_node("room/walls/wall_top").set_texture(GLOBAL.map.walls['cell'])
+	else:
+		get_node("room/walls/wall_top").set_texture(null)
+	if room.get_wall(8):
+		get_node("room/walls/wall_bottom").set_texture(GLOBAL.map.walls['cell'])
+	else:
+		get_node("room/walls/wall_bottom").set_texture(null)
+	pass
 	
 func unload_room():
 #	for object in get_node("room").get_children():

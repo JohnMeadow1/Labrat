@@ -1,8 +1,15 @@
 tool
 extends Node2D
 
-export(int, FLAGS, "Left", "Right", "Top", "Bottom") var walls = 0 setget set_walls, get_walls
-export(int, FLAGS, "Left", "Right", "Top", "Bottom") var doors = 0 setget set_doors, get_doors
+var color_array        = [Color(.39,.68,.21),Color(1,1,.32),Color(.98,.6,.07),Color(1,.15,.07),Color(.51,0,.65),Color(.07,.27,.98)]
+export(int, "Cell_block", "Lab_G-32", "Lab_X_03", "Animal testing") var sector =0 setget set_sector, get_sector
+export(int, FLAGS, "Left", "Right", "Top", "Bottom") var walls setget set_walls, get_walls
+export(int, FLAGS, "Left", "Right", "Top", "Bottom") var doors setget set_doors, get_doors
+export(int, FLAGS, "Left", "Right", "Top", "Bottom") var locked_doors setget set_locked_doors, get_locked_doors
+
+export(int, "Isolation", "Corridor", "Decontamination", "Trap") var room_type  setget set_room_type, get_room_type
+
+var wall_textures = []
 
 onready var coordinates = Vector2()
 func _init():
@@ -13,31 +20,61 @@ func _ready():
 #	coordinates = (get_pos()-Vector2(41,41))/80
 #	get_node("Label").set_text(str(coordinates))
 	pass
+func set_room_type(new_value):
+	if new_value !=null:
+		room_type = new_value
+		
+func get_room_type():
+	return room_type
 	
+func set_sector(new_value):
+	if new_value !=null:
+		sector = new_value
+		get_node("room_bg").set_modulate(color_array[new_value])
+
+func get_sector():
+	return sector
+	
+func set_locked_doors( new_value ):
+	if new_value !=null:
+		locked_doors = new_value
+
+func get_locked_doors( side ):
+	if locked_doors & side == side: return true
+	return false
 
 func set_walls( new_value ):
-	walls = new_value
-	if new_value & 1 == 1: get_node("room_bg/wall_left").set_hidden(false)
-	else:                  get_node("room_bg/wall_left").set_hidden(true)
-	if new_value & 2 == 2: get_node("room_bg/wall_right").set_hidden(false)
-	else:                  get_node("room_bg/wall_right").set_hidden(true)
-	if new_value & 4 == 4: get_node("room_bg/wall_top").set_hidden(false)
-	else:                  get_node("room_bg/wall_top").set_hidden(true)
-	if new_value & 8 == 8: get_node("room_bg/wall_bottom").set_hidden(false)
-	else:                  get_node("room_bg/wall_bottom").set_hidden(true)
-		
+	if new_value !=null:
+		walls = new_value
+		if new_value & 1 == 1: get_node("room_bg/wall_left").set_hidden(false)
+		else:                  get_node("room_bg/wall_left").set_hidden(true)
+		if new_value & 2 == 2: get_node("room_bg/wall_right").set_hidden(false)
+		else:                  get_node("room_bg/wall_right").set_hidden(true)
+		if new_value & 4 == 4: get_node("room_bg/wall_top").set_hidden(false)
+		else:                  get_node("room_bg/wall_top").set_hidden(true)
+		if new_value & 8 == 8: get_node("room_bg/wall_bottom").set_hidden(false)
+		else:                  get_node("room_bg/wall_bottom").set_hidden(true)
+
+func get_wall( side ):
+#	print(walls, " ", side)
+	if walls & side == side: return true
+	return false
+	
 func get_walls():
 	return walls
 	
 func set_doors( new_value ):
-	doors = new_value
-	if new_value & 1 == 1: get_node("room_bg/door_left").set_hidden(false)
-	else:                  get_node("room_bg/door_left").set_hidden(true)
-	if new_value & 2 == 2: get_node("room_bg/door_right").set_hidden(false)
-	else:                  get_node("room_bg/door_right").set_hidden(true)
-	if new_value & 4 == 4: get_node("room_bg/door_top").set_hidden(false)
-	else:                  get_node("room_bg/door_top").set_hidden(true)
-	if new_value & 8 == 8: get_node("room_bg/door_bottom").set_hidden(false)
-	else:                  get_node("room_bg/door_bottom").set_hidden(true)
-func get_doors():
-	return doors
+	if new_value !=null:
+		doors = new_value
+		if new_value & 1 == 1: get_node("room_bg/door_left").set_hidden(false)
+		else:                  get_node("room_bg/door_left").set_hidden(true)
+		if new_value & 2 == 2: get_node("room_bg/door_right").set_hidden(false)
+		else:                  get_node("room_bg/door_right").set_hidden(true)
+		if new_value & 4 == 4: get_node("room_bg/door_top").set_hidden(false)
+		else:                  get_node("room_bg/door_top").set_hidden(true)
+		if new_value & 8 == 8: get_node("room_bg/door_bottom").set_hidden(false)
+		else:                  get_node("room_bg/door_bottom").set_hidden(true)
+	
+func get_doors( side ):
+	if doors & side == side: return true
+	return false

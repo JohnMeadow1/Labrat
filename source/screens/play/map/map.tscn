@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://screens/play/map/map.gd" type="Script" id=1]
 [ext_resource path="res://screens/play/map/map_grid.png" type="Texture" id=2]
 [ext_resource path="res://screens/play/map/rooms/room.tscn" type="PackedScene" id=3]
-[ext_resource path="res://screens/play/map/grid_solo.png" type="Texture" id=4]
-[ext_resource path="res://screens/play/map/direction.png" type="Texture" id=5]
+[ext_resource path="res://screens/play/map/direction.png" type="Texture" id=4]
 
 [node name="Node" type="Node2D"]
 
@@ -17,42 +16,51 @@ __meta__ = {
 
 texture = ExtResource( 2 )
 centered = false
+modulate = Color( 1, 1, 1, 0.0273333 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="room" parent="map" instance=ExtResource( 3 )]
 
-editor/display_folded = true
-transform/pos = Vector2( 361, 201 )
-walls = 15
-doors = 15
+transform/pos = Vector2( 361, 281 )
+sector = 1
+walls = 13
+doors = 8
+locked_doors = 1
+room_type = null
 
 [node name="room1" parent="map" instance=ExtResource( 3 )]
 
-editor/display_folded = true
-transform/pos = Vector2( 441, 201 )
-walls = 15
-doors = 3
+transform/pos = Vector2( 441, 281 )
+sector = 1
+walls = 6
+doors = null
+locked_doors = null
+room_type = null
 
-[node name="room 2" parent="map" instance=ExtResource( 3 )]
+[node name="room2" parent="map" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 41, 41 )
+transform/pos = Vector2( 441, 361 )
+sector = 1
+walls = 11
+doors = null
+locked_doors = null
+room_type = 1
+
+[node name="room3" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 361, 361 )
+sector = 0
 walls = 15
-doors = 2
+doors = 4
+locked_doors = null
+room_type = 2
 
 [node name="selector" type="Sprite" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( 0, 0.323532 )
 texture = ExtResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="direction" type="Sprite" parent="selector"]
-
-texture = ExtResource( 5 )
 __meta__ = {
 "_edit_lock_": true
 }
