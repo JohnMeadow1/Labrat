@@ -73,7 +73,7 @@ sector = 0
 walls = 15
 doors = 4
 locked_doors = null
-room_type = 2
+room_type = 0
 
 [node name="room11" parent="map" instance=ExtResource( 3 )]
 
@@ -82,7 +82,7 @@ sector = 0
 walls = 15
 doors = 1
 locked_doors = null
-room_type = 2
+room_type = 0
 
 [node name="room29" parent="map" instance=ExtResource( 3 )]
 
@@ -91,7 +91,7 @@ sector = 0
 walls = 15
 doors = 2
 locked_doors = null
-room_type = 2
+room_type = 0
 
 [node name="room14 2" parent="map" instance=ExtResource( 3 )]
 
@@ -100,7 +100,7 @@ sector = 0
 walls = 15
 doors = 1
 locked_doors = null
-room_type = 2
+room_type = 0
 
 [node name="room4" parent="map" instance=ExtResource( 3 )]
 
@@ -109,7 +109,7 @@ sector = 0
 walls = 15
 doors = 2
 locked_doors = null
-room_type = 1
+room_type = 0
 
 [node name="room15" parent="map" instance=ExtResource( 3 )]
 
@@ -118,7 +118,7 @@ sector = 0
 walls = 15
 doors = 2
 locked_doors = null
-room_type = 1
+room_type = 0
 
 [node name="room16" parent="map" instance=ExtResource( 3 )]
 
@@ -127,7 +127,7 @@ sector = 0
 walls = 15
 doors = 8
 locked_doors = null
-room_type = 1
+room_type = 0
 
 [node name="room13" parent="map" instance=ExtResource( 3 )]
 
@@ -136,7 +136,7 @@ sector = 0
 walls = 15
 doors = 1
 locked_doors = null
-room_type = 1
+room_type = 0
 
 [node name="room14" parent="map" instance=ExtResource( 3 )]
 
@@ -145,7 +145,7 @@ sector = 0
 walls = 15
 doors = 1
 locked_doors = null
-room_type = 1
+room_type = 0
 
 [node name="room6" parent="map" instance=ExtResource( 3 )]
 
@@ -154,7 +154,7 @@ sector = 0
 walls = 15
 doors = 8
 locked_doors = null
-room_type = 1
+room_type = 0
 
 [node name="room12" parent="map" instance=ExtResource( 3 )]
 
@@ -163,7 +163,7 @@ sector = 0
 walls = 15
 doors = 8
 locked_doors = null
-room_type = 1
+room_type = 0
 
 [node name="room5" parent="map" instance=ExtResource( 3 )]
 
@@ -321,11 +321,11 @@ room_type = 1
 [node name="room14 3" parent="map" instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 681, 761 )
-sector = 2
+sector = 0
 walls = 10
 doors = 2
 locked_doors = null
-room_type = 1
+room_type = 0
 
 [node name="room144" parent="map" instance=ExtResource( 3 )]
 

@@ -151,5 +151,17 @@ func _ready():
 	GLOBAL.map.load_grid()
 	set_fixed_process(true)
 	set_process_input(true)
+	pick_start()
 	load_room( GLOBAL.map.grid[GLOBAL.map_pos.x][GLOBAL.map_pos.y] )
 	get_orientation_vector()
+	
+func pick_start():
+	var list = []
+	for room in GLOBAL.map.get_node("map").get_children():
+		if room.get_room_type() == 0:
+			list.append(room)
+	randomize ( )
+	var room = list[randi() % list.size()]
+	GLOBAL.map_pos = room.coordinates
+	GLOBAL.map_orientation = randi() % 4
+	get_node("room/walls").set_pos(Vector2(1,0) * 1920 * GLOBAL.map_orientation + Vector2(960,540))

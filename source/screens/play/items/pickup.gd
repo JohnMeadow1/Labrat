@@ -68,8 +68,6 @@ func use_item():
 	GLOBAL.picked_items.erase(self)
 	GLOBAL.selected_item_index = -1
 	if GLOBAL.picked_items.size() > 0:
-		print("Ok")
-		GLOBAL.picked_items.sort()
 		for item in GLOBAL.picked_items:
 			move_item(item)
 			
