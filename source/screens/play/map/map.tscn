@@ -1,41 +1,43 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=6 format=1]
 
-[ext_resource path="res://screens/play/map/map_grid.png" type="Texture" id=1]
-[ext_resource path="res://screens/play/map/rooms/room.tscn" type="PackedScene" id=2]
-[ext_resource path="res://screens/play/map/grid_solo.png" type="Texture" id=3]
-[ext_resource path="res://screens/play/map/direction.png" type="Texture" id=4]
+[ext_resource path="res://screens/play/map/map.gd" type="Script" id=1]
+[ext_resource path="res://screens/play/map/map_grid.png" type="Texture" id=2]
+[ext_resource path="res://screens/play/map/rooms/room.tscn" type="PackedScene" id=3]
+[ext_resource path="res://screens/play/map/grid_solo.png" type="Texture" id=4]
+[ext_resource path="res://screens/play/map/direction.png" type="Texture" id=5]
 
 [node name="Node" type="Node2D"]
 
+script/script = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="map" type="Sprite" parent="."]
 
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 centered = false
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="room" parent="map" instance=ExtResource( 2 )]
+[node name="room" parent="map" instance=ExtResource( 3 )]
 
 editor/display_folded = true
 transform/pos = Vector2( 361, 201 )
 walls = 15
 doors = 15
 
-[node name="room1" parent="map" instance=ExtResource( 2 )]
+[node name="room1" parent="map" instance=ExtResource( 3 )]
 
 editor/display_folded = true
 transform/pos = Vector2( 441, 201 )
 walls = 15
 doors = 3
 
-[node name="room 2" parent="map" instance=ExtResource( 2 )]
+[node name="room 2" parent="map" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 201, 121 )
+transform/pos = Vector2( 41, 41 )
 walls = 15
 doors = 2
 
@@ -43,14 +45,14 @@ doors = 2
 
 editor/display_folded = true
 transform/pos = Vector2( 0, 0.323532 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="direction" type="Sprite" parent="selector"]
 
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 __meta__ = {
 "_edit_lock_": true
 }
