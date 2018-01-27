@@ -27,7 +27,7 @@ transform/pos = Vector2( 121, 361 )
 sector = 1
 walls = 13
 doors = 13
-locked_doors = 0
+locked_doors = 1
 
 [node name="room1" parent="map" instance=ExtResource( 3 )]
 
@@ -98,6 +98,7 @@ transform/pos = Vector2( 41, 361 )
 sector = 0
 walls = 15
 doors = 2
+locked_doors = 2
 room_type = 0
 
 [node name="room15" parent="map" instance=ExtResource( 3 )]

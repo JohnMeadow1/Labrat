@@ -117,7 +117,7 @@ func get_doors( side ):
 
 func unlock_door(side):
 	doors_state += side
-	locked_doors-= side
+	locked_doors -= side
 	
 func get_door_state(side):
 	if (doors_state & side) == side: return true
