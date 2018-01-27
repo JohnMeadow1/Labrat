@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=1]
+[gd_scene load_steps=9 format=1]
 
 [ext_resource path="res://screens/play/main.gd" type="Script" id=1]
 [ext_resource path="res://screens/play/locations/cell.png" type="Texture" id=2]
-[ext_resource path="res://screens/play/map/map.tscn" type="PackedScene" id=3]
-[ext_resource path="res://images/arrow_left.png" type="Texture" id=4]
-[ext_resource path="res://images/arrow_front.png" type="Texture" id=5]
-[ext_resource path="res://images/arrow_right.png" type="Texture" id=6]
-[ext_resource path="res://screens/play/items/door.tscn" type="PackedScene" id=7]
+[ext_resource path="res://screens/play/items/door.tscn" type="PackedScene" id=3]
+[ext_resource path="res://screens/play/items/door.png" type="Texture" id=4]
+[ext_resource path="res://images/arrow_left.png" type="Texture" id=5]
+[ext_resource path="res://images/arrow_front.png" type="Texture" id=6]
+[ext_resource path="res://images/arrow_right.png" type="Texture" id=7]
+[ext_resource path="res://screens/play/map/map.tscn" type="PackedScene" id=8]
 
 [node name="main" type="Node2D"]
 
@@ -15,18 +16,60 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="room" type="Node" parent="."]
 
+[node name="walls" type="Node2D" parent="room"]
+
+[node name="wall_right" type="Sprite" parent="room/walls"]
+
+z/z = -2
 texture = ExtResource( 2 )
 centered = false
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="map" parent="." instance=ExtResource( 3 )]
+[node name="Door" parent="room/walls/wall_right" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 958.975, 0.99789 )
-transform/scale = Vector2( 0.4, 0.4 )
+editor/display_folded = true
+transform/pos = Vector2( 400, 400 )
+z/z = 1
+z/relative = false
+valid_code = "4444"
+
+[node name="door" type="Sprite" parent="room/walls/wall_right/Door"]
+
+texture = ExtResource( 4 )
+
+[node name="wall_bottom" type="Sprite" parent="room/walls"]
+
+transform/pos = Vector2( -3072, 0 )
+z/z = -2
+texture = ExtResource( 2 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="wall_left" type="Sprite" parent="room/walls"]
+
+transform/pos = Vector2( -2048, 0 )
+z/z = -2
+texture = ExtResource( 2 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="wall_top" type="Sprite" parent="room/walls"]
+
+transform/pos = Vector2( -1024, 0 )
+z/z = -2
+texture = ExtResource( 2 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="gui_overlay" type="CanvasLayer" parent="."]
 
@@ -47,7 +90,7 @@ size_flags/vertical = 0
 margin/left = 0.0
 margin/top = 0.0
 margin/right = 24.0
-margin/bottom = 24.0
+margin/bottom = 720.0
 __meta__ = {
 "_edit_lock_": true
 }
@@ -92,7 +135,7 @@ margin/left = 0.0
 margin/top = 0.0
 margin/right = 80.0
 margin/bottom = 80.0
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 stretch_mode = 0
 __meta__ = {
 "_edit_lock_": true
@@ -108,7 +151,7 @@ margin/left = 554.0
 margin/top = 0.0
 margin/right = 634.0
 margin/bottom = 80.0
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 stretch_mode = 0
 __meta__ = {
 "_edit_lock_": true
@@ -124,16 +167,24 @@ margin/left = 1108.0
 margin/top = 0.0
 margin/right = 1188.0
 margin/bottom = 80.0
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 stretch_mode = 0
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Door" parent="." instance=ExtResource( 7 )]
+[node name="minimap" type="CanvasLayer" parent="."]
 
-transform/pos = Vector2( 520.264, 389.293 )
-valid_code = "1111"
+editor/display_folded = true
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+
+[node name="map" parent="minimap" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 963.278, 128.104 )
+transform/scale = Vector2( 0.4, 0.4 )
+z/z = 2
 
 
-[editable path="Door"]

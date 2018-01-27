@@ -4,11 +4,13 @@ extends Node2D
 export(int, FLAGS, "Left", "Right", "Top", "Bottom") var walls = 0 setget set_walls, get_walls
 export(int, FLAGS, "Left", "Right", "Top", "Bottom") var doors = 0 setget set_doors, get_doors
 
-var coordinates = Vector2()
-
-
+onready var coordinates = Vector2()
+func _init():
+	coordinates = (get_pos()-Vector2(41.0,41.0))/80.0
 func _ready():
-	coordinates = (get_pos()-Vector2(41,41))/80
+	coordinates = (get_pos()-Vector2(41.0,41.0))/80.0
+#	print(coordinates)
+#	coordinates = (get_pos()-Vector2(41,41))/80
 #	get_node("Label").set_text(str(coordinates))
 	pass
 	
