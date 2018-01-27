@@ -14,7 +14,7 @@ func load_walls():
 	pass
 	
 func load_grid():
-	for i in range(10):
+	for i in range(17):
 		grid.append([])
 		for j in range(10):
 			grid[i].append(null)

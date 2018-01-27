@@ -2,7 +2,7 @@ tool
 extends Node2D
 
 var color_array        = [Color(.39,.68,.21),Color(1,1,.32),Color(.98,.6,.07),Color(1,.15,.07),Color(.51,0,.65),Color(.07,.27,.98)]
-export(int, "Cell_block", "Lab_G-32", "Lab_X_03", "Animal testing") var sector = 0 setget set_sector, get_sector
+export(int, "Cell_block", "Lab_A", "Lab_B", "Lab_C", "Animal testing", "Decontamination") var sector = 0 setget set_sector, get_sector
 export(int, FLAGS, "Left", "Right", "Top", "Bottom") var walls setget set_walls, get_walls
 export(int, FLAGS, "Left", "Right", "Top", "Bottom") var doors setget set_doors, get_doors
 export(int, FLAGS, "Left", "Right", "Top", "Bottom") var locked_doors setget set_locked_doors, get_locked_doors
