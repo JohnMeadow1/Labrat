@@ -3,7 +3,9 @@ extends TextureButton
 var normal = Color(1, 1, 1)
 var hover = Color(0.75, 0.75, 0.75)
 var pressed = Color(0.5, 0.5, 0.5)
+
 export (String) var name
+var selected = false
 
 var original_position = get_pos()
 var move_to = Vector2(0,0)
@@ -23,21 +25,28 @@ func _ready():
 	set_process_input(true)
 	
 func _on_mouse_exit():
-	set_modulate(normal)
+	if !selected:
+		set_modulate(normal)
 
 func _on_mouse_enter():
-	set_modulate(hover)
+	if !selected:
+		set_modulate(hover)
 
 func _on_button_down():
+	print (GLOBAL.selected_item_index)
+	if GLOBAL.selected_item_index > -1:
+		GLOBAL.picked_items[GLOBAL.selected_item_index].selected = false
+		GLOBAL.picked_items[GLOBAL.selected_item_index].set_modulate(normal)
 	var item_index = GLOBAL.picked_items.find(self)
 	if item_index == -1:
 		pick_item()
-	GLOBAL.selected_item_index = item_index
-	
+	selected = true
+	GLOBAL.selected_item_index = GLOBAL.picked_items.find(self)
 	set_modulate(pressed)
 
 func _on_button_up():
-	set_modulate(hover)
+	if !selected:
+		set_modulate(hover)
 
 func _fixed_process(delta):
 	if(animate):
