@@ -113,6 +113,9 @@ func enter_the_room():
 			GLOBAL.map_pos += GLOBAL.map_orientation_vect
 			load_room( GLOBAL.map.grid[GLOBAL.map_pos.x][GLOBAL.map_pos.y] )
 	
+	if get_node("room/Trap").is_visible():
+		print ("It's a Trap")
+	
 #func reload_room():
 #	if GLOBAL.map.grid[GLOBAL.map_pos.x][GLOBAL.map_pos.y] != null:
 #		unload_room()
@@ -131,6 +134,8 @@ func load_room(room):
 	load_door(room,get_node("room/walls/wall_bottom/Door"), 8)
 	
 	load_furniture(room,get_node("room/walls/wall_left/Door"), 1)
+	
+	set_trap(room)
 	
 func load_furniture(room, node, side):
 	
@@ -172,3 +177,9 @@ func pick_start():
 	GLOBAL.map_pos = room.coordinates
 	GLOBAL.map_orientation = randi() % 4
 	get_node("room/walls").set_pos(Vector2(1,0) * 1920 * GLOBAL.map_orientation + Vector2(960,540))
+
+func set_trap(room):
+	if room.get_room_type() == 3:
+		get_node("room/Trap").set_hidden(false)
+	else:
+		get_node("room/Trap").set_hidden(true)

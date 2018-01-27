@@ -271,7 +271,7 @@ sector = 5
 walls = 15
 doors = 11
 locked_doors = null
-room_type = 1
+room_type = 3
 
 [node name="room26" parent="map" instance=ExtResource( 3 )]
 

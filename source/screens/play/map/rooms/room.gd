@@ -70,8 +70,7 @@ func get_walls():
 func set_doors( new_value ):
 	if new_value != null:
 		doors = new_value
-		if new_value & 1 == 1: 
-			get_node("room_bg/door_left").set_hidden(false)
+		if new_value & 1 == 1: get_node("room_bg/door_left").set_hidden(false)
 		else:                  get_node("room_bg/door_left").set_hidden(true)
 		if new_value & 2 == 2: get_node("room_bg/door_right").set_hidden(false)
 		else:                  get_node("room_bg/door_right").set_hidden(true)
@@ -79,7 +78,7 @@ func set_doors( new_value ):
 		else:                  get_node("room_bg/door_top").set_hidden(true)
 		if new_value & 8 == 8: get_node("room_bg/door_bottom").set_hidden(false)
 		else:                  get_node("room_bg/door_bottom").set_hidden(true)
-	
+
 func get_doors( side ):
 	if doors && (doors & side) == side: return true
 	return false
