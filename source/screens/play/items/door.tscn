@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://screens/play/items/door.gd" type="Script" id=1]
 [ext_resource path="res://screens/play/locations/door2.png" type="Texture" id=2]
 [ext_resource path="res://screens/play/items/keypad.tscn" type="PackedScene" id=3]
 [ext_resource path="res://screens/play/map/decor/light/lamp.png" type="Texture" id=4]
+[ext_resource path="res://screens/play/items/handlock.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -22,8 +23,11 @@ texture = ExtResource( 2 )
 
 [node name="Keypad" parent="." instance=ExtResource( 3 )]
 
-editor/display_folded = true
 transform/pos = Vector2( 90.5484, 66.2007 )
+
+[node name="Area2D" parent="Keypad"]
+
+editor/display_folded = true
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -54,6 +58,10 @@ __meta__ = {
 transform/pos = Vector2( -673.496, -337.265 )
 transform/scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 4 )
+
+[node name="HandLock" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 212.822, -18.5062 )
 
 
 [editable path="Keypad"]
