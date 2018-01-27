@@ -31,8 +31,5 @@ func addValue():
 	if text.length() < 3:
 		get_parent().set_text(text + value)
 	elif text.length() == 3:
-		validateCode(text + value)
+		get_node("../../..").validateCode(text + value)
 		get_parent().set_text("")
-
-func validateCode(code):
-	pass
