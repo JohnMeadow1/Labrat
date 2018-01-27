@@ -110,7 +110,7 @@ func set_doors( new_value ):
 		else:                  get_node("room_bg/door_top").set_hidden(true)
 		if new_value & 8 == 8: get_node("room_bg/door_bottom").set_hidden(false)
 		else:                  get_node("room_bg/door_bottom").set_hidden(true)
-	
+
 func get_doors( side ):
 	if doors && (doors & side) == side: return true
 	return false
