@@ -8,7 +8,7 @@ export(int, FLAGS, "Left", "Right", "Top", "Bottom") var doors setget set_doors,
 export(int, FLAGS, "Left", "Right", "Top", "Bottom") var locked_doors setget set_locked_doors, get_locked_doors
 export(int, FLAGS, "Left", "Right", "Top", "Bottom") var danger_doors setget set_danger_doors, get_danger_doors
 
-export(int, "Isolation", "Corridor", "Decontamination") var room_type  setget set_room_type, get_room_type
+export(int, "Isolation", "Corridor", "Decontamination", "Archive", "Warehouse", "Lab" ) var room_type setget set_room_type, get_room_type
 export(int, "None", "Acid", "Monster") var trap_type setget set_trap_type, get_trap_type
 
 var doors_state = 0
