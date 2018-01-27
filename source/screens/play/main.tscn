@@ -1,16 +1,18 @@
-[gd_scene load_steps=12 format=1]
+[gd_scene load_steps=14 format=1]
 
 [ext_resource path="res://screens/play/main.gd" type="Script" id=1]
 [ext_resource path="res://screens/play/locations/wall.png" type="Texture" id=2]
 [ext_resource path="res://screens/play/items/door.tscn" type="PackedScene" id=3]
-[ext_resource path="res://screens/play/map/decor/small/hand.png" type="Texture" id=4]
-[ext_resource path="res://screens/play/items/pickup.gd" type="Script" id=5]
-[ext_resource path="res://screens/play/map/decor/small/glass1.png" type="Texture" id=6]
-[ext_resource path="res://images/arrow_left.png" type="Texture" id=7]
-[ext_resource path="res://images/arrow_front.png" type="Texture" id=8]
-[ext_resource path="res://images/arrow_right.png" type="Texture" id=9]
-[ext_resource path="res://screens/play/map/map.tscn" type="PackedScene" id=10]
-[ext_resource path="res://images/background_bottom.png" type="Texture" id=11]
+[ext_resource path="res://screens/play/map/decor/furniture/cupboard.png" type="Texture" id=4]
+[ext_resource path="res://screens/play/map/decor/furniture/chair2.png" type="Texture" id=5]
+[ext_resource path="res://screens/play/map/decor/small/hand.png" type="Texture" id=6]
+[ext_resource path="res://screens/play/items/pickup.gd" type="Script" id=7]
+[ext_resource path="res://screens/play/map/decor/small/glass1.png" type="Texture" id=8]
+[ext_resource path="res://images/arrow_left.png" type="Texture" id=9]
+[ext_resource path="res://images/arrow_front.png" type="Texture" id=10]
+[ext_resource path="res://images/arrow_right.png" type="Texture" id=11]
+[ext_resource path="res://screens/play/map/map.tscn" type="PackedScene" id=12]
+[ext_resource path="res://images/background_bottom.png" type="Texture" id=13]
 
 [node name="main" type="Node2D"]
 
@@ -23,10 +25,15 @@ __meta__ = {
 
 [node name="walls" type="Node2D" parent="room"]
 
+editor/display_folded = true
 transform/pos = Vector2( 960, 540 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="wall_right" type="Sprite" parent="room/walls"]
 
+editor/display_folded = true
 z/z = 1
 z/relative = false
 texture = ExtResource( 2 )
@@ -86,10 +93,40 @@ __meta__ = {
 transform/pos = Vector2( 0, 20 )
 valid_code = "4444"
 
+[node name="furniture" type="Node2D" parent="room"]
+
+z/z = 3
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="slot1" type="Sprite" parent="room/furniture"]
+
+visibility/visible = false
+transform/pos = Vector2( 331.58, 447.615 )
+transform/scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 4 )
+
+[node name="slot2" type="Sprite" parent="room/furniture"]
+
+transform/pos = Vector2( 1629.45, 454.812 )
+transform/scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 4 )
+flip_h = true
+
+[node name="front_right" type="Sprite" parent="room/furniture"]
+
+transform/pos = Vector2( 557.745, 764.451 )
+transform/scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 5 )
+flip_h = true
+
 [node name="Pickups" type="Node2D" parent="room"]
 
-editor/display_folded = true
-z/z = 2
+z/z = 3
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="HandPickup" type="TextureButton" parent="room/Pickups"]
 
@@ -104,11 +141,11 @@ margin/bottom = 1033.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 4 )
+textures/normal = ExtResource( 6 )
 params/resize_mode = 0
 params/scale = Vector2( 0.1, 0.1 )
 params/stretch_mode = 0
-script/script = ExtResource( 5 )
+script/script = ExtResource( 7 )
 name = "Hand"
 
 [node name="GlassPickup" type="TextureButton" parent="room/Pickups"]
@@ -124,11 +161,11 @@ margin/bottom = 1032.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 6 )
+textures/normal = ExtResource( 8 )
 params/resize_mode = 0
 params/scale = Vector2( 0.1, 0.1 )
 params/stretch_mode = 0
-script/script = ExtResource( 5 )
+script/script = ExtResource( 7 )
 name = "Glass"
 
 [node name="gui_overlay" type="CanvasLayer" parent="."]
@@ -195,7 +232,7 @@ margin/left = 0.0
 margin/top = 0.0
 margin/right = 80.0
 margin/bottom = 80.0
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 stretch_mode = 0
 __meta__ = {
 "_edit_lock_": true
@@ -211,7 +248,7 @@ margin/left = 874.0
 margin/top = 0.0
 margin/right = 954.0
 margin/bottom = 80.0
-texture = ExtResource( 8 )
+texture = ExtResource( 10 )
 stretch_mode = 0
 __meta__ = {
 "_edit_lock_": true
@@ -227,7 +264,7 @@ margin/left = 1748.0
 margin/top = 0.0
 margin/right = 1828.0
 margin/bottom = 80.0
-texture = ExtResource( 9 )
+texture = ExtResource( 11 )
 stretch_mode = 0
 __meta__ = {
 "_edit_lock_": true
@@ -241,7 +278,7 @@ offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 
-[node name="map" parent="minimap" instance=ExtResource( 10 )]
+[node name="map" parent="minimap" instance=ExtResource( 12 )]
 
 transform/pos = Vector2( 1585.81, 128.104 )
 transform/scale = Vector2( 0.4, 0.4 )
@@ -250,10 +287,13 @@ z/z = 2
 [node name="Sprite" type="Sprite" parent="."]
 
 z/z = 100
-texture = ExtResource( 11 )
+texture = ExtResource( 13 )
 centered = false
 modulate = Color( 1, 1, 1, 0 )
 region = true
 region_rect = Rect2( 0, 0, 1920, 1080 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 

@@ -11,13 +11,16 @@ export(int, "Isolation", "Corridor", "Decontamination", "Trap") var room_type  s
 
 var doors_state = 0
 
-var wall_textures = []
+#var wall_textures = []
+var furnitures = []
 
 onready var coordinates = Vector2()
 func _init():
 	coordinates = (get_pos()-Vector2(41.0,41.0))/80.0
 func _ready():
 	coordinates = (get_pos()-Vector2(41.0,41.0))/80.0
+#	if room_type == 0:
+#		furnitures.append(randi()%GLOBAL.map.furniture.size())
 #	print(coordinates)
 #	coordinates = (get_pos()-Vector2(41,41))/80
 #	get_node("Label").set_text(str(coordinates))

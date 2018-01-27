@@ -129,7 +129,12 @@ func load_room(room):
 	load_door(room,get_node("room/walls/wall_right/Door") , 2)
 	load_door(room,get_node("room/walls/wall_top/Door")   , 4)
 	load_door(room,get_node("room/walls/wall_bottom/Door"), 8)
-
+	
+	load_furniture(room,get_node("room/walls/wall_left/Door"), 1)
+	
+func load_furniture(room, node, side):
+	
+	pass
 func load_wall(room, node, side):
 	if room.get_wall(side):
 		node.set_texture(GLOBAL.map.walls['wall'])
