@@ -6,14 +6,13 @@ var animate_through_door  = false
 var timer = 1
 
 func _input(ev):
-	if ev.type == InputEvent.MOUSE_BUTTON && ev.button_index == BUTTON_LEFT && !ev.is_pressed() :
-		mouse_click_pos = ev.pos
+	if ev.is_action_released("click"):
 		GLOBAL.is_clicked = true
-	elif (ev.type == InputEvent.MOUSE_MOTION):
-		GLOBAL.mouse_pos = ev.pos
-		GLOBAL.is_clicked = false
 	else:
 		GLOBAL.is_clicked = false
+	if (ev.type == InputEvent.MOUSE_MOTION):
+		GLOBAL.mouse_pos = ev.pos
+
 
 func _fixed_process(delta):
 	if GLOBAL.item_active == false:
@@ -22,11 +21,12 @@ func _fixed_process(delta):
 	
 	if animate_through_door:
 		timer -= delta * 2
-		if GLOBAL.map_orientation == 0:
+		get_node("Sprite").set_modulate( Color(1,1,1,1-timer) )
+		if GLOBAL.map_orientation == 2:
 			get_node("room/walls/wall_left").set_scale(   Vector2(1+(1-timer)/2,1+(1-timer)/2) )
 		elif GLOBAL.map_orientation == 1:
 			get_node("room/walls/wall_top").set_scale(    Vector2(1+(1-timer)/2,1+(1-timer)/2) )
-		elif GLOBAL.map_orientation == 2:
+		elif GLOBAL.map_orientation == 0:
 			get_node("room/walls/wall_right").set_scale(  Vector2(1+(1-timer)/2,1+(1-timer)/2) )
 		elif GLOBAL.map_orientation == 3:
 			get_node("room/walls/wall_bottom").set_scale( Vector2(1+(1-timer)/2,1+(1-timer)/2) )
@@ -38,6 +38,7 @@ func _fixed_process(delta):
 			get_node("room/walls/wall_right").set_scale(  Vector2(1,1) )
 			get_node("room/walls/wall_bottom").set_scale( Vector2(1,1) )
 			enter_the_room()
+			get_node("Sprite").set_modulate( Color(1,1,1,0) )
 			
 		
 func process_movement():
@@ -46,6 +47,7 @@ func process_movement():
 		get_node("gui_overlay/Control/Container/HBoxContainer/turn_arrow1").set_opacity( 0 )
 		get_node("gui_overlay/Control/Container/HBoxContainer/turn_arrow").set_opacity( 0 )
 		if GLOBAL.is_clicked:
+			
 			move_in_room()
 	else:
 		get_node("gui_overlay/Control/Container/HBoxContainer/turn_arrow2").set_opacity( 0 )
@@ -97,16 +99,17 @@ func get_orientation_vector():
 #	print(GLOBAL.map_orientation_vect )
 	
 func move_in_room():
+#	print("move into")
 	animate_through_door = true
+	
 func enter_the_room():
+#	print("move into")
 	if GLOBAL.map_orientation == 1 || GLOBAL.map_orientation == 3:
 		if GLOBAL.map.grid[GLOBAL.map_pos.x][GLOBAL.map_pos.y +  GLOBAL.map_orientation - 2 ] != null:
-			animate_through_door = true
 			GLOBAL.map_pos += GLOBAL.map_orientation_vect
 			load_room(GLOBAL.map.grid[GLOBAL.map_pos.x][GLOBAL.map_pos.y])
 	else:
 		if GLOBAL.map.grid[GLOBAL.map_pos.x - (GLOBAL.map_orientation - 1)][ GLOBAL.map_pos.y ] != null:
-			animate_through_door = true
 			GLOBAL.map_pos += GLOBAL.map_orientation_vect
 			load_room( GLOBAL.map.grid[GLOBAL.map_pos.x][GLOBAL.map_pos.y] )
 	

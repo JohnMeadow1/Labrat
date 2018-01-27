@@ -235,6 +235,7 @@ __meta__ = {
 
 [node name="minimap" type="CanvasLayer" parent="."]
 
+editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -251,6 +252,8 @@ z/z = 2
 z/z = 100
 texture = ExtResource( 11 )
 centered = false
-modulate = Color( 0.445313, 0.292236, 0.292236, 1 )
+modulate = Color( 1, 1, 1, 0 )
+region = true
+region_rect = Rect2( 0, 0, 1920, 1080 )
 
 
