@@ -16,6 +16,10 @@ func _input(ev):
 #	print (GLOBAL.is_clicked)
 
 func _fixed_process(delta):
+	if GLOBAL.item_active == false:
+		process_movement()
+		
+func process_movement():
 	if GLOBAL.mouse_pos.x > 800:
 		get_node("gui_overlay/Control/Container/HBoxContainer/turn_arrow1").set_opacity( 0.5 )
 	else:
@@ -46,7 +50,6 @@ func _fixed_process(delta):
 			else:
 				GLOBAL.map_pos -= Vector2( GLOBAL.map_orientation-1, 0 )
 
-#		print( GLOBAL.map_orientation )
 	get_node("map/selector").set_pos( GLOBAL.map_pos * 80 + Vector2(40,40) )
 	get_node("map/selector").set_rot( GLOBAL.map_orientation*(PI/2) )
 

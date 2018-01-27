@@ -3,6 +3,8 @@ extends "res://screens/play/items/abstract_item.gd"
 
 
 func set_variables():
+	mini_scale    = 0.25
+	current_scale = 0.25
 	pass
 
 func process_item():
