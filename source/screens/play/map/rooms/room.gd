@@ -8,11 +8,11 @@ export(int, FLAGS, "Left", "Right", "Top", "Bottom") var doors setget set_doors,
 export(int, FLAGS, "Left", "Right", "Top", "Bottom") var locked_doors setget set_locked_doors, get_locked_doors
 export(int, FLAGS, "Left", "Right", "Top", "Bottom") var danger_doors setget set_danger_doors, get_danger_doors
 
-export(int, "Isolation", "Corridor", "Decontamination") var room_type  setget set_room_type, get_room_type
+export(int, "Isolation", "Corridor", "Decontamination", "Archive", "Warehouse", "Lab" ) var room_type setget set_room_type, get_room_type
 export(int, "None", "Acid", "Monster") var trap_type setget set_trap_type, get_trap_type
 
 var doors_state = 0
-
+var door_type
 
 
 #var wall_textures = []
@@ -55,20 +55,21 @@ func set_locked_doors( new_value ):
 	if new_value !=null:
 		locked_doors = new_value
 		if new_value & 1 == 1: get_node("room_bg/door_left_locked").set_hidden(false)
-			doors_state +=1
+			doors_state += 1
 		else:                  get_node("room_bg/door_left_locked").set_hidden(true)
 		if new_value & 2 == 2: get_node("room_bg/door_right_locked").set_hidden(false)
-			doors_state +=2
+			doors_state += 2
 		else:                  get_node("room_bg/door_right_locked").set_hidden(true)
 		if new_value & 4 == 4: get_node("room_bg/door_top_locked").set_hidden(false)
-			doors_state +=4
+			doors_state += 4
 		else:                  get_node("room_bg/door_top_locked").set_hidden(true)
 		if new_value & 8 == 8: get_node("room_bg/door_bottom_locked").set_hidden(false)
-			doors_state +=8
+			doors_state += 8
 		else:                  get_node("room_bg/door_bottom_locked").set_hidden(true)
 
 func get_locked_doors( side ):
-	if locked_doors & side == side: return true
+	if locked_doors:
+		if locked_doors & side == side: return true
 	return false
 	
 func set_danger_doors( new_value ):

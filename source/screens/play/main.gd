@@ -166,11 +166,15 @@ func load_door(room, node, side):
 	if room.get_doors(side):
 		node.door_side = side
 		node.set_hidden(false)
-#		if room.get_locked_doors(side): 
-		if room.get_door_state(side):
-			node.unlock()
+		if room.get_locked_doors(side): 
+			if room.get_door_state(side):
+				node.unlock()
+			else:
+				node.lock()
 		else:
-			node.lock()
+			node.get_node("Keypad").set_hidden(true)
+			node.get_node("HandLock").set_hidden(true)
+			node.get_node("Area2D").set_hidden(false)
 	else:
 		node.set_hidden(true)
 
@@ -188,7 +192,7 @@ func pick_start():
 		if room.get_room_type() == 0:
 			list.append(room)
 	var room = list[randi() % list.size()]
-	GLOBAL.map_pos = Vector2(0,4)
+	GLOBAL.map_pos = Vector2(0,8)
 #	GLOBAL.map_pos = room.coordinates
 #	GLOBAL.map_orientation = randi() % 4
 	get_node("room/walls").set_pos(Vector2(1,0) * 1920 * GLOBAL.map_orientation + Vector2(960,540))
