@@ -1,5 +1,6 @@
 extends Node
 
+
 var map_pos                     = Vector2(1,3)
 var map_orientation             = 0
 var map_orientation_vect        = Vector2()
@@ -65,3 +66,4 @@ func _fixed_process(delta):
 	if (OS.get_window_size().x != screen_res.x):
 		screen_res = OS.get_window_size()
 		update_res = true
+		
