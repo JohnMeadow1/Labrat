@@ -1,0 +1,90 @@
+[gd_scene load_steps=8 format=1]
+
+[ext_resource path="res://screens/narrator/narrator.gd" type="Script" id=1]
+[ext_resource path="res://screens/narrator/biorko.jpg" type="Texture" id=2]
+[ext_resource path="res://screens/narrator/Desk_a.png" type="Texture" id=3]
+[ext_resource path="res://screens/narrator/Desk_b.png" type="Texture" id=4]
+[ext_resource path="res://screens/narrator/Desk_c.png" type="Texture" id=5]
+[ext_resource path="res://screens/play/map/map.tscn" type="PackedScene" id=6]
+[ext_resource path="res://fonts/bank_gothic_36.fnt" type="BitmapFont" id=7]
+
+[node name="narraor" type="Node2D"]
+
+script/script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+
+transform/pos = Vector2( -999, -679 )
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Desk_a" type="Sprite" parent="."]
+
+transform/pos = Vector2( 121, 1004 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Desk_b" type="Sprite" parent="."]
+
+transform/pos = Vector2( 2041, 1004 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Desk_c" type="Sprite" parent="."]
+
+transform/pos = Vector2( 281, 361 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+anchor_mode = 0
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit/left = -10000000
+limit/top = -10000000
+limit/right = 10000000
+limit/bottom = 10000000
+drag_margin/h_enabled = true
+drag_margin/v_enabled = true
+smoothing/enable = false
+smoothing/speed = 5.0
+drag_margin/left = 0.2
+drag_margin/top = 0.2
+drag_margin/right = 0.2
+drag_margin/bottom = 0.2
+
+[node name="Node" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 1321, 121 )
+
+[node name="selector" parent="Node"]
+
+transform/pos = Vector2( 0, 0 )
+transform/rot = 90.0
+
+[node name="Label" type="Label" parent="Node"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 5.0
+margin/top = 0.0
+margin/right = 45.0
+margin/bottom = 37.0
+custom_fonts/font = ExtResource( 7 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "N"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+
+[editable path="Node"]
