@@ -200,7 +200,6 @@ func load_decor(room, side):
 	
 	if room.get_room_type() == 0:
 		if room.get_doors(side):
-			print(side)
 			wall_node.activeNode = wall_node.get_node("HoldingCell/Door")
 		else:
 			wall_node.activeNode = wall_node.get_node("HoldingCell").get_child(decor)
@@ -219,6 +218,8 @@ func load_wall(room, node, side):
 		
 func load_door(room, node, side):
 	if room.get_doors(side):
+		print(room.doors_style.values())
+		node.get_node("door").set_texture(room.doors_style[side])
 		node.door_side = side
 		node.set_hidden(false)
 		var lock_node = null 
