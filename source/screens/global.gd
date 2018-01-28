@@ -11,6 +11,9 @@ var item_active                 = false
 var picked_items                = []
 var selected_item_index         = -1
 var player_id                   = -1
+var compass_orientation         = 0
+var compass_target_orientation  = 0
+var starting_orientation_offset = 0
 
 var map_packed  = preload("res://screens/play/map/map.tscn")
 onready var map = map_packed.instance()
