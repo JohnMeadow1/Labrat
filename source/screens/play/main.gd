@@ -165,7 +165,6 @@ func load_room(room):
 	load_door(room,get_node("room/walls/wall_top/Door")   , 4)
 	load_door(room,get_node("room/walls/wall_bottom/Door"), 8)
 	
-	load_furniture(room,get_node("room/walls/wall_left/Door"), 1)
 	
 	set_trap(room)
 	
