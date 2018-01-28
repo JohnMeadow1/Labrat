@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=1]
+[gd_scene load_steps=46 format=1]
 
 [ext_resource path="res://screens/play/map/decor/sectorA.png" type="Texture" id=1]
 [ext_resource path="res://screens/play/map/decor/stain2.png" type="Texture" id=2]
@@ -45,8 +45,6 @@
 [ext_resource path="res://screens/play/map/decor/glass_3.png" type="Texture" id=43]
 [ext_resource path="res://screens/play/items/lab.tscn" type="PackedScene" id=44]
 [ext_resource path="res://screens/play/map/decor/shelfb.png" type="Texture" id=45]
-[ext_resource path="res://screens/play/locations/wall.png" type="Texture" id=46]
-[ext_resource path="res://screens/play/items/door.tscn" type="PackedScene" id=47]
 
 [node name="Decor" type="Node2D"]
 
@@ -54,6 +52,7 @@ z/z = 1
 
 [node name="Sector" type="Node2D" parent="."]
 
+editor/display_folded = true
 z/z = 1
 
 [node name="LabA1" type="Node2D" parent="Sector"]
@@ -794,15 +793,5 @@ transform/pos = Vector2( -608.448, 447.171 )
 transform/rot = 426.632
 transform/scale = Vector2( 0.108325, 0.108325 )
 texture = ExtResource( 43 )
-
-[node name="wall" type="Sprite" parent="."]
-
-visibility/visible = false
-texture = ExtResource( 46 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Door" parent="wall" instance=ExtResource( 47 )]
 
 

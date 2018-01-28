@@ -20,7 +20,6 @@ var doors_style = {}
 var doors_state = 0
 var passwords = {}
 
-#var wall_textures = []
 var decor = {}
 
 onready var coordinates = Vector2()

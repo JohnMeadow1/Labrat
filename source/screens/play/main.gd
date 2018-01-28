@@ -16,13 +16,13 @@ func _input(ev):
 	if is_alive:
 		if ev.is_action_released("click"):
 			GLOBAL.is_clicked = true
-			
 		else:
 			GLOBAL.is_clicked = false
 		if (ev.type == InputEvent.MOUSE_MOTION):
 			GLOBAL.mouse_pos = ev.pos
 
 func die():
+	GLOBAL.audio.play("krzyk"+str(randi()%3 +1))
 	is_alive = false
 	get_node("game_over").set_texture(dead['dead'+str(randi()%4) ])
 	
@@ -168,10 +168,10 @@ func show_decor():
 		
 func load_room(room):
 #	print(GLOBAL.map_pos)
-	load_wall(room, get_node("room/walls/wall_left"), 1)
-	load_wall(room, get_node("room/walls/wall_right"), 2)
-	load_wall(room, get_node("room/walls/wall_top"), 4)
-	load_wall(room, get_node("room/walls/wall_bottom"), 8)
+	load_wall(room, get_node("room/walls/wall_left")      , 1)
+	load_wall(room, get_node("room/walls/wall_right")     , 2)
+	load_wall(room, get_node("room/walls/wall_top")       , 4)
+	load_wall(room, get_node("room/walls/wall_bottom")    , 8)
 
 	load_door(room,get_node("room/walls/wall_left/Door")  , 1)
 	load_door(room,get_node("room/walls/wall_right/Door") , 2)
@@ -288,6 +288,7 @@ func _ready():
 	set_process_input(true)
 	pick_start()
 	get_orientation_vector()
+#	print (GLOBAL.map.grid[GLOBAL.map_pos.x][GLOBAL.map_pos.y])
 	load_room( GLOBAL.map.grid[GLOBAL.map_pos.x][GLOBAL.map_pos.y] )
 	get_node("room/walls/wall_left/Area2D").connect("mouse_enter",self, 'mouse_enter')
 	get_node("room/walls/wall_left/Area2D").connect("mouse_exit",self, 'mouse_exit')
@@ -311,9 +312,9 @@ func pick_start():
 		if room.get_room_type() == 0:
 			list.append(room)
 	var room = list[randi() % list.size()]
-	GLOBAL.map_pos = Vector2(0,8)
-#	GLOBAL.map_pos = room.coordinates
-#	GLOBAL.map_orientation = randi() % 4
+#	GLOBAL.map_pos = Vector2(0,8)
+	GLOBAL.map_pos = room.coordinates
+	GLOBAL.map_orientation = randi() % 4
 	get_node("room/walls").set_pos(Vector2(1,0) * 1920 * GLOBAL.map_orientation + Vector2(960,540))
 
 func set_trap(room):
@@ -330,4 +331,5 @@ func set_trap(room):
 		
 func check_trap():
 	if get_node("room/Trap").is_visible():
+		
 		die()

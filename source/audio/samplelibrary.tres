@@ -69,19 +69,19 @@ samples/iskrzenie = {
 "priority": 0,
 "sample": ExtResource( 8 )
 }
-samples/krzykbaba1 = {
+samples/krzyk1 = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
 "sample": ExtResource( 9 )
 }
-samples/krzykchop1 = {
+samples/krzyk2 = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
 "sample": ExtResource( 10 )
 }
-samples/krzykchop2 = {
+samples/krzyk3 = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
