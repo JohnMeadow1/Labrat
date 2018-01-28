@@ -4,6 +4,7 @@ var mouse_click_pos   = Vector2()
 #var animate_rotation  = false
 var animate_through_door  = false
 var timer       = 1
+var decor = 0
 
 var dead        = {"dead0": load("res://images/game_over1.png"),
                    "dead1": load("res://images/game_over2.png"),
@@ -197,7 +198,8 @@ func load_decor(room, side):
 			print(side)
 			wall_node.activeNode = wall_node.get_node("HoldingCell/Door")
 		else:
-			wall_node.activeNode = wall_node.get_node("HoldingCell").get_child(0)
+			wall_node.activeNode = wall_node.get_node("HoldingCell").get_child(decor)
+			decor += 1
 	
 	wall_node.activeNode.set_hidden(false)
 
