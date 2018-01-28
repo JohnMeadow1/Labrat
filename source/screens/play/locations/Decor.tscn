@@ -44,7 +44,6 @@ script/script = ExtResource( 1 )
 
 [node name="DecorWall" type="Node2D" parent="."]
 
-editor/display_folded = true
 z/z = 2
 
 [node name="wall1" type="Node2D" parent="DecorWall"]
@@ -361,6 +360,7 @@ texture = ExtResource( 15 )
 
 [node name="HoldingCell" type="Node2D" parent="."]
 
+editor/display_folded = true
 z/z = 2
 
 [node name="Bed" type="Node2D" parent="HoldingCell"]
