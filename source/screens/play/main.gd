@@ -224,7 +224,9 @@ func _ready():
 	get_node("room/walls/wall_top/Area2D").connect("mouse_exit",self, 'mouse_exit')
 	get_node("room/walls/wall_bottom/Area2D").connect("mouse_enter",self, 'mouse_enter')
 	get_node("room/walls/wall_bottom/Area2D").connect("mouse_exit",self, 'mouse_exit')
-#	GLOBALaudio
+	GLOBAL.audio = get_node("SamplePlayer")
+	get_node("ambient").play("laboratorium1")
+#	GLOBAL.audio.play("")
 	
 func mouse_enter():
 	mouse_inside = true

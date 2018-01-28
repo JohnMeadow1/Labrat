@@ -27,6 +27,7 @@ func _on_button_up():
 	set_modulate(hover)
 
 func addValue():
+	GLOBAL.audio.play("click")
 	var text = get_node("../../Screen").get_text()
 	if text.length() < 3:
 		get_node("../../Screen").set_text(text + value)
