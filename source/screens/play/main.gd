@@ -73,13 +73,13 @@ func _fixed_process(delta):
 			
 		
 func process_movement():
-	if GLOBAL.mouse_pos.y < 100:
-		get_node("gui_overlay/Control/Container/HBoxContainer/turn_arrow2").set_opacity( 0.5 )
-		get_node("gui_overlay/Control/Container/HBoxContainer/turn_arrow1").set_opacity( 0 )
-		get_node("gui_overlay/Control/Container/HBoxContainer/turn_arrow").set_opacity( 0 )
-		if GLOBAL.is_clicked:
-			move_in_room()
-	elif mouse_inside:
+#	if GLOBAL.mouse_pos.y < 100:
+#		get_node("gui_overlay/Control/Container/HBoxContainer/turn_arrow2").set_opacity( 0.5 )
+#		get_node("gui_overlay/Control/Container/HBoxContainer/turn_arrow1").set_opacity( 0 )
+#		get_node("gui_overlay/Control/Container/HBoxContainer/turn_arrow").set_opacity( 0 )
+#		if GLOBAL.is_clicked:
+#			move_in_room()
+	if mouse_inside:
 		if GLOBAL.is_clicked:
 			get_node("gui_overlay/Control/Container/HBoxContainer/turn_arrow2").set_opacity( 0 )
 			get_node("gui_overlay/Control/Container/HBoxContainer/turn_arrow1").set_opacity( 0 )
@@ -100,8 +100,8 @@ func process_movement():
 		else:
 			get_node("gui_overlay/Control/Container/HBoxContainer/turn_arrow").set_opacity( 0 )
 
-	get_node("minimap/map/selector").set_pos( GLOBAL.map_pos * 80 + Vector2(40,40) )
-	get_node("minimap/map/selector").set_rot( GLOBAL.map_orientation * ( PI/2 ) )
+#	get_node("minimap/map/selector").set_pos( GLOBAL.map_pos * 80 + Vector2(40,40) )
+#	get_node("minimap/map/selector").set_rot( GLOBAL.map_orientation * ( PI/2 ) )
 	
 func turn( value ):
 	GLOBAL.is_clicked = false

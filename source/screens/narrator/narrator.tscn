@@ -1,12 +1,16 @@
-[gd_scene load_steps=8 format=1]
+[gd_scene load_steps=12 format=1]
 
 [ext_resource path="res://screens/narrator/narrator.gd" type="Script" id=1]
 [ext_resource path="res://screens/narrator/biorko.jpg" type="Texture" id=2]
-[ext_resource path="res://screens/narrator/Desk_a.png" type="Texture" id=3]
-[ext_resource path="res://screens/narrator/Desk_b.png" type="Texture" id=4]
-[ext_resource path="res://screens/narrator/Desk_c.png" type="Texture" id=5]
-[ext_resource path="res://screens/play/map/map.tscn" type="PackedScene" id=6]
-[ext_resource path="res://fonts/bank_gothic_36.fnt" type="BitmapFont" id=7]
+[ext_resource path="res://screens/narrator/legend-desk.png" type="Texture" id=3]
+[ext_resource path="res://screens/narrator/mapa.png" type="Texture" id=4]
+[ext_resource path="res://screens/narrator/Desk_a.png" type="Texture" id=5]
+[ext_resource path="res://screens/narrator/Desk_b.png" type="Texture" id=6]
+[ext_resource path="res://screens/narrator/Desk_c.png" type="Texture" id=7]
+[ext_resource path="res://screens/play/map/map.tscn" type="PackedScene" id=8]
+[ext_resource path="res://fonts/bank_gothic_36.fnt" type="BitmapFont" id=9]
+[ext_resource path="res://fonts/new.fnt" type="BitmapFont" id=10]
+[ext_resource path="res://audio/ambient.tres" type="SampleLibrary" id=11]
 
 [node name="narraor" type="Node2D"]
 
@@ -22,23 +26,36 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="legend-desk" type="Sprite" parent="."]
+
+transform/pos = Vector2( 41, 41 )
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="mapa" type="Sprite" parent="legend-desk"]
+
+transform/pos = Vector2( 800, 280 )
+transform/scale = Vector2( 0.844011, 0.844011 )
+texture = ExtResource( 4 )
+
 [node name="Desk_a" type="Sprite" parent="."]
 
-transform/pos = Vector2( 121, 1004 )
-texture = ExtResource( 3 )
+transform/pos = Vector2( 41, 1087 )
+texture = ExtResource( 5 )
 centered = false
 
 [node name="Desk_b" type="Sprite" parent="."]
 
-transform/pos = Vector2( 2041, 1004 )
-texture = ExtResource( 4 )
+transform/pos = Vector2( 1961, 1081 )
+texture = ExtResource( 6 )
 centered = false
 
 [node name="Desk_c" type="Sprite" parent="."]
 
-transform/pos = Vector2( 281, 361 )
+transform/pos = Vector2( 2521, 41 )
 transform/scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 5 )
+texture = ExtResource( 7 )
 centered = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -60,8 +77,10 @@ drag_margin/top = 0.2
 drag_margin/right = 0.2
 drag_margin/bottom = 0.2
 
-[node name="Node" parent="." instance=ExtResource( 6 )]
+[node name="Node" parent="." instance=ExtResource( 8 )]
 
+editor/display_folded = true
+visibility/visible = false
 transform/pos = Vector2( 1321, 121 )
 
 [node name="selector" parent="Node"]
@@ -79,12 +98,75 @@ margin/left = 5.0
 margin/top = 0.0
 margin/right = 45.0
 margin/bottom = 37.0
-custom_fonts/font = ExtResource( 7 )
+custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "N"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+
+[node name="RichTextLabel0" type="RichTextLabel" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 2557.0
+margin/top = 528.0
+margin/right = 3257.0
+margin/bottom = 1169.0
+custom_fonts/normal_font = ExtResource( 10 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode/enabled = false
+bbcode/bbcode = "Od ciebie zależy ich życie.
+
+W tej jednostce badawczej przetrzymywana była grupa ludzi. Zdarzył się jednak nieprzewidziany wypadek. Personel uciekł, lecz nikt nie zajął się luźmi zamkniętymi w izolatkach. Właśnie padło zasilanie, część drzwi zostało otwartych. Podłączyłeś się do intercomu. Tylko ty możesz ich wyprowdzić.
+
+W laboratorium pracowano nad niebezpiecznym wirusem. Nie może wydostać się na zewnątrz! Podejrzewasz, że niektóre uwolnionych osób może być zarażone. Musisz przebadać ich krew w Testing Room i zadecydować o ich losie.
+
+Zdrowa osobę wyprowadź a zarażoną osobę zabij."
+visible_characters = -1
+percent_visible = 1.0
+
+[node name="RichTextLabel1" type="RichTextLabel" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 2557.0
+margin/top = 528.0
+margin/right = 3277.0
+margin/bottom = 1248.0
+custom_fonts/normal_font = ExtResource( 10 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode/enabled = false
+bbcode/bbcode = "Od ciebie zależy ich życie.
+
+W tej jednostce badawczej przetrzymywana była grupa ludzi. Zdarzył się jednak nieprzewidziany wypadek. Personel uciekł, lecz nikt nie zajął się luźmi zamkniętymi w izolatkach. Właśnie padło zasilanie, część drzwi zostało otwartych. Podłączyłeś się do intercomu. Tylko ty możesz ich wyprowdzić.
+
+W laboratorium pracowano nad niebezpiecznym wirusem. Można go urzyć by szerzyć terror na świecie. Podejrzewasz, że niektóre uwolnionych osób może być zarażone. Musisz przebadać ich krew w Testing Room i zadecydować o ich losie.
+
+Zdrowa osobę zabij a zarażoną osobę wyprowadź."
+visible_characters = -1
+percent_visible = 1.0
+
+[node name="SamplePlayer" type="SamplePlayer" parent="."]
+
+config/polyphony = 1
+config/samples = ExtResource( 11 )
+default/volume_db = 0.0
+default/pitch_scale = 1.0
+default/pan = 0.0
+default/depth = 0.0
+default/height = 0.0
+default/filter/type = 0
+default/filter/cutoff = 5000.0
+default/filter/resonance = 1.0
+default/filter/gain = 1.0
+default/reverb_room = 2
+default/reverb_send = 0.0
+default/chorus_send = 0.0
 
 
 [editable path="Node"]

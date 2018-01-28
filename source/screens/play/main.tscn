@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=1]
+[gd_scene load_steps=18 format=1]
 
 [ext_resource path="res://screens/play/main.gd" type="Script" id=1]
 [ext_resource path="res://screens/play/map/decor/liquid.png" type="Texture" id=2]
@@ -12,11 +12,10 @@
 [ext_resource path="res://images/arrow_front.png" type="Texture" id=10]
 [ext_resource path="res://images/arrow_right.png" type="Texture" id=11]
 [ext_resource path="res://screens/play/map/decor/arrow.png" type="Texture" id=12]
-[ext_resource path="res://screens/play/map/map.tscn" type="PackedScene" id=13]
-[ext_resource path="res://images/background_bottom.png" type="Texture" id=14]
-[ext_resource path="res://images/win_2.png" type="Texture" id=15]
-[ext_resource path="res://audio/ambient.tres" type="SampleLibrary" id=16]
-[ext_resource path="res://audio/samplelibrary.tres" type="SampleLibrary" id=17]
+[ext_resource path="res://images/background_bottom.png" type="Texture" id=13]
+[ext_resource path="res://images/win_2.png" type="Texture" id=14]
+[ext_resource path="res://audio/ambient.tres" type="SampleLibrary" id=15]
+[ext_resource path="res://audio/samplelibrary.tres" type="SampleLibrary" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -36,6 +35,7 @@ editor/display_folded = true
 
 [node name="Trap" type="Node2D" parent="room"]
 
+editor/display_folded = true
 visibility/visible = false
 transform/pos = Vector2( 960, 540 )
 z/z = 2
@@ -71,7 +71,6 @@ valid_code = "4444"
 
 [node name="Area2D" type="Area2D" parent="room/walls/wall_right"]
 
-editor/display_folded = true
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, -50 )
@@ -256,13 +255,12 @@ scale = Vector2( 1, 1 )
 
 [node name="Control" type="Control" parent="gui_overlay"]
 
-editor/display_folded = true
 anchor/right = 1
 anchor/bottom = 1
 focus/ignore_mouse = true
 focus/stop_mouse = false
-size_flags/horizontal = 2
-size_flags/vertical = 0
+size_flags/horizontal = 3
+size_flags/vertical = 3
 margin/left = 0.0
 margin/top = 0.0
 margin/right = 24.0
@@ -277,7 +275,7 @@ anchor/right = 1
 focus/ignore_mouse = true
 focus/stop_mouse = false
 size_flags/horizontal = 3
-size_flags/vertical = 0
+size_flags/vertical = 3
 margin/left = 30.0
 margin/top = 30.0
 margin/right = 30.0
@@ -291,7 +289,7 @@ __meta__ = {
 focus/ignore_mouse = true
 focus/stop_mouse = false
 size_flags/horizontal = 3
-size_flags/vertical = 0
+size_flags/vertical = 3
 margin/left = 8.0
 margin/top = 0.0
 margin/right = 1836.0
@@ -306,10 +304,10 @@ __meta__ = {
 focus/ignore_mouse = true
 focus/stop_mouse = false
 size_flags/horizontal = 0
-size_flags/vertical = 0
-margin/left = 0.0
+size_flags/vertical = 3
+margin/left = 832.0
 margin/top = 0.0
-margin/right = 80.0
+margin/right = 912.0
 margin/bottom = 80.0
 texture = ExtResource( 9 )
 stretch_mode = 0
@@ -319,10 +317,11 @@ __meta__ = {
 
 [node name="turn_arrow2" type="TextureFrame" parent="gui_overlay/Control/Container/HBoxContainer"]
 
+visibility/visible = false
 focus/ignore_mouse = true
 focus/stop_mouse = false
-size_flags/horizontal = 1
-size_flags/vertical = 0
+size_flags/horizontal = 0
+size_flags/vertical = 3
 margin/left = 874.0
 margin/top = 0.0
 margin/right = 954.0
@@ -339,9 +338,9 @@ focus/ignore_mouse = true
 focus/stop_mouse = false
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 1748.0
+margin/left = 916.0
 margin/top = 0.0
-margin/right = 1828.0
+margin/right = 996.0
 margin/bottom = 80.0
 texture = ExtResource( 11 )
 stretch_mode = 0
@@ -362,24 +361,10 @@ transform/pos = Vector2( 100, 275 )
 transform/scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 6 )
 
-[node name="minimap" type="CanvasLayer" parent="."]
-
-editor/display_folded = true
-layer = 1
-offset = Vector2( 0, 0 )
-rotation = 0.0
-scale = Vector2( 1, 1 )
-
-[node name="map" parent="minimap" instance=ExtResource( 13 )]
-
-transform/pos = Vector2( 1585.81, 128.104 )
-transform/scale = Vector2( 0.4, 0.4 )
-z/z = 2
-
 [node name="Sprite" type="Sprite" parent="."]
 
 z/z = 100
-texture = ExtResource( 14 )
+texture = ExtResource( 13 )
 centered = false
 modulate = Color( 0, 0, 0, 0 )
 region = true
@@ -392,9 +377,9 @@ __meta__ = {
 
 z/z = 9
 z/relative = false
-texture = ExtResource( 14 )
+texture = ExtResource( 13 )
 centered = false
-modulate = Color( 0, 0, 0, 0.633882 )
+modulate = Color( 0, 0, 0, 0.480863 )
 region = true
 region_rect = Rect2( 0, 0, 1920, 1080 )
 __meta__ = {
@@ -405,7 +390,7 @@ __meta__ = {
 
 z/z = 100
 z/relative = false
-texture = ExtResource( 15 )
+texture = ExtResource( 14 )
 centered = false
 modulate = Color( 1, 1, 1, 0 )
 region = true
@@ -417,7 +402,7 @@ __meta__ = {
 [node name="ambient" type="SamplePlayer" parent="."]
 
 config/polyphony = 1
-config/samples = ExtResource( 16 )
+config/samples = ExtResource( 15 )
 default/volume_db = 0.0
 default/pitch_scale = 1.0
 default/pan = 0.0
@@ -434,7 +419,7 @@ default/chorus_send = 0.0
 [node name="SamplePlayer" type="SamplePlayer" parent="."]
 
 config/polyphony = 32
-config/samples = ExtResource( 17 )
+config/samples = ExtResource( 16 )
 default/volume_db = 0.0
 default/pitch_scale = 1.0
 default/pan = 0.0
