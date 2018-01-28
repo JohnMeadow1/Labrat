@@ -36,7 +36,7 @@ func _fixed_process(delta):
 		if abs(target_scale - current_scale) < 0.02:
 			current_scale = target_scale
 			animate       = false
-		get_node("Area2D").set_scale(Vector2(current_scale,current_scale))
+#		get_node("Area2D").set_scale(Vector2(current_scale,current_scale))
 	process_item()
 	
 func process_item():

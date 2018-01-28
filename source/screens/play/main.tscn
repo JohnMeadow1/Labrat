@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=1]
+[gd_scene load_steps=19 format=1]
 
 [ext_resource path="res://screens/play/main.gd" type="Script" id=1]
 [ext_resource path="res://screens/play/map/decor/liquid.png" type="Texture" id=2]
@@ -14,8 +14,9 @@
 [ext_resource path="res://screens/play/map/decor/arrow.png" type="Texture" id=12]
 [ext_resource path="res://screens/play/map/map.tscn" type="PackedScene" id=13]
 [ext_resource path="res://images/background_bottom.png" type="Texture" id=14]
-[ext_resource path="res://audio/ambient.tres" type="SampleLibrary" id=15]
-[ext_resource path="res://audio/samplelibrary.tres" type="SampleLibrary" id=16]
+[ext_resource path="res://images/win_2.png" type="Texture" id=15]
+[ext_resource path="res://audio/ambient.tres" type="SampleLibrary" id=16]
+[ext_resource path="res://audio/samplelibrary.tres" type="SampleLibrary" id=17]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -394,9 +395,12 @@ __meta__ = {
 [node name="game_over" type="Sprite" parent="."]
 
 z/z = 100
-texture = ExtResource( 14 )
+z/relative = false
+texture = ExtResource( 15 )
 centered = false
 modulate = Color( 1, 1, 1, 0 )
+region = true
+region_rect = Rect2( 0, 0, 1920, 1080 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -404,7 +408,7 @@ __meta__ = {
 [node name="ambient" type="SamplePlayer" parent="."]
 
 config/polyphony = 1
-config/samples = ExtResource( 15 )
+config/samples = ExtResource( 16 )
 default/volume_db = 0.0
 default/pitch_scale = 1.0
 default/pan = 0.0
@@ -421,7 +425,7 @@ default/chorus_send = 0.0
 [node name="SamplePlayer" type="SamplePlayer" parent="."]
 
 config/polyphony = 32
-config/samples = ExtResource( 16 )
+config/samples = ExtResource( 17 )
 default/volume_db = 0.0
 default/pitch_scale = 1.0
 default/pan = 0.0

@@ -4,12 +4,18 @@ var mouse_click_pos   = Vector2()
 #var animate_rotation  = false
 var animate_through_door  = false
 var timer       = 1
-var decor = 0
+var decor    = 0
+var infected = 0
 
 var dead        = {"dead0": load("res://images/game_over1.png"),
                    "dead1": load("res://images/game_over2.png"),
                    "dead2": load("res://images/game_over3.png"),
-                   "dead3": load("res://images/game_over4.png")}
+                   "dead3": load("res://images/game_over4.png"),
+                   "dead4": load("res://images/win_0.png"),
+                   "dead5": load("res://images/win_1.png"),
+                   "dead6": load("res://images/win_2.png"),
+                   "dead7": load("res://images/win_3.png")}
+
 var is_alive     = true
 var mouse_inside = false
 func _input(ev):
@@ -20,6 +26,13 @@ func _input(ev):
 			GLOBAL.is_clicked = false
 		if (ev.type == InputEvent.MOUSE_MOTION):
 			GLOBAL.mouse_pos = ev.pos
+func win():
+#	GLOBAL.audio.play("krzyk"+str(randi()%3 +1))
+	is_alive = false
+#	animate_through_door = false
+#	print ("win")
+	get_node("game_over").set_texture(dead['dead'+str((randi()%4) + 6 ) ])
+#	die()
 
 func die():
 	GLOBAL.audio.play("krzyk"+str(randi()%3 +1))
@@ -31,9 +44,11 @@ func _fixed_process(delta):
 		process_movement()
 	set_compass()
 	get_node("room/walls").set_pos(get_node("room/walls").get_pos().linear_interpolate( Vector2(1,0) * 1920 * GLOBAL.map_orientation + Vector2(960,540),0.1 ))
-	if !is_alive:
-		timer -= delta/2
-		get_node("game_over").set_modulate( Color(1,1,1,1-timer) )
+	if !is_alive :
+		if timer >0:
+			timer -= delta/2
+#			print(timer)
+			get_node("game_over").set_modulate( Color(1,1,1,1-timer) )
 		
 	if animate_through_door:
 		timer -= delta * 2
@@ -130,17 +145,25 @@ func move_in_room():
 	GLOBAL.is_clicked = false
 	animate_through_door = true
 	var enter_d = GLOBAL.audio.play("enter_room")
+	GLOBAL.audio.set_pitch_scale(enter_d,rand_range(0.6,1))
+	
 	
 func enter_the_room():
 #	print("move into")
 	if GLOBAL.map_orientation == 1 || GLOBAL.map_orientation == 3:
 		if GLOBAL.map.grid[GLOBAL.map_pos.x][GLOBAL.map_pos.y +  GLOBAL.map_orientation - 2 ] != null:
 			GLOBAL.map_pos += GLOBAL.map_orientation_vect
-			load_room(GLOBAL.map.grid[GLOBAL.map_pos.x][GLOBAL.map_pos.y])
+			if GLOBAL.map.grid[GLOBAL.map_pos.x][GLOBAL.map_pos.y].is_exit:
+				win()
+			else:
+				load_room(GLOBAL.map.grid[GLOBAL.map_pos.x][GLOBAL.map_pos.y])
 	else:
 		if GLOBAL.map.grid[GLOBAL.map_pos.x - (GLOBAL.map_orientation - 1)][ GLOBAL.map_pos.y ] != null:
 			GLOBAL.map_pos += GLOBAL.map_orientation_vect
-			load_room( GLOBAL.map.grid[GLOBAL.map_pos.x][GLOBAL.map_pos.y] )
+			if GLOBAL.map.grid[GLOBAL.map_pos.x][GLOBAL.map_pos.y].is_exit:
+				win()
+			else:
+				load_room( GLOBAL.map.grid[GLOBAL.map_pos.x][GLOBAL.map_pos.y] )
 	
 	check_trap()
 	
@@ -333,6 +356,7 @@ func clear_decor(decor_node):
 
 
 func _ready():
+	infected = randi()%2
 	GLOBAL.map.load_grid()
 	set_fixed_process(true)
 	set_process_input(true)

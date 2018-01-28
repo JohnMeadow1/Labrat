@@ -55,6 +55,8 @@ export(int, "Keypad", "Finger", "Card") var unique_pad_right  setget set_unique_
 export(int, "Keypad", "Finger", "Card") var unique_pad_top    setget set_unique_lock_top   ,get_lock_type
 export(int, "Keypad", "Finger", "Card") var unique_pad_bottom setget set_unique_lock_bottom,get_lock_type
 
+export(bool) var is_exit setget set_exit
+
 var doors_style = {}
 var doors_state = 0
 var password   = ""
@@ -66,7 +68,9 @@ func _init():
 	coordinates = (get_pos()-Vector2(41.0,41.0))/80.0
 	pass
 #	get_node("Label").set_text(password)
-	
+func set_exit(new_value):
+	if new_value !=null:
+		is_exit = new_value
 func _ready():
 
 	pass
@@ -229,6 +233,7 @@ func set_walls( new_value ):
 		else:                  get_node("room_bg/wall_bottom").set_hidden(true)
 
 func get_wall( side ):
+#	print(get_children())
 	if walls & side == side: return true
 	return false
 	

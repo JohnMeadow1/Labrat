@@ -21,6 +21,7 @@ unique_pad_left = null
 unique_pad_right = null
 unique_pad_top = null
 unique_pad_bottom = null
+is_exit = false
 
 [node name="pass" type="Label" parent="."]
 
@@ -34,7 +35,6 @@ margin/top = -35.0
 margin/right = -21.0
 margin/bottom = -21.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "1"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
