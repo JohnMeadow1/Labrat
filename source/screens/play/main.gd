@@ -207,13 +207,13 @@ func init_decor(room, side):
 	if side == 4: wall_node = get_node("room/walls/wall_top/Decor")
 	if side == 8: wall_node = get_node("room/walls/wall_bottom/Decor")
 	
-	if room.get_room_type() == 0:
+	if room.get_room_type() == 0 && room.get_sector() == 0: #Isolation Cell
 		if room.get_doors(side):
 			room.decor[side] = wall_node.get_node("HoldingCell/Door")
 		else:
 			room.decor[side] = wall_node.get_node("HoldingCell").get_child(decor % 3)
 			decor += 1
-	elif room.get_room_type() == 1:
+	elif room.get_room_type() == 1: #Corridor
 		if room.get_wall(side):
 			wall_node = wall_node.get_node("DecorWall")
 			var offset = decor % (wall_node.get_child_count ( ) + 10)
@@ -224,8 +224,42 @@ func init_decor(room, side):
 			else:
 				room.decor[side] = null
 			decor += 13
+	elif room.get_room_type() == 4: #Warehouse
+		if room.get_wall(side):
+			wall_node = wall_node.get_node("Warehouse")
+			if decor % 3 == 0:
+				room.decor[side] = wall_node.get_child(0)
+			else:
+				room.decor[side] = wall_node.get_child(1)
 		else:
 			room.decor[side] = null
+		decor += 1
+	elif room.get_room_type() == 5: #Lab
+		if room.get_wall(side):
+			wall_node = wall_node.get_node("Lab")
+			room.decor[side] = wall_node.get_child(decor % 2)
+		else:
+			room.decor[side] = null
+		decor += 1
+	elif room.get_room_type() == 6: #Animal
+		if room.get_wall(side):
+			wall_node = wall_node.get_node("Animal")
+			room.decor[side] = wall_node.get_child(decor % 4)
+		else:
+			room.decor[side] = null
+		decor += 1
+	elif room.get_room_type() == 7: #Study
+		if room.get_wall(side):
+			wall_node = wall_node.get_node("Study")
+			if decor % 4 == 0:
+				room.decor[side] = wall_node.get_child(0)
+			elif decor % 4 == 1:
+				room.decor[side] = wall_node.get_child(1)
+			else:
+				room.decor[side] = wall_node.get_child(2)
+		else:
+			room.decor[side] = null
+		decor += 1
 
 func clear_decor(decor_node):
 	for nodes in decor_node.get_children():
