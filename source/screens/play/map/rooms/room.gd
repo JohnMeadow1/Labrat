@@ -18,16 +18,37 @@ export(int, "None", "Finger", "Card") var unique_pad_bottom setget set_unique_lo
 
 var doors_style = {}
 var doors_state = 0
-var passwords = {}
+var password   = ""
 
-var decor = {}
+var decor       = {}
 
 onready var coordinates = Vector2()
 func _init():
 	coordinates = (get_pos()-Vector2(41.0,41.0))/80.0
-
+	if room_type == 0:
+		if sector == 1:
+			password = GLOBAL.passwords["Isolation_S1"+str(randi()%3)]
+		elif sector == 2:
+			password = GLOBAL.passwords["Isolation_S2"+str(randi()%3)]
+		elif sector == 3:
+			password = GLOBAL.passwords["Isolation_S3"+str(randi()%3)]
+		elif sector == 4:
+			password = GLOBAL.passwords["Isolation_S4"+str(randi()%3)]
+	elif room_type == 1:
+		password = GLOBAL.passwords["Decontamination_"+str(randi()%3)]
+	elif room_type == 2:
+		password = GLOBAL.passwords["Archive_"+str(randi()%3)]
+	elif room_type == 3:
+		password = GLOBAL.passwords["Warehouse_"+str(randi()%3)]
+	elif room_type == 4:
+		password = GLOBAL.passwords["Lab_"+str(randi()%3)]
+	elif room_type == 5:
+		password = GLOBAL.passwords["Animal_testing_"+str(randi()%3)]
+	elif room_type == 6:
+		password = GLOBAL.passwords["Study_room_"+str(randi()%3)]
 func _ready():
-	coordinates = (get_pos()-Vector2(41.0,41.0))/80.0
+	pass
+#	coordinates = (get_pos()-Vector2(41.0,41.0))/80.0
 
 
 func initialize_door_types():
