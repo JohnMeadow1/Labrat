@@ -16,6 +16,7 @@ doors = null
 locked_doors = null
 danger_doors = null
 room_type = null
+trap_type = null
 
 [node name="room_bg" type="Sprite" parent="."]
 

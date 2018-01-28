@@ -33,12 +33,317 @@ trap_type = 0
 
 [node name="room35" parent="map" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 41, 41 )
-sector = 1
+transform/pos = Vector2( 1401, 761 )
+sector = 3
 walls = 15
-doors = 0
+doors = 5
 locked_doors = 0
 room_type = 1
+trap_type = 2
+
+[node name="room170" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1401, 681 )
+sector = 3
+walls = 15
+doors = 12
+locked_doors = 0
+danger_doors = 4
+room_type = 1
+trap_type = 0
+
+[node name="room169" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1401, 601 )
+sector = 3
+walls = 15
+doors = 9
+locked_doors = 0
+danger_doors = 8
+room_type = 1
+trap_type = 0
+
+[node name="room168" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1401, 441 )
+sector = 3
+walls = 11
+doors = 1
+locked_doors = 1
+room_type = 1
+trap_type = 0
+
+[node name="room167" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1401, 361 )
+sector = 3
+walls = 7
+doors = 4
+locked_doors = 0
+room_type = 1
+trap_type = 0
+
+[node name="room166" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1401, 281 )
+sector = 3
+walls = 15
+doors = 13
+locked_doors = 0
+room_type = 1
+trap_type = 0
+
+[node name="room165" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1321, 761 )
+sector = 3
+walls = 15
+doors = 5
+locked_doors = 0
+room_type = 1
+trap_type = 0
+
+[node name="room164" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1321, 681 )
+sector = 3
+walls = 15
+doors = 12
+locked_doors = 0
+room_type = 1
+trap_type = 0
+
+[node name="room163" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1321, 601 )
+sector = 3
+walls = 15
+doors = 14
+locked_doors = 0
+room_type = 1
+trap_type = 0
+
+[node name="room162" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1321, 521 )
+sector = 3
+walls = 15
+doors = 1
+locked_doors = 12
+room_type = 1
+trap_type = 0
+
+[node name="room161" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1321, 441 )
+sector = 3
+walls = 15
+doors = 11
+locked_doors = 2
+room_type = 1
+trap_type = 0
+
+[node name="room160" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1321, 361 )
+sector = 0
+walls = 15
+doors = 4
+locked_doors = 0
+room_type = 0
+trap_type = 0
+
+[node name="room159" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1321, 281 )
+sector = 3
+walls = 15
+doors = 11
+locked_doors = 0
+room_type = 1
+trap_type = 0
+
+[node name="room158" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1241, 521 )
+sector = 3
+walls = 15
+doors = 6
+locked_doors = 0
+room_type = 1
+trap_type = 0
+
+[node name="room157" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1241, 441 )
+sector = 3
+walls = 15
+doors = 11
+locked_doors = 0
+room_type = 1
+trap_type = 0
+
+[node name="room156" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1241, 281 )
+sector = 0
+walls = 15
+doors = 2
+locked_doors = 0
+room_type = 0
+trap_type = 0
+
+[node name="room155" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1241, 201 )
+sector = 3
+walls = 15
+doors = 3
+locked_doors = 0
+room_type = 1
+trap_type = 0
+
+[node name="room154" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1401, 201 )
+sector = 3
+walls = 15
+doors = 9
+locked_doors = 0
+room_type = 1
+trap_type = 0
+
+[node name="room153" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1321, 201 )
+sector = 3
+walls = 15
+doors = 7
+locked_doors = 0
+room_type = 1
+trap_type = 0
+
+[node name="room152" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1321, 121 )
+sector = 3
+walls = 15
+doors = 8
+locked_doors = 0
+room_type = 1
+trap_type = 2
+
+[node name="room151" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1241, 761 )
+sector = 3
+walls = 14
+doors = 2
+locked_doors = 0
+room_type = 1
+trap_type = 0
+
+[node name="room150" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1161, 761 )
+sector = 3
+walls = 13
+doors = 5
+locked_doors = 0
+room_type = 1
+trap_type = 0
+
+[node name="room149" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1161, 681 )
+sector = 3
+walls = 15
+doors = 13
+locked_doors = 0
+room_type = 1
+trap_type = 0
+
+[node name="room148" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1161, 601 )
+sector = 3
+walls = 15
+doors = 12
+locked_doors = 0
+danger_doors = 8
+room_type = 1
+trap_type = 0
+
+[node name="room147" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1161, 521 )
+sector = 3
+walls = 15
+doors = 12
+locked_doors = 0
+room_type = 1
+trap_type = 0
+
+[node name="room146" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1161, 441 )
+sector = 3
+walls = 15
+doors = 15
+locked_doors = 1
+room_type = 1
+trap_type = 0
+
+[node name="room145" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1161, 361 )
+sector = 3
+walls = 11
+doors = 8
+locked_doors = 0
+room_type = 1
+trap_type = 0
+
+[node name="room144" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1161, 281 )
+sector = 3
+walls = 7
+doors = 1
+locked_doors = 0
+room_type = 1
+trap_type = 0
+
+[node name="room143" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1161, 201 )
+sector = 3
+walls = 15
+doors = 7
+locked_doors = 0
+danger_doors = 4
+room_type = 1
+trap_type = 0
+
+[node name="room142" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1161, 121 )
+sector = 3
+walls = 15
+doors = 9
+locked_doors = 0
+danger_doors = 8
+room_type = 7
+trap_type = 0
+
+[node name="room141" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1081, 681 )
+sector = 3
+walls = 15
+doors = 6
+locked_doors = 0
+room_type = 5
 trap_type = 0
 
 [node name="room140" parent="map" instance=ExtResource( 3 )]
@@ -46,8 +351,8 @@ trap_type = 0
 transform/pos = Vector2( 1081, 601 )
 sector = 3
 walls = 15
-doors = 0
-locked_doors = 0
+doors = 9
+locked_doors = 1
 room_type = 1
 trap_type = 0
 
@@ -266,7 +571,7 @@ trap_type = 0
 [node name="room118" parent="map" instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 921, 41 )
-sector = 2
+sector = 3
 walls = 15
 doors = 11
 locked_doors = 0
@@ -388,7 +693,7 @@ trap_type = 2
 transform/pos = Vector2( 841, 281 )
 sector = 2
 walls = 15
-doors = 0
+doors = 10
 locked_doors = 10
 room_type = 5
 trap_type = 0
@@ -590,7 +895,7 @@ sector = 1
 walls = 15
 doors = 12
 locked_doors = 1
-danger_doors = 1
+danger_doors = 0
 room_type = 1
 trap_type = 0
 
@@ -837,7 +1142,7 @@ trap_type = 0
 transform/pos = Vector2( 201, 361 )
 sector = 1
 walls = 15
-doors = 13
+doors = 15
 locked_doors = 2
 danger_doors = 0
 room_type = 1
@@ -1111,7 +1416,7 @@ trap_type = 0
 transform/pos = Vector2( 41, 441 )
 sector = 1
 walls = 15
-doors = 8
+doors = 10
 locked_doors = 0
 room_type = 1
 trap_type = 0
@@ -1121,7 +1426,7 @@ trap_type = 0
 transform/pos = Vector2( 41, 281 )
 sector = 1
 walls = 15
-doors = 4
+doors = 6
 locked_doors = 0
 room_type = 7
 trap_type = 0
