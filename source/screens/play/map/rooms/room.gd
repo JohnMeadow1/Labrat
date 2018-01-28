@@ -32,36 +32,36 @@ func _ready():
 
 func initialize_door_types():
 	if sector == 0:
-		doors_style[1] = GLOBAL.map.doors["door1"]
-		doors_style[2] = GLOBAL.map.doors["door1"]
-		doors_style[4] = GLOBAL.map.doors["door1"]
-		doors_style[8] = GLOBAL.map.doors["door1"]
+		doors_style[1] = GLOBAL.doors["door1"]
+		doors_style[2] = GLOBAL.doors["door1"]
+		doors_style[4] = GLOBAL.doors["door1"]
+		doors_style[8] = GLOBAL.doors["door1"]
 	elif sector == 1:
-		doors_style[1] = GLOBAL.map.doors["door"+str(randi()%2+2)]
-		doors_style[2] = GLOBAL.map.doors["door"+str(randi()%2+2)]
-		doors_style[4] = GLOBAL.map.doors["door"+str(randi()%2+2)]
-		doors_style[8] = GLOBAL.map.doors["door"+str(randi()%2+2)]
+		doors_style[1] = GLOBAL.doors["door"+str(randi()%2+2)]
+		doors_style[2] = GLOBAL.doors["door"+str(randi()%2+2)]
+		doors_style[4] = GLOBAL.doors["door"+str(randi()%2+2)]
+		doors_style[8] = GLOBAL.doors["door"+str(randi()%2+2)]
 	elif sector == 2:
-		doors_style[1] = GLOBAL.map.doors["door"+str(randi()%2+3)]
-		doors_style[2] = GLOBAL.map.doors["door"+str(randi()%2+3)]
-		doors_style[4] = GLOBAL.map.doors["door"+str(randi()%2+3)]
-		doors_style[8] = GLOBAL.map.doors["door"+str(randi()%2+3)]
+		doors_style[1] = GLOBAL.doors["door"+str(randi()%2+3)]
+		doors_style[2] = GLOBAL.doors["door"+str(randi()%2+3)]
+		doors_style[4] = GLOBAL.doors["door"+str(randi()%2+3)]
+		doors_style[8] = GLOBAL.doors["door"+str(randi()%2+3)]
 	elif sector == 3:
-		doors_style[1] = GLOBAL.map.doors["door"+str(randi()%2+4)]
-		doors_style[2] = GLOBAL.map.doors["door"+str(randi()%2+4)]
-		doors_style[4] = GLOBAL.map.doors["door"+str(randi()%2+4)]
-		doors_style[8] = GLOBAL.map.doors["door"+str(randi()%2+4)]
+		doors_style[1] = GLOBAL.doors["door"+str(randi()%2+4)]
+		doors_style[2] = GLOBAL.doors["door"+str(randi()%2+4)]
+		doors_style[4] = GLOBAL.doors["door"+str(randi()%2+4)]
+		doors_style[8] = GLOBAL.doors["door"+str(randi()%2+4)]
 	elif sector == 4:
-		doors_style[1] = GLOBAL.map.doors["door"+str(randi()%2+5)]
-		doors_style[2] = GLOBAL.map.doors["door"+str(randi()%2+5)]
-		doors_style[4] = GLOBAL.map.doors["door"+str(randi()%2+5)]
-		doors_style[8] = GLOBAL.map.doors["door"+str(randi()%2+5)]
+		doors_style[1] = GLOBAL.doors["door"+str(randi()%2+5)]
+		doors_style[2] = GLOBAL.doors["door"+str(randi()%2+5)]
+		doors_style[4] = GLOBAL.doors["door"+str(randi()%2+5)]
+		doors_style[8] = GLOBAL.doors["door"+str(randi()%2+5)]
 	elif sector == 5:
-		doors_style[1] = GLOBAL.map.doors["door"+str(randi()%2+7)]
-		doors_style[2] = GLOBAL.map.doors["door"+str(randi()%2+7)]
-		doors_style[4] = GLOBAL.map.doors["door"+str(randi()%2+7)]
-		doors_style[8] = GLOBAL.map.doors["door"+str(randi()%2+7)]
-	
+		doors_style[1] = GLOBAL.doors["door"+str(randi()%2+7)]
+		doors_style[2] = GLOBAL.doors["door"+str(randi()%2+7)]
+		doors_style[4] = GLOBAL.doors["door"+str(randi()%2+7)]
+		doors_style[8] = GLOBAL.doors["door"+str(randi()%2+7)]
+	pass
 #	print(doors_style)
 	
 func set_room_type(new_value):
