@@ -20,7 +20,8 @@ func _on_mouse_enter():
 	set_modulate(hover)
 
 func _on_button_down():
-	get_parent().set_text("")
+#	get_node("../../..").set_text("")
+	get_node("../../Screen").set_text("")
 	set_modulate(pressed)
 
 func _on_button_up():

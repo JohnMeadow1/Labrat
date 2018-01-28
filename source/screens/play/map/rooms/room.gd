@@ -9,7 +9,37 @@ var doors_array             = {"door1": load("res://screens/play/locations/doors
                                "door6": load("res://screens/play/locations/doors/door6.png"),
                                "door7": load("res://screens/play/locations/doors/door7.png"),
                                "door8": load("res://screens/play/locations/doors/door8.png")}
-
+var passwords = { "Isolation_S1_0":    "4426",
+                  "Isolation_S1_1":    "1937",
+                  "Isolation_S1_2":    "3691",
+                  "Isolation_S2_0":    "6188",
+                  "Isolation_S2_1":    "9225",
+                  "Isolation_S2_2":    "1165",
+                  "Isolation_S3_0":    "1277",
+                  "Isolation_S3_1":    "5636",
+                  "Isolation_S3_2":    "1155",
+                  "Isolation_S4_0":    "2223",
+                  "Isolation_S4_1":    "5876",
+                  "Isolation_S4_2":    "4568",
+                  "Corridor_0":        "4444",
+                  "Decontamination_0": "4735",
+                  "Decontamination_1": "8631",
+                  "Decontamination_2": "9531",
+                  "Archive_0":         "4587",
+                  "Archive_1":         "5941",
+                  "Archive_2":         "1267",
+                  "Warehouse_0":       "9754",
+                  "Warehouse_1":       "8345",
+                  "Warehouse_2":       "8748",
+                  "Lab_0":             "5563", 
+                  "Lab_1":             "9981", 
+                  "Lab_2":             "7861", 
+                  "Animal_testing_0":  "6531", 
+                  "Animal_testing_1":  "8316", 
+                  "Animal_testing_2":  "7831", 
+                  "Study_room_0":      "8541", 
+                  "Study_room_1":      "3256", 
+                  "Study_room_2":      "8653" } 
 var color_array        = [Color(.39,.68,.21),Color(1,1,.32),Color(.98,.6,.07),Color(1,.15,.07),Color(.51,0,.65),Color(.07,.27,.98)]
 export(int, "Cell_block", "Lab_A", "Lab_B", "Lab_C", "Animal testing", "Decontamination") var sector setget set_sector, get_sector
 export(int, FLAGS, "Left", "Right", "Top", "Bottom") var walls setget set_walls, get_walls
@@ -20,10 +50,10 @@ export(int, FLAGS, "Left", "Right", "Top", "Bottom") var danger_doors setget set
 export(int, "Isolation", "Corridor", "Decontamination", "Archive", "Warehouse", "Lab", "Animal testing", "Study room" ) var room_type setget set_room_type, get_room_type
 export(int, "None", "Acid", "Monster") var trap_type setget set_trap_type, get_trap_type
 
-export(int, "None", "Finger", "Card") var unique_pad_left   setget set_unique_lock_left ,get_lock_type
-export(int, "None", "Finger", "Card") var unique_pad_right  setget set_unique_lock_right ,get_lock_type
-export(int, "None", "Finger", "Card") var unique_pad_top    setget set_unique_lock_top   ,get_lock_type
-export(int, "None", "Finger", "Card") var unique_pad_bottom setget set_unique_lock_bottom,get_lock_type
+export(int, "Keypad", "Finger", "Card") var unique_pad_left   setget set_unique_lock_left  ,get_lock_type
+export(int, "Keypad", "Finger", "Card") var unique_pad_right  setget set_unique_lock_right ,get_lock_type
+export(int, "Keypad", "Finger", "Card") var unique_pad_top    setget set_unique_lock_top   ,get_lock_type
+export(int, "Keypad", "Finger", "Card") var unique_pad_bottom setget set_unique_lock_bottom,get_lock_type
 
 var doors_style = {}
 var doors_state = 0
@@ -34,34 +64,43 @@ var decor       = {}
 onready var coordinates = Vector2()
 func _init():
 	coordinates = (get_pos()-Vector2(41.0,41.0))/80.0
+	pass
+#	get_node("Label").set_text(password)
+	
+func _ready():
+
+	pass
+	
+func set_passwords():
 	if room_type == 0:
 		if sector == 1:
-			password = GLOBAL.passwords["Isolation_S1"+str(randi()%3)]
+			password = passwords["Isolation_S1_"+str(randi()%3)]
 		elif sector == 2:
-			password = GLOBAL.passwords["Isolation_S2"+str(randi()%3)]
+			password = passwords["Isolation_S2_"+str(randi()%3)]
 		elif sector == 3:
-			password = GLOBAL.passwords["Isolation_S3"+str(randi()%3)]
+			password = passwords["Isolation_S3_"+str(randi()%3)]
 		elif sector == 4:
-			password = GLOBAL.passwords["Isolation_S4"+str(randi()%3)]
+			password = passwords["Isolation_S4_"+str(randi()%3)]
+		
 	elif room_type == 1:
-		password = GLOBAL.passwords["Decontamination_"+str(randi()%3)]
+		password = passwords["Decontamination_"+str(randi()%3)]
 	elif room_type == 2:
-		password = GLOBAL.passwords["Archive_"+str(randi()%3)]
+		password = passwords["Archive_"+str(randi()%3)]
 	elif room_type == 3:
-		password = GLOBAL.passwords["Warehouse_"+str(randi()%3)]
+		password = passwords["Warehouse_"+str(randi()%3)]
 	elif room_type == 4:
-		password = GLOBAL.passwords["Lab_"+str(randi()%3)]
+		password = passwords["Lab_"+str(randi()%3)]
 	elif room_type == 5:
-		password = GLOBAL.passwords["Animal_testing_"+str(randi()%3)]
+		password = passwords["Animal_testing_"+str(randi()%3)]
 	elif room_type == 6:
-		password = GLOBAL.passwords["Study_room_"+str(randi()%3)]
-func _ready():
+		password = passwords["Study_room_"+str(randi()%3)]
+#	if has_node("Label"):
+	get_node("pass").set_text(password)
 	pass
 #	coordinates = (get_pos()-Vector2(41.0,41.0))/80.0
 
-
 func initialize_door_types():
-	print(coordinates)
+#	print(coordinates)
 	if get_sector() == 0:
 		doors_style[1] = doors_array["door1"]
 		doors_style[2] = doors_array["door1"]
@@ -132,7 +171,6 @@ func set_unique_lock_bottom(new_value):
 		unique_pad_bottom = new_value
 	
 func get_lock_type(side):
-
 	if side == 1:
 		return unique_pad_left
 	if side == 2:

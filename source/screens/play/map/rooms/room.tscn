@@ -17,9 +17,31 @@ locked_doors = null
 danger_doors = null
 room_type = null
 trap_type = null
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
+
+[node name="pass" type="Label" parent="."]
+
+rect/scale = Vector2( 3, 3 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -61.0
+margin/top = -35.0
+margin/right = -21.0
+margin/bottom = -21.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "1"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 [node name="room_bg" type="Sprite" parent="."]
 
+editor/display_folded = true
 texture = ExtResource( 2 )
 modulate = Color( 0.655725, 0.675804, 0.699451, 1 )
 
@@ -118,20 +140,5 @@ flip_h = true
 
 visibility/visible = false
 texture = ExtResource( 6 )
-
-[node name="Label" type="Label" parent="."]
-
-visibility/visible = false
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = -20.0
-margin/top = -8.0
-margin/right = 20.0
-margin/bottom = 6.0
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
 

@@ -11,6 +11,7 @@ func load_grid():
 	for room in get_node("map").get_children():
 		room._init()
 		room.initialize_door_types()
+		room.set_passwords()
 		
 	for i in range(18):
 		grid.append([])
