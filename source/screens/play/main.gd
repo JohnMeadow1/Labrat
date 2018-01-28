@@ -221,10 +221,18 @@ func load_room(room):
 func load_wall(room, node, side):
 #	print(room.get_name(), node.get_name(), side)
 	if room.get_wall(side):
-		node.set_texture(GLOBAL.map.walls['wall'])
+		if room.get_room_type() == 0:
+			node.set_texture(GLOBAL.map.walls['isolation_wall'])
+		elif room.get_sector() == 4:
+			node.set_texture(GLOBAL.map.walls['animal_wall'])
+		else:
+			node.set_texture(GLOBAL.map.walls['wall'])
 		node.get_node("Area2D").set_hidden(true)
 	else:
-		node.set_texture(GLOBAL.map.walls['deep_wall'])
+		if room.get_sector() == 4:
+			node.set_texture(GLOBAL.map.walls['animal_wall'])
+		else:
+			node.set_texture(GLOBAL.map.walls['animal_corridor'])
 		node.get_node("Area2D").set_hidden(false)
 		
 

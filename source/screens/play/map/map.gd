@@ -3,7 +3,11 @@ extends Node2D
 
 var grid                    = []
 var walls                   = {"wall": load("res://screens/play/locations/wall.png"),
-                               "deep_wall": load("res://screens/play/locations/corridor.png")}
+                               "deep_wall": load("res://screens/play/locations/corridor.png"),
+                               "isolation_wall": load("res://screens/play/locations/WALL_isolation.png"),
+                               "animal_wall": load("res://screens/play/locations/animal_wall.png"),
+                               "animal_corridor": load("res://screens/play/locations/animal_corridor.png")
+}
 func _ready():
 	pass
 	
