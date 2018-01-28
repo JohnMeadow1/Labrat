@@ -30,26 +30,464 @@ doors = 8
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room35" parent="map" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 41, 41 )
-sector = 1
+transform/pos = Vector2( 1401, 761 )
+sector = 3
 walls = 15
-doors = 0
+doors = 5
+locked_doors = 0
+room_type = 1
+trap_type = 2
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
+
+[node name="room170" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1401, 681 )
+sector = 3
+walls = 15
+doors = 12
+locked_doors = 0
+danger_doors = 4
+room_type = 1
+trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
+
+[node name="room169" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1401, 601 )
+sector = 3
+walls = 15
+doors = 9
+locked_doors = 0
+danger_doors = 8
+room_type = 1
+trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
+
+[node name="room168" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1401, 441 )
+sector = 3
+walls = 11
+doors = 1
+locked_doors = 1
+room_type = 1
+trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
+
+[node name="room167" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1401, 361 )
+sector = 3
+walls = 7
+doors = 4
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
+
+[node name="room166" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1401, 281 )
+sector = 3
+walls = 15
+doors = 13
+locked_doors = 0
+room_type = 1
+trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
+
+[node name="room165" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1321, 761 )
+sector = 3
+walls = 15
+doors = 5
+locked_doors = 0
+room_type = 1
+trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
+
+[node name="room164" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1321, 681 )
+sector = 3
+walls = 15
+doors = 12
+locked_doors = 0
+room_type = 1
+trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
+
+[node name="room163" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1321, 601 )
+sector = 3
+walls = 15
+doors = 14
+locked_doors = 0
+room_type = 1
+trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
+
+[node name="room162" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1321, 521 )
+sector = 3
+walls = 15
+doors = 1
+locked_doors = 0
+room_type = 1
+trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
+
+[node name="room161" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1321, 441 )
+sector = 3
+walls = 15
+doors = 11
+locked_doors = 2
+room_type = 1
+trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
+
+[node name="room160" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1321, 361 )
+sector = 0
+walls = 15
+doors = 4
+locked_doors = 0
+room_type = 0
+trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
+
+[node name="room159" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1321, 281 )
+sector = 3
+walls = 15
+doors = 11
+locked_doors = 0
+room_type = 1
+trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
+
+[node name="room158" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1241, 521 )
+sector = 3
+walls = 15
+doors = 6
+locked_doors = 0
+room_type = 1
+trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
+
+[node name="room157" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1241, 441 )
+sector = 3
+walls = 15
+doors = 11
+locked_doors = 0
+room_type = 1
+trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
+
+[node name="room156" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1241, 281 )
+sector = 0
+walls = 15
+doors = 2
+locked_doors = 0
+room_type = 0
+trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
+
+[node name="room155" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1241, 201 )
+sector = 3
+walls = 15
+doors = 3
+locked_doors = 0
+room_type = 1
+trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
+
+[node name="room154" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1401, 201 )
+sector = 3
+walls = 15
+doors = 9
+locked_doors = 0
+room_type = 1
+trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
+
+[node name="room153" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1321, 201 )
+sector = 3
+walls = 15
+doors = 7
+locked_doors = 0
+room_type = 1
+trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
+
+[node name="room152" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1321, 121 )
+sector = 3
+walls = 15
+doors = 8
+locked_doors = 0
+room_type = 1
+trap_type = 2
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
+
+[node name="room151" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1241, 761 )
+sector = 3
+walls = 14
+doors = 2
+locked_doors = 0
+room_type = 1
+trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
+
+[node name="room150" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1161, 761 )
+sector = 3
+walls = 13
+doors = 5
+locked_doors = 0
+room_type = 1
+trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
+
+[node name="room149" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1161, 681 )
+sector = 3
+walls = 15
+doors = 13
+locked_doors = 0
+danger_doors = 4
+room_type = 1
+trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
+
+[node name="room148" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1161, 601 )
+sector = 3
+walls = 15
+doors = 12
+locked_doors = 0
+danger_doors = 8
+room_type = 1
+trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
+
+[node name="room147" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1161, 521 )
+sector = 3
+walls = 15
+doors = 12
+locked_doors = 0
+room_type = 1
+trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
+
+[node name="room146" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1161, 441 )
+sector = 3
+walls = 15
+doors = 15
+locked_doors = 1
+room_type = 1
+trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
+
+[node name="room145" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1161, 361 )
+sector = 3
+walls = 11
+doors = 8
+locked_doors = 0
+room_type = 1
+trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
+
+[node name="room144" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1161, 281 )
+sector = 3
+walls = 7
+doors = 1
+locked_doors = 0
+room_type = 1
+trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
+
+[node name="room143" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1161, 201 )
+sector = 3
+walls = 15
+doors = 7
+locked_doors = 0
+danger_doors = 4
+room_type = 1
+trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
+
+[node name="room142" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1161, 121 )
+sector = 3
+walls = 15
+doors = 9
+locked_doors = 0
+danger_doors = 8
+room_type = 7
+trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
+
+[node name="room141" parent="map" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1081, 681 )
+sector = 3
+walls = 15
+doors = 6
+locked_doors = 0
+room_type = 5
+trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room140" parent="map" instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 1081, 601 )
 sector = 3
 walls = 15
-doors = 0
-locked_doors = 0
+doors = 9
+locked_doors = 1
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room139" parent="map" instance=ExtResource( 3 )]
 
@@ -60,6 +498,10 @@ doors = 3
 locked_doors = 2
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room138" parent="map" instance=ExtResource( 3 )]
 
@@ -70,6 +512,10 @@ doors = 4
 locked_doors = 0
 room_type = 1
 trap_type = 2
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room137" parent="map" instance=ExtResource( 3 )]
 
@@ -80,6 +526,10 @@ doors = 15
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room136" parent="map" instance=ExtResource( 3 )]
 
@@ -87,9 +537,13 @@ transform/pos = Vector2( 1081, 201 )
 sector = 3
 walls = 15
 doors = 14
-locked_doors = 0
+locked_doors = 4
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room135" parent="map" instance=ExtResource( 3 )]
 
@@ -100,6 +554,10 @@ doors = 15
 locked_doors = 8
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room134" parent="map" instance=ExtResource( 3 )]
 
@@ -110,6 +568,10 @@ doors = 9
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room133" parent="map" instance=ExtResource( 3 )]
 
@@ -120,6 +582,10 @@ doors = 7
 locked_doors = 0
 room_type = 6
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room132" parent="map" instance=ExtResource( 3 )]
 
@@ -131,6 +597,10 @@ locked_doors = 0
 danger_doors = 4
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room131" parent="map" instance=ExtResource( 3 )]
 
@@ -142,6 +612,10 @@ locked_doors = 0
 danger_doors = 8
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room130" parent="map" instance=ExtResource( 3 )]
 
@@ -152,6 +626,10 @@ doors = 6
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room129" parent="map" instance=ExtResource( 3 )]
 
@@ -162,6 +640,10 @@ doors = 11
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room128" parent="map" instance=ExtResource( 3 )]
 
@@ -172,6 +654,10 @@ doors = 3
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room127" parent="map" instance=ExtResource( 3 )]
 
@@ -182,6 +668,10 @@ doors = 6
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room126" parent="map" instance=ExtResource( 3 )]
 
@@ -192,6 +682,10 @@ doors = 12
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room125" parent="map" instance=ExtResource( 3 )]
 
@@ -202,6 +696,10 @@ doors = 11
 locked_doors = 2
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room124" parent="map" instance=ExtResource( 3 )]
 
@@ -212,6 +710,10 @@ doors = 7
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room123" parent="map" instance=ExtResource( 3 )]
 
@@ -222,6 +724,10 @@ doors = 12
 locked_doors = 4
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room122" parent="map" instance=ExtResource( 3 )]
 
@@ -232,6 +738,10 @@ doors = 14
 locked_doors = 8
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room121" parent="map" instance=ExtResource( 3 )]
 
@@ -242,6 +752,10 @@ doors = 13
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room120" parent="map" instance=ExtResource( 3 )]
 
@@ -252,6 +766,10 @@ doors = 11
 locked_doors = 1
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room119" parent="map" instance=ExtResource( 3 )]
 
@@ -262,16 +780,24 @@ doors = 4
 locked_doors = 0
 room_type = 0
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room118" parent="map" instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 921, 41 )
-sector = 2
+sector = 3
 walls = 15
 doors = 11
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room117" parent="map" instance=ExtResource( 3 )]
 
@@ -282,6 +808,10 @@ doors = 5
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room116" parent="map" instance=ExtResource( 3 )]
 
@@ -292,6 +822,10 @@ doors = 12
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room115" parent="map" instance=ExtResource( 3 )]
 
@@ -302,6 +836,10 @@ doors = 11
 locked_doors = 1
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room114" parent="map" instance=ExtResource( 3 )]
 
@@ -312,6 +850,10 @@ doors = 1
 locked_doors = 0
 room_type = 1
 trap_type = 1
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room113" parent="map" instance=ExtResource( 3 )]
 
@@ -322,16 +864,24 @@ doors = 7
 locked_doors = 4
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room112" parent="map" instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 761, 601 )
 sector = 5
 walls = 15
-doors = 1
+doors = 3
 locked_doors = 2
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room111" parent="map" instance=ExtResource( 3 )]
 
@@ -342,6 +892,10 @@ doors = 7
 locked_doors = 1
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room110" parent="map" instance=ExtResource( 3 )]
 
@@ -352,6 +906,10 @@ doors = 14
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room109" parent="map" instance=ExtResource( 3 )]
 
@@ -362,6 +920,10 @@ doors = 13
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room108" parent="map" instance=ExtResource( 3 )]
 
@@ -372,6 +934,10 @@ doors = 13
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room107" parent="map" instance=ExtResource( 3 )]
 
@@ -382,16 +948,24 @@ doors = 8
 locked_doors = 0
 room_type = 1
 trap_type = 2
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room106" parent="map" instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 841, 281 )
 sector = 2
 walls = 15
-doors = 0
+doors = 10
 locked_doors = 10
 room_type = 5
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room105" parent="map" instance=ExtResource( 3 )]
 
@@ -402,6 +976,10 @@ doors = 2
 locked_doors = 0
 room_type = 0
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room104" parent="map" instance=ExtResource( 3 )]
 
@@ -412,6 +990,10 @@ doors = 11
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room103" parent="map" instance=ExtResource( 3 )]
 
@@ -422,6 +1004,10 @@ doors = 6
 locked_doors = 4
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room102" parent="map" instance=ExtResource( 3 )]
 
@@ -432,6 +1018,10 @@ doors = 12
 locked_doors = 8
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room100" parent="map" instance=ExtResource( 3 )]
 
@@ -442,6 +1032,10 @@ doors = 11
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room101" parent="map" instance=ExtResource( 3 )]
 
@@ -452,6 +1046,10 @@ doors = 5
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room99" parent="map" instance=ExtResource( 3 )]
 
@@ -462,6 +1060,10 @@ doors = 11
 locked_doors = 2
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room98" parent="map" instance=ExtResource( 3 )]
 
@@ -472,6 +1074,10 @@ doors = 2
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room97" parent="map" instance=ExtResource( 3 )]
 
@@ -482,6 +1088,10 @@ doors = 3
 locked_doors = 0
 room_type = 3
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room96" parent="map" instance=ExtResource( 3 )]
 
@@ -492,6 +1102,10 @@ doors = 1
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room95" parent="map" instance=ExtResource( 3 )]
 
@@ -502,6 +1116,10 @@ doors = 3
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room94" parent="map" instance=ExtResource( 3 )]
 
@@ -512,6 +1130,10 @@ doors = 7
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room93" parent="map" instance=ExtResource( 3 )]
 
@@ -522,6 +1144,10 @@ doors = 10
 locked_doors = 0
 room_type = 4
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room92" parent="map" instance=ExtResource( 3 )]
 
@@ -532,6 +1158,10 @@ doors = 1
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room91" parent="map" instance=ExtResource( 3 )]
 
@@ -542,6 +1172,10 @@ doors = 3
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room90" parent="map" instance=ExtResource( 3 )]
 
@@ -552,6 +1186,10 @@ doors = 3
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room89" parent="map" instance=ExtResource( 3 )]
 
@@ -562,6 +1200,10 @@ doors = 2
 locked_doors = 0
 room_type = 2
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room88" parent="map" instance=ExtResource( 3 )]
 
@@ -572,6 +1214,10 @@ doors = 3
 locked_doors = 1
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room87" parent="map" instance=ExtResource( 3 )]
 
@@ -582,17 +1228,25 @@ doors = 5
 locked_doors = 0
 room_type = 1
 trap_type = 1
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room86" parent="map" instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 521, 361 )
 sector = 1
 walls = 15
-doors = 12
+doors = 13
 locked_doors = 1
-danger_doors = 1
+danger_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room85" parent="map" instance=ExtResource( 3 )]
 
@@ -603,6 +1257,10 @@ doors = 10
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room84" parent="map" instance=ExtResource( 3 )]
 
@@ -613,17 +1271,25 @@ doors = 3
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room83" parent="map" instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 521, 121 )
 sector = 2
 walls = 7
-doors = 0
+doors = 1
 locked_doors = 1
 danger_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room82" parent="map" instance=ExtResource( 3 )]
 
@@ -634,6 +1300,10 @@ doors = 6
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room81" parent="map" instance=ExtResource( 3 )]
 
@@ -644,6 +1314,10 @@ doors = 12
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room80" parent="map" instance=ExtResource( 3 )]
 
@@ -655,6 +1329,10 @@ locked_doors = 2
 danger_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room79" parent="map" instance=ExtResource( 3 )]
 
@@ -665,17 +1343,25 @@ doors = 3
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room78" parent="map" instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 441, 361 )
 sector = 1
 walls = 15
-doors = 5
+doors = 7
 locked_doors = 2
 danger_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room77" parent="map" instance=ExtResource( 3 )]
 
@@ -687,6 +1373,10 @@ locked_doors = 0
 danger_doors = 1
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room76" parent="map" instance=ExtResource( 3 )]
 
@@ -697,6 +1387,10 @@ doors = 10
 locked_doors = 0
 room_type = 5
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room75" parent="map" instance=ExtResource( 3 )]
 
@@ -707,6 +1401,10 @@ doors = 1
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room74" parent="map" instance=ExtResource( 3 )]
 
@@ -717,6 +1415,10 @@ doors = 3
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room73" parent="map" instance=ExtResource( 3 )]
 
@@ -727,6 +1429,10 @@ doors = 6
 locked_doors = 0
 room_type = 3
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room72" parent="map" instance=ExtResource( 3 )]
 
@@ -738,6 +1444,10 @@ locked_doors = 0
 danger_doors = 2
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room71" parent="map" instance=ExtResource( 3 )]
 
@@ -748,6 +1458,10 @@ doors = 1
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room70" parent="map" instance=ExtResource( 3 )]
 
@@ -758,6 +1472,10 @@ doors = 4
 locked_doors = 1
 room_type = 4
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room69" parent="map" instance=ExtResource( 3 )]
 
@@ -769,6 +1487,10 @@ locked_doors = 4
 danger_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room68" parent="map" instance=ExtResource( 3 )]
 
@@ -780,6 +1502,10 @@ locked_doors = 8
 danger_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room67" parent="map" instance=ExtResource( 3 )]
 
@@ -790,6 +1516,10 @@ doors = 14
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room66" parent="map" instance=ExtResource( 3 )]
 
@@ -801,6 +1531,10 @@ locked_doors = 1
 danger_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room65" parent="map" instance=ExtResource( 3 )]
 
@@ -811,6 +1545,10 @@ doors = 6
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room64" parent="map" instance=ExtResource( 3 )]
 
@@ -821,6 +1559,10 @@ doors = 15
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room63" parent="map" instance=ExtResource( 3 )]
 
@@ -831,17 +1573,25 @@ doors = 12
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room62" parent="map" instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 201, 361 )
 sector = 1
 walls = 15
-doors = 13
+doors = 15
 locked_doors = 2
 danger_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room61" parent="map" instance=ExtResource( 3 )]
 
@@ -852,6 +1602,10 @@ doors = 12
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room60" parent="map" instance=ExtResource( 3 )]
 
@@ -862,6 +1616,10 @@ doors = 10
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room59" parent="map" instance=ExtResource( 3 )]
 
@@ -872,6 +1630,10 @@ doors = 8
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room58" parent="map" instance=ExtResource( 3 )]
 
@@ -883,6 +1645,10 @@ locked_doors = 2
 danger_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room57" parent="map" instance=ExtResource( 3 )]
 
@@ -893,6 +1659,10 @@ doors = 3
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room56" parent="map" instance=ExtResource( 3 )]
 
@@ -903,6 +1673,10 @@ doors = 15
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room55" parent="map" instance=ExtResource( 3 )]
 
@@ -913,6 +1687,10 @@ doors = 8
 locked_doors = 0
 room_type = 0
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room54" parent="map" instance=ExtResource( 3 )]
 
@@ -923,6 +1701,10 @@ doors = 2
 locked_doors = 0
 room_type = 0
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room53" parent="map" instance=ExtResource( 3 )]
 
@@ -933,6 +1715,10 @@ doors = 1
 locked_doors = 0
 room_type = 1
 trap_type = 2
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room52" parent="map" instance=ExtResource( 3 )]
 
@@ -943,6 +1729,10 @@ doors = 2
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room51" parent="map" instance=ExtResource( 3 )]
 
@@ -953,6 +1743,10 @@ doors = 1
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room50" parent="map" instance=ExtResource( 3 )]
 
@@ -963,6 +1757,10 @@ doors = 6
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room49" parent="map" instance=ExtResource( 3 )]
 
@@ -973,6 +1771,10 @@ doors = 10
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room48" parent="map" instance=ExtResource( 3 )]
 
@@ -983,6 +1785,10 @@ doors = 7
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room47" parent="map" instance=ExtResource( 3 )]
 
@@ -993,6 +1799,10 @@ doors = 12
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room46" parent="map" instance=ExtResource( 3 )]
 
@@ -1004,6 +1814,10 @@ locked_doors = 0
 danger_doors = 1
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room45" parent="map" instance=ExtResource( 3 )]
 
@@ -1015,6 +1829,10 @@ locked_doors = 0
 danger_doors = 2
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room44" parent="map" instance=ExtResource( 3 )]
 
@@ -1025,6 +1843,10 @@ doors = 5
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room43" parent="map" instance=ExtResource( 3 )]
 
@@ -1035,6 +1857,10 @@ doors = 14
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room42" parent="map" instance=ExtResource( 3 )]
 
@@ -1045,6 +1871,10 @@ doors = 13
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room41" parent="map" instance=ExtResource( 3 )]
 
@@ -1055,6 +1885,10 @@ doors = 12
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room40" parent="map" instance=ExtResource( 3 )]
 
@@ -1065,6 +1899,10 @@ doors = 8
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room39" parent="map" instance=ExtResource( 3 )]
 
@@ -1075,6 +1913,10 @@ doors = 1
 locked_doors = 0
 room_type = 0
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room38" parent="map" instance=ExtResource( 3 )]
 
@@ -1085,6 +1927,10 @@ doors = 4
 locked_doors = 0
 room_type = 0
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room37" parent="map" instance=ExtResource( 3 )]
 
@@ -1095,6 +1941,10 @@ doors = 14
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room36" parent="map" instance=ExtResource( 3 )]
 
@@ -1105,26 +1955,38 @@ doors = 14
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room34" parent="map" instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 41, 441 )
 sector = 1
 walls = 15
-doors = 8
+doors = 10
 locked_doors = 0
 room_type = 1
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="room33" parent="map" instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 41, 281 )
 sector = 1
 walls = 15
-doors = 4
+doors = 6
 locked_doors = 0
 room_type = 7
 trap_type = 0
+unique_pad_left = null
+unique_pad_right = null
+unique_pad_top = null
+unique_pad_bottom = null
 
 [node name="selector" type="Sprite" parent="."]
 
