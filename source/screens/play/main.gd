@@ -24,8 +24,13 @@ func _input(ev):
 			GLOBAL.is_clicked = true
 		else:
 			GLOBAL.is_clicked = false
+		if ev.is_action_released("btn_left"):
+			turn(1)
+		if ev.is_action_released("btn_right"):
+			turn(-1)
 		if (ev.type == InputEvent.MOUSE_MOTION):
 			GLOBAL.mouse_pos = ev.pos
+		
 func win():
 #	GLOBAL.audio.play("krzyk"+str(randi()%3 +1))
 	is_alive = false
@@ -237,7 +242,7 @@ func load_wall(room, node, side):
 		
 
 func load_door(room, node, side):
-	print("room: ",room,' ',room.coordinates, " lock_type ", room.get_lock_type(side))
+#	print("room: ",room,' ',room.coordinates, " lock_type ", room.get_lock_type(side))
 	if room.get_doors(side):
 #		print(room.doors_style.values())
 		node.get_node("door").set_texture(room.doors_style[side])
@@ -266,7 +271,7 @@ func load_door(room, node, side):
 			node.get_node("Keypad").set_hidden(true)
 			node.get_node("Cardlock").set_hidden(true)
 			
-		print("locked door: ",room.get_locked_doors(side) )
+#		print("locked door: ",room.get_locked_doors(side) )
 		if room.get_locked_doors(side): 
 #			print(room.get_lock_type(side))
 			if room.get_door_state(side):
