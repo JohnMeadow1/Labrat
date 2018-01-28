@@ -221,7 +221,7 @@ func load_room(room):
 func load_wall(room, node, side):
 #	print(room.get_name(), node.get_name(), side)
 	if room.get_wall(side):
-		if room.get_room_type() == 0:
+		if room.get_room_type() == 0 && room.get_sector() == 0:
 			node.set_texture(GLOBAL.map.walls['isolation_wall'])
 		elif room.get_sector() == 4:
 			node.set_texture(GLOBAL.map.walls['animal_wall'])
