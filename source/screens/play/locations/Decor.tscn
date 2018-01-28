@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=1]
+[gd_scene load_steps=65 format=1]
 
 [ext_resource path="res://screens/play/map/decor/sectorA.png" type="Texture" id=1]
 [ext_resource path="res://screens/play/map/decor/stain2.png" type="Texture" id=2]
@@ -62,7 +62,8 @@
 [ext_resource path="res://screens/play/map/decor/bottlecrashed2.png" type="Texture" id=60]
 [ext_resource path="res://screens/play/map/decor/bottle.png" type="Texture" id=61]
 [ext_resource path="res://screens/play/map/decor/hand.png" type="Texture" id=62]
-[ext_resource path="res://screens/play/locations/wall.png" type="Texture" id=63]
+[ext_resource path="res://screens/play/items/pickup.gd" type="Script" id=63]
+[ext_resource path="res://screens/play/locations/wall.png" type="Texture" id=64]
 
 [node name="Decor" type="Node2D"]
 
@@ -1097,7 +1098,6 @@ texture = ExtResource( 53 )
 
 [node name="Animal" type="Node2D" parent="."]
 
-editor/display_folded = true
 z/z = 1
 
 [node name="Wall2" type="Node2D" parent="Animal"]
@@ -1201,12 +1201,25 @@ texture = ExtResource( 9 )
 transform/pos = Vector2( 318.641, 280.179 )
 texture = ExtResource( 42 )
 
-[node name="hand" type="Sprite" parent="Animal/Wall5"]
+[node name="hand" type="TextureButton" parent="Animal/Wall5"]
 
-transform/pos = Vector2( -563.914, 466.661 )
-transform/rot = 6.86267
-transform/scale = Vector2( 0.190265, 0.190265 )
-texture = ExtResource( 62 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -678.0
+margin/top = 342.0
+margin/right = -418.8
+margin/bottom = 552.4
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 62 )
+params/resize_mode = 0
+params/scale = Vector2( 0.2, 0.2 )
+params/stretch_mode = 0
+script/script = ExtResource( 63 )
+name = "Hand"
 
 [node name="Wall3" type="Node2D" parent="Animal"]
 
@@ -1361,7 +1374,7 @@ flip_v = true
 [node name="wall" type="Sprite" parent="."]
 
 visibility/visible = false
-texture = ExtResource( 63 )
+texture = ExtResource( 64 )
 __meta__ = {
 "_edit_lock_": true
 }
