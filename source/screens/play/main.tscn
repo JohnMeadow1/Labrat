@@ -50,6 +50,7 @@ __meta__ = {
 
 [node name="wall_right" type="Sprite" parent="room/walls"]
 
+editor/display_folded = true
 z/z = 1
 z/relative = false
 texture = ExtResource( 3 )
@@ -90,6 +91,7 @@ _update_shape_index = 0
 
 [node name="wall_bottom" type="Sprite" parent="room/walls"]
 
+editor/display_folded = true
 transform/pos = Vector2( -5760, 0 )
 z/z = -2
 texture = ExtResource( 3 )
@@ -125,14 +127,10 @@ _update_shape_index = 0
 [node name="Decor" parent="room/walls/wall_bottom" instance=ExtResource( 5 )]
 
 editor/display_folded = true
-transform/pos = Vector2( 4800, -540 )
-
-[node name="HoldingCell" parent="room/walls/wall_bottom/Decor"]
-
-editor/display_folded = true
 
 [node name="wall_left" type="Sprite" parent="room/walls"]
 
+editor/display_folded = true
 transform/pos = Vector2( -3840, 0 )
 z/z = -2
 texture = ExtResource( 3 )
@@ -166,8 +164,6 @@ trigger = false
 _update_shape_index = 0
 
 [node name="Decor" parent="room/walls/wall_left" instance=ExtResource( 5 )]
-
-transform/pos = Vector2( 2880, -540 )
 
 [node name="wall_top" type="Sprite" parent="room/walls"]
 
@@ -204,12 +200,6 @@ trigger = false
 _update_shape_index = 0
 
 [node name="Decor" parent="room/walls/wall_top" instance=ExtResource( 5 )]
-
-transform/pos = Vector2( 960, -540 )
-
-[node name="Bed" parent="room/walls/wall_top/Decor/HoldingCell"]
-
-visibility/visible = true
 
 [node name="Pickups" type="Node2D" parent="room"]
 
