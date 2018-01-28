@@ -31,7 +31,8 @@ func unlock(node):
 func lock(node):
 	get_node("Area2D").set_hidden( true )
 	get_node("lamp").set_modulate( Color( 1, 1, 1 ) )
-	node.get_node("Area2D").set_hidden(false)
-	node.set_fixed_process(true)
-	node.is_open = false
-	node.lock()
+	if node:
+		node.get_node("Area2D").set_hidden(false)
+		node.set_fixed_process(true)
+		node.is_open = false
+		node.lock()
