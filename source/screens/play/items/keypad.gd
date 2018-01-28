@@ -41,6 +41,10 @@ func validateCode(code):
 		is_enabled         = false
 		GLOBAL.item_active = false
 		get_node("Area2D/buttons").set_hidden(true)
+		GLOBAL.audio.play("enter")
+		GLOBAL.audio.play("otwieraniedrzwi2")
+	else:
+		GLOBAL.audio.play("error3")
 
 func lock():
 	get_node("Area2D/Screen").set_text("")

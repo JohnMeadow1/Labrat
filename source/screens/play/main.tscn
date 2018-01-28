@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=1]
+[gd_scene load_steps=48 format=1]
 
 [ext_resource path="res://screens/play/main.gd" type="Script" id=1]
 [ext_resource path="res://screens/play/map/decor/liquid.png" type="Texture" id=2]
@@ -44,6 +44,13 @@
 [ext_resource path="res://images/arrow_right.png" type="Texture" id=42]
 [ext_resource path="res://screens/play/map/map.tscn" type="PackedScene" id=43]
 [ext_resource path="res://images/background_bottom.png" type="Texture" id=44]
+[ext_resource path="res://audio/ambient.tres" type="SampleLibrary" id=45]
+[ext_resource path="res://audio/samplelibrary.tres" type="SampleLibrary" id=46]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 600, 350 )
 
 [node name="main" type="Node2D"]
 
@@ -66,6 +73,7 @@ texture = ExtResource( 2 )
 
 [node name="Decors" type="Node2D" parent="room"]
 
+editor/display_folded = true
 z/z = 2
 
 [node name="wall1" type="Node2D" parent="room/Decors"]
@@ -457,6 +465,7 @@ texture = ExtResource( 15 )
 
 [node name="HoldingCell" type="Node2D" parent="room"]
 
+editor/display_folded = true
 z/z = 2
 
 [node name="Bed" type="Node2D" parent="room/HoldingCell"]
@@ -549,6 +558,7 @@ flip_v = true
 
 [node name="Lab" type="Node2D" parent="room"]
 
+editor/display_folded = true
 z/z = 1
 
 [node name="Station" type="Node2D" parent="room/Lab"]
@@ -619,6 +629,25 @@ valid_code = "4444"
 
 [node name="door" type="Sprite" parent="room/walls/wall_right/Door"]
 
+[node name="Area2D" type="Area2D" parent="room/walls/wall_right"]
+
+editor/display_folded = true
+input/pickable = true
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, -50 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="room/walls/wall_right/Area2D"]
+
+transform/pos = Vector2( 0, -50 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
 [node name="wall_bottom" type="Sprite" parent="room/walls"]
 
 transform/pos = Vector2( -5760, 0 )
@@ -632,6 +661,26 @@ __meta__ = {
 
 transform/pos = Vector2( 0, 20 )
 valid_code = "4444"
+
+[node name="Area2D" type="Area2D" parent="room/walls/wall_bottom"]
+
+editor/display_folded = true
+transform/pos = Vector2( 5760, 0 )
+input/pickable = true
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, -50 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="room/walls/wall_bottom/Area2D"]
+
+transform/pos = Vector2( 0, -50 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
 
 [node name="wall_left" type="Sprite" parent="room/walls"]
 
@@ -647,6 +696,26 @@ __meta__ = {
 transform/pos = Vector2( 0, 20 )
 valid_code = "4444"
 
+[node name="Area2D" type="Area2D" parent="room/walls/wall_left"]
+
+editor/display_folded = true
+transform/pos = Vector2( 3840, 0 )
+input/pickable = true
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, -50 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="room/walls/wall_left/Area2D"]
+
+transform/pos = Vector2( 0, -50 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
 [node name="wall_top" type="Sprite" parent="room/walls"]
 
 transform/pos = Vector2( -1920, 0 )
@@ -660,6 +729,26 @@ __meta__ = {
 
 transform/pos = Vector2( 0, 20 )
 valid_code = "4444"
+
+[node name="Area2D" type="Area2D" parent="room/walls/wall_top"]
+
+editor/display_folded = true
+transform/pos = Vector2( 1920, 0 )
+input/pickable = true
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, -50 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="room/walls/wall_top/Area2D"]
+
+transform/pos = Vector2( 0, -50 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
 
 [node name="Pickups" type="Node2D" parent="room"]
 
@@ -846,5 +935,39 @@ modulate = Color( 1, 1, 1, 0 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="ambient" type="SamplePlayer" parent="."]
+
+config/polyphony = 1
+config/samples = ExtResource( 45 )
+default/volume_db = 0.0
+default/pitch_scale = 1.0
+default/pan = 0.0
+default/depth = 0.0
+default/height = 0.0
+default/filter/type = 0
+default/filter/cutoff = 5000.0
+default/filter/resonance = 1.0
+default/filter/gain = 1.0
+default/reverb_room = 2
+default/reverb_send = 0.1
+default/chorus_send = 0.0
+
+[node name="SamplePlayer" type="SamplePlayer" parent="."]
+
+config/polyphony = 32
+config/samples = ExtResource( 46 )
+default/volume_db = 0.0
+default/pitch_scale = 1.0
+default/pan = 0.0
+default/depth = 0.0
+default/height = 0.0
+default/filter/type = 0
+default/filter/cutoff = 5000.0
+default/filter/resonance = 1.0
+default/filter/gain = 1.0
+default/reverb_room = 2
+default/reverb_send = 0.1
+default/chorus_send = 0.0
 
 

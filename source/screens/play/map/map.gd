@@ -3,7 +3,7 @@ extends Node2D
 
 var grid                    = []
 var walls                   = {"wall": load("res://screens/play/locations/wall.png"),
-                               "deep_wall": load("res://screens/play/locations/wall_deep.png")}
+                               "deep_wall": load("res://screens/play/map/decor/corridor.png")}
 
 #var furniture_central       = {"desk_sm": load("res://screens/play/map/decor/furniture/desk_sm.png"),
 #                               "heater": load("res://screens/play/map/decor/furniture/heater.png"),
