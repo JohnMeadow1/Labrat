@@ -29,6 +29,7 @@ func die():
 func _fixed_process(delta):
 	if GLOBAL.item_active == false:
 		process_movement()
+	set_compass()
 	get_node("room/walls").set_pos(get_node("room/walls").get_pos().linear_interpolate( Vector2(1,0) * 1920 * GLOBAL.map_orientation + Vector2(960,540),0.1 ))
 	if !is_alive:
 		timer -= delta/2
@@ -91,7 +92,7 @@ func turn( value ):
 	GLOBAL.is_clicked = false
 #	print(GLOBAL.map_orientation, " ", value)
 	GLOBAL.map_orientation += value
-
+	GLOBAL.compass_target_orientation += value
 #	print(GLOBAL.map_orientation, " ", get_node("room/walls").get_pos() )
 	if GLOBAL.map_orientation < 0:
 		GLOBAL.map_orientation = 3
@@ -108,7 +109,11 @@ func turn( value ):
 		get_node("room/walls/wall_bottom").set_pos(Vector2(-5760,0) )
 		
 	get_orientation_vector()
-
+	
+func set_compass():
+	GLOBAL.compass_orientation = lerp (GLOBAL.compass_orientation, GLOBAL.compass_target_orientation, 0.1)
+	get_node("gui_overlay/arrow").set_rot(GLOBAL.compass_orientation*PI/2)
+	
 func get_orientation_vector():
 	if GLOBAL.map_orientation == 0:
 		GLOBAL.map_orientation_vect = Vector2(1,0)

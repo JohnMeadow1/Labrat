@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=1]
+[gd_scene load_steps=18 format=1]
 
 [ext_resource path="res://screens/play/main.gd" type="Script" id=1]
 [ext_resource path="res://screens/play/map/decor/liquid.png" type="Texture" id=2]
@@ -11,10 +11,11 @@
 [ext_resource path="res://images/arrow_left.png" type="Texture" id=9]
 [ext_resource path="res://images/arrow_front.png" type="Texture" id=10]
 [ext_resource path="res://images/arrow_right.png" type="Texture" id=11]
-[ext_resource path="res://screens/play/map/map.tscn" type="PackedScene" id=12]
-[ext_resource path="res://images/background_bottom.png" type="Texture" id=13]
-[ext_resource path="res://audio/ambient.tres" type="SampleLibrary" id=14]
-[ext_resource path="res://audio/samplelibrary.tres" type="SampleLibrary" id=15]
+[ext_resource path="res://screens/play/map/decor/arrow.png" type="Texture" id=12]
+[ext_resource path="res://screens/play/map/map.tscn" type="PackedScene" id=13]
+[ext_resource path="res://images/background_bottom.png" type="Texture" id=14]
+[ext_resource path="res://audio/ambient.tres" type="SampleLibrary" id=15]
+[ext_resource path="res://audio/samplelibrary.tres" type="SampleLibrary" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -251,7 +252,6 @@ name = "Glass"
 
 [node name="gui_overlay" type="CanvasLayer" parent="."]
 
-editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -259,6 +259,7 @@ scale = Vector2( 1, 1 )
 
 [node name="Control" type="Control" parent="gui_overlay"]
 
+editor/display_folded = true
 anchor/right = 1
 anchor/bottom = 1
 focus/ignore_mouse = true
@@ -351,6 +352,12 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="arrow" type="Sprite" parent="gui_overlay"]
+
+transform/pos = Vector2( 100, 100 )
+transform/scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 12 )
+
 [node name="minimap" type="CanvasLayer" parent="."]
 
 editor/display_folded = true
@@ -359,7 +366,7 @@ offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 
-[node name="map" parent="minimap" instance=ExtResource( 12 )]
+[node name="map" parent="minimap" instance=ExtResource( 13 )]
 
 transform/pos = Vector2( 1585.81, 128.104 )
 transform/scale = Vector2( 0.4, 0.4 )
@@ -368,7 +375,7 @@ z/z = 2
 [node name="Sprite" type="Sprite" parent="."]
 
 z/z = 100
-texture = ExtResource( 13 )
+texture = ExtResource( 14 )
 centered = false
 modulate = Color( 1, 1, 1, 0 )
 region = true
@@ -380,7 +387,7 @@ __meta__ = {
 [node name="game_over" type="Sprite" parent="."]
 
 z/z = 100
-texture = ExtResource( 13 )
+texture = ExtResource( 14 )
 centered = false
 modulate = Color( 1, 1, 1, 0 )
 __meta__ = {
@@ -390,7 +397,7 @@ __meta__ = {
 [node name="ambient" type="SamplePlayer" parent="."]
 
 config/polyphony = 1
-config/samples = ExtResource( 14 )
+config/samples = ExtResource( 15 )
 default/volume_db = 0.0
 default/pitch_scale = 1.0
 default/pan = 0.0
@@ -407,7 +414,7 @@ default/chorus_send = 0.0
 [node name="SamplePlayer" type="SamplePlayer" parent="."]
 
 config/polyphony = 32
-config/samples = ExtResource( 15 )
+config/samples = ExtResource( 16 )
 default/volume_db = 0.0
 default/pitch_scale = 1.0
 default/pan = 0.0
