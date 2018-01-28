@@ -11,7 +11,7 @@ var mouse_pos                   = Vector2(0,0)
 var item_active                 = false
 var picked_items                = []
 var selected_item_index         = -1
-var player_id                   = -1
+var is_infected                 = 0
 var compass_orientation         = 0
 var compass_target_orientation  = 0
 var starting_orientation_offset = 0
@@ -27,7 +27,7 @@ func _ready():
 	my_seed = "Godot Rocks"
 	seed(my_seed.hash())
 	randomize()
-	player_id = randi() % 4
+	is_infected = randi() % 2
 #	set_fixed_process(true)
 	
 func _fixed_process(delta):

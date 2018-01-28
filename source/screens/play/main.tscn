@@ -31,6 +31,8 @@ __meta__ = {
 
 [node name="room" type="Node" parent="."]
 
+editor/display_folded = true
+
 [node name="Trap" type="Node2D" parent="room"]
 
 visibility/visible = false
@@ -351,6 +353,13 @@ __meta__ = {
 transform/pos = Vector2( 100, 100 )
 transform/scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 12 )
+
+[node name="hand" type="Sprite" parent="gui_overlay"]
+
+visibility/visible = false
+transform/pos = Vector2( 100, 275 )
+transform/scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 6 )
 
 [node name="minimap" type="CanvasLayer" parent="."]
 
