@@ -56,6 +56,8 @@ func _fixed_process(delta):
 		set_pos(pos)
 		if pos == move_to:
 			animate = false
+			set_hidden(true)
+			get_tree().get_root().get_node("main/gui_overlay/hand").set_hidden(false)
 			value = 0
 
 func pick_item():
@@ -64,6 +66,7 @@ func pick_item():
 
 func use_item():
 	self.queue_free();
+	get_tree().get_root().get_node("main/gui_overlay/hand").set_hidden(true)
 #	GLOBAL.picked_items.remove(GLOBAL.selected_item_index);
 	GLOBAL.picked_items.erase(self)
 	GLOBAL.selected_item_index = -1
@@ -73,5 +76,5 @@ func use_item():
 			
 func move_item(item):
 	var item_index = GLOBAL.picked_items.find(item)
-	item.move_to = Vector2(650, 975) + Vector2(150, 0) * item_index
+	item.move_to = Vector2(-900, -375) + Vector2(0, 150) * item_index
 	item.animate = true;

@@ -21,4 +21,8 @@ func dissable():
 	result.set_hidden(true)
 
 func pick_result():
-	result = get_node("Area2D/result" + str(GLOBAL.player_id))
+	if GLOBAL.is_infected == 0:
+		result = get_node("Area2D/healthy")
+	else:
+		result = get_node("Area2D/infected")
+	

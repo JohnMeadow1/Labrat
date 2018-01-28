@@ -768,7 +768,6 @@ flip_v = true
 
 [node name="Lab" type="Node2D" parent="."]
 
-editor/display_folded = true
 z/z = 1
 
 [node name="Station" type="Node2D" parent="Lab"]
@@ -1098,6 +1097,7 @@ texture = ExtResource( 53 )
 
 [node name="Animal" type="Node2D" parent="."]
 
+editor/display_folded = true
 z/z = 1
 
 [node name="Wall2" type="Node2D" parent="Animal"]
@@ -1179,7 +1179,6 @@ texture = ExtResource( 9 )
 
 [node name="Wall5" type="Node2D" parent="Animal"]
 
-editor/display_folded = true
 visibility/visible = false
 z/z = 1
 
@@ -1207,19 +1206,19 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = -678.0
-margin/top = 342.0
-margin/right = -418.8
-margin/bottom = 552.4
+margin/left = -663.0
+margin/top = 333.0
+margin/right = -404.0
+margin/bottom = 543.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 textures/normal = ExtResource( 62 )
 params/resize_mode = 0
-params/scale = Vector2( 0.2, 0.2 )
+params/scale = Vector2( 0.1, 0.1 )
 params/stretch_mode = 0
 script/script = ExtResource( 63 )
-name = "Hand"
+name = "1"
 
 [node name="Wall3" type="Node2D" parent="Animal"]
 

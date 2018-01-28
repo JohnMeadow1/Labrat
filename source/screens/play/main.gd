@@ -324,7 +324,10 @@ func init_decor(room, side):
 	elif room.get_room_type() == 5: #Lab
 		if room.get_wall(side):
 			wall_node = wall_node.get_node("Lab")
-			room.decor[side] = wall_node.get_child(decor % 2)
+			if decor % 4 == 0:
+				room.decor[side] = wall_node.get_child(0)
+			else:
+				room.decor[side] = wall_node.get_child(1)
 		else:
 			room.decor[side] = null
 		decor += 1

@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://screens/play/items/lab_result.gd" type="Script" id=1]
-[ext_resource path="res://screens/play/map/decor/gear1.png" type="Texture" id=2]
-[ext_resource path="res://screens/play/map/decor/vavle.png" type="Texture" id=3]
+[ext_resource path="res://screens/play/map/decor/aparatura.png" type="Texture" id=2]
+[ext_resource path="res://screens/play/map/decor/infected_folder.png" type="Texture" id=3]
+[ext_resource path="res://screens/play/map/decor/healthy_folder.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -33,42 +34,32 @@ _update_shape_index = 0
 
 [node name="sprite" type="Sprite" parent="Area2D"]
 
+transform/pos = Vector2( -299.272, 91.9293 )
+transform/scale = Vector2( 2.74537, 2.74537 )
 texture = ExtResource( 2 )
 
-[node name="result0" type="Node2D" parent="Area2D"]
+[node name="infected" type="Node2D" parent="Area2D"]
 
 visibility/visible = false
+z/z = 10
+z/relative = false
 
-[node name="vavle" type="Sprite" parent="Area2D/result0"]
+[node name="vavle" type="Sprite" parent="Area2D/infected"]
 
+transform/pos = Vector2( 18.7749, -20.4075 )
+transform/scale = Vector2( 5.81225, 5.81225 )
 texture = ExtResource( 3 )
-modulate = Color( 0.421053, 0.550781, 0.0623932, 1 )
 
-[node name="result1" type="Node2D" parent="Area2D"]
+[node name="healthy" type="Node2D" parent="Area2D"]
 
 visibility/visible = false
+z/z = 10
+z/relative = false
 
-[node name="vavle" type="Sprite" parent="Area2D/result1"]
+[node name="vavle" type="Sprite" parent="Area2D/healthy"]
 
-texture = ExtResource( 3 )
-modulate = Color( 1, 0.359375, 0.359375, 1 )
-
-[node name="result2" type="Node2D" parent="Area2D"]
-
-visibility/visible = false
-
-[node name="vavle" type="Sprite" parent="Area2D/result2"]
-
-texture = ExtResource( 3 )
-modulate = Color( 0.36557, 0.41974, 0.773438, 1 )
-
-[node name="result3" type="Node2D" parent="Area2D"]
-
-visibility/visible = false
-
-[node name="vavle" type="Sprite" parent="Area2D/result3"]
-
-texture = ExtResource( 3 )
-modulate = Color( 0.154846, 0.671875, 0.441636, 1 )
+transform/pos = Vector2( 26.1638, -0.365343 )
+transform/scale = Vector2( 3.11236, 3.11236 )
+texture = ExtResource( 4 )
 
 
