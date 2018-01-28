@@ -26,46 +26,44 @@ var decor = {}
 onready var coordinates = Vector2()
 func _init():
 	coordinates = (get_pos()-Vector2(41.0,41.0))/80.0
-	initialize_door_types()
+
 func _ready():
 	coordinates = (get_pos()-Vector2(41.0,41.0))/80.0
 
+
 func initialize_door_types():
-	if room_type == 0:
+	if sector == 0:
 		doors_style[1] = GLOBAL.map.doors["door1"]
 		doors_style[2] = GLOBAL.map.doors["door1"]
 		doors_style[4] = GLOBAL.map.doors["door1"]
 		doors_style[8] = GLOBAL.map.doors["door1"]
-	elif room_type == 1:
+	elif sector == 1:
 		doors_style[1] = GLOBAL.map.doors["door"+str(randi()%2+2)]
 		doors_style[2] = GLOBAL.map.doors["door"+str(randi()%2+2)]
 		doors_style[4] = GLOBAL.map.doors["door"+str(randi()%2+2)]
 		doors_style[8] = GLOBAL.map.doors["door"+str(randi()%2+2)]
-	elif room_type == 2:
+	elif sector == 2:
 		doors_style[1] = GLOBAL.map.doors["door"+str(randi()%2+3)]
 		doors_style[2] = GLOBAL.map.doors["door"+str(randi()%2+3)]
 		doors_style[4] = GLOBAL.map.doors["door"+str(randi()%2+3)]
 		doors_style[8] = GLOBAL.map.doors["door"+str(randi()%2+3)]
-	elif room_type == 3:
+	elif sector == 3:
 		doors_style[1] = GLOBAL.map.doors["door"+str(randi()%2+4)]
 		doors_style[2] = GLOBAL.map.doors["door"+str(randi()%2+4)]
 		doors_style[4] = GLOBAL.map.doors["door"+str(randi()%2+4)]
 		doors_style[8] = GLOBAL.map.doors["door"+str(randi()%2+4)]
-	elif room_type == 4:
+	elif sector == 4:
 		doors_style[1] = GLOBAL.map.doors["door"+str(randi()%2+5)]
 		doors_style[2] = GLOBAL.map.doors["door"+str(randi()%2+5)]
 		doors_style[4] = GLOBAL.map.doors["door"+str(randi()%2+5)]
 		doors_style[8] = GLOBAL.map.doors["door"+str(randi()%2+5)]
-	elif room_type == 5:
-		doors_style[1] = GLOBAL.map.doors["door"+str(randi()%2+6)]
-		doors_style[2] = GLOBAL.map.doors["door"+str(randi()%2+6)]
-		doors_style[4] = GLOBAL.map.doors["door"+str(randi()%2+6)]
-		doors_style[8] = GLOBAL.map.doors["door"+str(randi()%2+6)]
-	elif room_type == 6:
+	elif sector == 5:
 		doors_style[1] = GLOBAL.map.doors["door"+str(randi()%2+7)]
 		doors_style[2] = GLOBAL.map.doors["door"+str(randi()%2+7)]
 		doors_style[4] = GLOBAL.map.doors["door"+str(randi()%2+7)]
 		doors_style[8] = GLOBAL.map.doors["door"+str(randi()%2+7)]
+	
+#	print(doors_style)
 	
 func set_room_type(new_value):
 	if new_value !=null:
@@ -105,10 +103,7 @@ func set_unique_lock_bottom(new_value):
 		unique_pad_bottom = new_value
 	
 func get_lock_type(side):
-#	print(unique_pad_left)
-#	print(unique_pad_right)
-#	print(unique_pad_top)
-#	print(unique_pad_bottom)
+
 	if side == 1:
 		return unique_pad_left
 	if side == 2:

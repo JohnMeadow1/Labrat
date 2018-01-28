@@ -4,6 +4,7 @@ extends Node2D
 var grid                    = []
 var walls                   = {"wall": load("res://screens/play/locations/wall.png"),
                                "deep_wall": load("res://screens/play/locations/corridor.png")}
+
 var doors                   = {"door1": load("res://screens/play/locations/doors/door1.png"),
                                "door2": load("res://screens/play/locations/doors/door2.png"),
                                "door3": load("res://screens/play/locations/doors/door3.png"),
@@ -38,6 +39,8 @@ func load_grid():
 		for j in range(10):
 			grid[i].append(null)
 			for room in get_node("map").get_children():
-				room._init()
+#				room.initialize_door_types()
 				if room.coordinates.x == i && room.coordinates.y == j:
+					room._init()
 					grid[i][j] = room
+					room.initialize_door_types()

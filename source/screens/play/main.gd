@@ -145,7 +145,7 @@ func enter_the_room():
 	
 func show_decor():
 	var room = GLOBAL.map.grid[GLOBAL.map_pos.x][GLOBAL.map_pos.y]
-	print(room.decor)
+#	print(room.decor)
 	
 	for d in room.decor.values(): d.set_hidden(true)
 	
@@ -156,7 +156,7 @@ func show_decor():
 	elif GLOBAL.map_orientation == 2: side = 8
 	elif GLOBAL.map_orientation == 3: side = 2
 	
-	print(side)
+#	print(side)
 	
 	if side == 4:
 		room.decor[side].set_hidden(false)
@@ -218,7 +218,7 @@ func load_wall(room, node, side):
 		
 func load_door(room, node, side):
 	if room.get_doors(side):
-		print(room.doors_style.values())
+#		print(room.doors_style.values())
 		node.get_node("door").set_texture(room.doors_style[side])
 		node.door_side = side
 		node.set_hidden(false)
@@ -274,7 +274,6 @@ func _ready():
 	get_node("room/walls/wall_bottom/Area2D").connect("mouse_exit",self, 'mouse_exit')
 	GLOBAL.audio = get_node("SamplePlayer")
 	get_node("ambient").play("laboratorium1")
-#	GLOBAL.audio.play("")
 	
 func mouse_enter():
 	mouse_inside = true
