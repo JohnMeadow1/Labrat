@@ -59,7 +59,6 @@ __meta__ = {
 
 [node name="Door" parent="room/walls/wall_right" instance=ExtResource( 4 )]
 
-editor/display_folded = true
 transform/pos = Vector2( 0, 20 )
 z/z = 1
 z/relative = false
@@ -372,7 +371,20 @@ z/z = 2
 z/z = 100
 texture = ExtResource( 14 )
 centered = false
-modulate = Color( 1, 1, 1, 0 )
+modulate = Color( 0, 0, 0, 0 )
+region = true
+region_rect = Rect2( 0, 0, 1920, 1080 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite1" type="Sprite" parent="."]
+
+z/z = 9
+z/relative = false
+texture = ExtResource( 14 )
+centered = false
+modulate = Color( 0, 0, 0, 0.633882 )
 region = true
 region_rect = Rect2( 0, 0, 1920, 1080 )
 __meta__ = {
@@ -425,5 +437,4 @@ default/chorus_send = 0.0
 
 
 [editable path="room/walls/wall_bottom/Decor"]
-[editable path="room/walls/wall_top/Door"]
 [editable path="room/walls/wall_top/Decor"]

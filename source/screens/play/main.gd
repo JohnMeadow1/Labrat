@@ -129,6 +129,7 @@ func move_in_room():
 #	print("move into")
 	GLOBAL.is_clicked = false
 	animate_through_door = true
+	var enter_d = GLOBAL.audio.play("enter_room")
 	
 func enter_the_room():
 #	print("move into")
@@ -167,8 +168,8 @@ func show_decor():
 #		load_room(GLOBAL.map.grid[GLOBAL.map_pos.x][GLOBAL.map_pos.y])
 		
 func load_room(room):
-	print(GLOBAL.map_pos ," ", room.coordinates)
-	print(" code", room.password)
+#	print(GLOBAL.map_pos ," ", room.coordinates)
+#	print(" code", room.password)
 	load_wall(room, get_node("room/walls/wall_left")      , 1)
 	load_wall(room, get_node("room/walls/wall_right")     , 2)
 	load_wall(room, get_node("room/walls/wall_top")       , 4)
@@ -194,8 +195,68 @@ func load_room(room):
 		load_decor(room, 4)
 		load_decor(room, 8)
 
-<<<<<<< HEAD
-=======
+func load_wall(room, node, side):
+#	print(room.get_name(), node.get_name(), side)
+	if room.get_wall(side):
+		node.set_texture(GLOBAL.map.walls['wall'])
+		node.get_node("Area2D").set_hidden(true)
+	else:
+		node.set_texture(GLOBAL.map.walls['deep_wall'])
+		node.get_node("Area2D").set_hidden(false)
+		
+
+func load_door(room, node, side):
+	print("room: ",room,' ',room.coordinates, " lock_type ", room.get_lock_type(side))
+	if room.get_doors(side):
+#		print(room.doors_style.values())
+		node.get_node("door").set_texture(room.doors_style[side])
+		node.door_side = side
+		node.set_hidden(false)
+		var lock_node = null 
+#		print(room.get_lock_type(side))
+		if room.get_lock_type(side) == 1:
+			node.get_node("HandLock").set_hidden(false)
+			node.get_node("Keypad").set_hidden(true)
+			node.get_node("Cardlock").set_hidden(true)
+			lock_node = node.get_node("HandLock")
+		elif room.get_lock_type(side) == 2:
+			node.get_node("HandLock").set_hidden(true)
+			node.get_node("Keypad").set_hidden(true)
+			node.get_node("Cardlock").set_hidden(false)
+			lock_node = node.get_node("Cardlock")
+		elif room.get_lock_type(side) == 0:
+			node.get_node("HandLock").set_hidden(true)
+			node.get_node("Keypad").set_hidden(false)
+			node.get_node("Keypad").valid_code = room.password
+			node.get_node("Cardlock").set_hidden(true)
+			lock_node = node.get_node("Keypad")
+		else:
+			node.get_node("HandLock").set_hidden(true)
+			node.get_node("Keypad").set_hidden(true)
+			node.get_node("Cardlock").set_hidden(true)
+			
+		print("locked door: ",room.get_locked_doors(side) )
+		if room.get_locked_doors(side): 
+#			print(room.get_lock_type(side))
+			if room.get_door_state(side):
+				node.unlock(lock_node)
+				node.get_node("lamp").set_modulate(Color(0.5,1,0.5))
+			else:
+				node.lock(lock_node)
+				node.get_node("lamp").set_modulate(Color(1,0.5,0.5))
+		else:
+			node.get_node("lamp").set_modulate(Color(0.5,1,0.5))
+			node.get_node("Keypad").set_hidden(true)
+			node.get_node("HandLock").set_hidden(true)
+			node.get_node("Cardlock").set_hidden(true)
+			if lock_node:
+				lock_node.set_hidden(false)
+				lock_node.get_node("Area2D").set_hidden(true)
+			node.get_node("Area2D").set_hidden(false)
+	else:
+		node.set_hidden(true)
+
+
 func load_decor(room, side):
 	if !room.decor.has(side): init_decor(room, side)
 	
@@ -269,105 +330,7 @@ func clear_decor(decor_node):
 		for decor in nodes.get_children():
 			decor.set_hidden(true);
 
->>>>>>> 204f4bd47bd7d8e8125112043b1878851047d4f1
-func load_wall(room, node, side):
-#	print(room.get_name(), node.get_name(), side)
-	if room.get_wall(side):
-		node.set_texture(GLOBAL.map.walls['wall'])
-		node.get_node("Area2D").set_hidden(true)
-	else:
-		node.set_texture(GLOBAL.map.walls['deep_wall'])
-		node.get_node("Area2D").set_hidden(false)
-		
-func load_door(room, node, side):
-	print("room: ",room,' ',room.coordinates, " lock_type ", room.get_lock_type(side))
-	if room.get_doors(side):
-#		print(room.doors_style.values())
-		node.get_node("door").set_texture(room.doors_style[side])
-		node.door_side = side
-		node.set_hidden(false)
-		var lock_node = null 
-#		print(room.get_lock_type(side))
-		if room.get_lock_type(side) == 1:
-			node.get_node("HandLock").set_hidden(false)
-			node.get_node("Keypad").set_hidden(true)
-			node.get_node("Cardlock").set_hidden(true)
-			lock_node = node.get_node("HandLock")
-		elif room.get_lock_type(side) == 2:
-			node.get_node("HandLock").set_hidden(true)
-			node.get_node("Keypad").set_hidden(true)
-			node.get_node("Cardlock").set_hidden(false)
-			lock_node = node.get_node("Cardlock")
-		elif room.get_lock_type(side) == 0:
-			node.get_node("HandLock").set_hidden(true)
-			node.get_node("Keypad").set_hidden(false)
-			node.get_node("Keypad").valid_code = room.password
-			node.get_node("Cardlock").set_hidden(true)
-			lock_node = node.get_node("Keypad")
-		else:
-			node.get_node("HandLock").set_hidden(true)
-			node.get_node("Keypad").set_hidden(true)
-			node.get_node("Cardlock").set_hidden(true)
-			
-		print("locked door: ",room.get_locked_doors(side) )
-		if room.get_locked_doors(side): 
-#			print(room.get_lock_type(side))
-			if room.get_door_state(side):
-				node.unlock(lock_node)
-				node.get_node("lamp").set_modulate(Color(0.5,1,0.5))
-			else:
-				node.lock(lock_node)
-				node.get_node("lamp").set_modulate(Color(1,0.5,0.5))
-		else:
-			node.get_node("lamp").set_modulate(Color(0.5,1,0.5))
-			node.get_node("Keypad").set_hidden(true)
-			node.get_node("HandLock").set_hidden(true)
-			node.get_node("Cardlock").set_hidden(true)
-			if lock_node:
-				lock_node.set_hidden(false)
-				lock_node.get_node("Area2D").set_hidden(true)
-			node.get_node("Area2D").set_hidden(false)
-	else:
-		node.set_hidden(true)
 
-func load_decor(room, side):
-	if !room.decor.has(side): init_decor(room, side)
-	
-	if room.decor.has(side) && room.decor[side] != null:
-		room.decor[side].set_hidden(false)
-
-func init_decor(room, side):
-	var wall_node = null
-	
-	if side == 1: wall_node = get_node("room/walls/wall_left/Decor")
-	if side == 2: wall_node = get_node("room/walls/wall_right/Decor")
-	if side == 4: wall_node = get_node("room/walls/wall_top/Decor")
-	if side == 8: wall_node = get_node("room/walls/wall_bottom/Decor")
-	
-	if room.get_room_type() == 0:
-		if room.get_doors(side):
-			room.decor[side] = wall_node.get_node("HoldingCell/Door")
-		else:
-			room.decor[side] = wall_node.get_node("HoldingCell").get_child(decor % 3)
-			decor += 1
-	elif room.get_room_type() == 1:
-		if room.get_wall(side):
-			wall_node = wall_node.get_node("DecorWall")
-			var offset = decor % (wall_node.get_child_count ( ) + 10)
-			if offset < wall_node.get_child_count():
-				room.decor[side] = wall_node.get_child(offset)
-			elif decor % 3 == 0:
-				room.decor[side] = wall_node.get_node("../Sector").get_child((decor % 2) + 2 * (room.get_sector() -1 ))
-			else:
-				room.decor[side] = null
-			decor += 13
-		else:
-			room.decor[side] = null
-
-func clear_decor(decor_node):
-	for nodes in decor_node.get_children():
-		for decor in nodes.get_children():
-			decor.set_hidden(true);
 
 func _ready():
 	GLOBAL.map.load_grid()

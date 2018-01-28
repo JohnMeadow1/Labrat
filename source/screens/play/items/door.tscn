@@ -60,6 +60,8 @@ __meta__ = {
 
 transform/pos = Vector2( -673.496, -337.265 )
 transform/scale = Vector2( 0.25, 0.25 )
+z/z = 10
+z/relative = false
 texture = ExtResource( 4 )
 
 [node name="HandLock" parent="." instance=ExtResource( 5 )]
