@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=1]
+[gd_scene load_steps=64 format=1]
 
 [ext_resource path="res://screens/play/map/decor/sectorA.png" type="Texture" id=1]
 [ext_resource path="res://screens/play/map/decor/stain2.png" type="Texture" id=2]
@@ -45,6 +45,24 @@
 [ext_resource path="res://screens/play/map/decor/glass_3.png" type="Texture" id=43]
 [ext_resource path="res://screens/play/items/lab.tscn" type="PackedScene" id=44]
 [ext_resource path="res://screens/play/map/decor/shelfb.png" type="Texture" id=45]
+[ext_resource path="res://screens/play/map/decor/laboratorium.png" type="Texture" id=46]
+[ext_resource path="res://screens/play/map/decor/lab5.png" type="Texture" id=47]
+[ext_resource path="res://screens/play/map/decor/lab2.png" type="Texture" id=48]
+[ext_resource path="res://screens/play/map/decor/magazyn.png" type="Texture" id=49]
+[ext_resource path="res://screens/play/map/decor/storage1.png" type="Texture" id=50]
+[ext_resource path="res://screens/play/map/decor/storage2.png" type="Texture" id=51]
+[ext_resource path="res://screens/play/map/decor/box.png" type="Texture" id=52]
+[ext_resource path="res://screens/play/map/decor/biuro.png" type="Texture" id=53]
+[ext_resource path="res://screens/play/map/decor/chair2.png" type="Texture" id=54]
+[ext_resource path="res://screens/play/map/decor/doc.png" type="Texture" id=55]
+[ext_resource path="res://screens/play/map/decor/shelf3.png" type="Texture" id=56]
+[ext_resource path="res://screens/play/map/decor/papers3.png" type="Texture" id=57]
+[ext_resource path="res://screens/play/map/decor/papers2.png" type="Texture" id=58]
+[ext_resource path="res://screens/play/map/decor/bottlecrashed.png" type="Texture" id=59]
+[ext_resource path="res://screens/play/map/decor/bottlecrashed2.png" type="Texture" id=60]
+[ext_resource path="res://screens/play/map/decor/bottle.png" type="Texture" id=61]
+[ext_resource path="res://screens/play/map/decor/hand.png" type="Texture" id=62]
+[ext_resource path="res://screens/play/locations/wall.png" type="Texture" id=63]
 
 [node name="Decor" type="Node2D"]
 
@@ -793,5 +811,559 @@ transform/pos = Vector2( -608.448, 447.171 )
 transform/rot = 426.632
 transform/scale = Vector2( 0.108325, 0.108325 )
 texture = ExtResource( 43 )
+
+[node name="laboratorium" type="Sprite" parent="Lab/Station"]
+
+transform/pos = Vector2( 494.619, -288.348 )
+transform/scale = Vector2( 0.212317, 0.212317 )
+texture = ExtResource( 46 )
+
+[node name="lab5" type="Sprite" parent="Lab/Station"]
+
+transform/pos = Vector2( -405.96, -127.738 )
+transform/scale = Vector2( 0.325435, 0.325435 )
+texture = ExtResource( 47 )
+
+[node name="lab2" type="Sprite" parent="Lab/Station"]
+
+transform/pos = Vector2( 734.424, 398.399 )
+transform/scale = Vector2( 0.442074, 0.442074 )
+texture = ExtResource( 48 )
+
+[node name="Wall" type="Node2D" parent="Lab"]
+
+editor/display_folded = true
+visibility/visible = false
+z/z = 1
+
+[node name="laboratorium" type="Sprite" parent="Lab/Wall"]
+
+transform/pos = Vector2( 494.619, -288.348 )
+transform/scale = Vector2( 0.212317, 0.212317 )
+texture = ExtResource( 46 )
+
+[node name="Warehouse" type="Node2D" parent="."]
+
+editor/display_folded = true
+z/z = 1
+
+[node name="Wall2" type="Node2D" parent="Warehouse"]
+
+editor/display_folded = true
+visibility/visible = false
+z/z = 1
+
+[node name="magazyn" type="Sprite" parent="Warehouse/Wall2"]
+
+transform/pos = Vector2( 501.878, -235.264 )
+transform/scale = Vector2( 0.284238, 0.284238 )
+texture = ExtResource( 49 )
+
+[node name="storage1" type="Sprite" parent="Warehouse/Wall2"]
+
+transform/pos = Vector2( 565.227, 191.134 )
+texture = ExtResource( 50 )
+
+[node name="storage3" type="Sprite" parent="Warehouse/Wall2"]
+
+transform/pos = Vector2( 695.369, 259.63 )
+texture = ExtResource( 50 )
+
+[node name="shelfb" type="Sprite" parent="Warehouse/Wall2"]
+
+transform/pos = Vector2( -568.91, 122.507 )
+transform/scale = Vector2( 0.549945, 0.549945 )
+texture = ExtResource( 45 )
+
+[node name="shelfb1" type="Sprite" parent="Warehouse/Wall2"]
+
+transform/pos = Vector2( -359.997, 125.932 )
+transform/scale = Vector2( 0.549945, 0.549945 )
+texture = ExtResource( 45 )
+
+[node name="shelfb3" type="Sprite" parent="Warehouse/Wall2"]
+
+transform/pos = Vector2( -455.891, 396.491 )
+transform/rot = -81.5311
+transform/scale = Vector2( 0.549945, 0.549945 )
+texture = ExtResource( 45 )
+
+[node name="Wall1" type="Node2D" parent="Warehouse"]
+
+editor/display_folded = true
+visibility/visible = false
+z/z = 1
+
+[node name="magazyn" type="Sprite" parent="Warehouse/Wall1"]
+
+transform/pos = Vector2( 501.878, -235.264 )
+transform/scale = Vector2( 0.284238, 0.284238 )
+texture = ExtResource( 49 )
+
+[node name="storage2" type="Sprite" parent="Warehouse/Wall1"]
+
+transform/pos = Vector2( -490.28, 32.8371 )
+transform/scale = Vector2( 0.767406, 0.767406 )
+texture = ExtResource( 51 )
+
+[node name="storage1" type="Sprite" parent="Warehouse/Wall1"]
+
+transform/pos = Vector2( 565.227, 191.134 )
+texture = ExtResource( 50 )
+
+[node name="storage3" type="Sprite" parent="Warehouse/Wall1"]
+
+transform/pos = Vector2( 695.369, 259.63 )
+texture = ExtResource( 50 )
+
+[node name="storage4" type="Sprite" parent="Warehouse/Wall1"]
+
+transform/pos = Vector2( 438.509, 266.479 )
+texture = ExtResource( 50 )
+
+[node name="box1" type="Sprite" parent="Warehouse/Wall1"]
+
+transform/pos = Vector2( -387.395, 301.238 )
+transform/scale = Vector2( 0.567782, 0.567782 )
+texture = ExtResource( 52 )
+
+[node name="box" type="Sprite" parent="Warehouse/Wall1"]
+
+transform/pos = Vector2( -740.15, 335.486 )
+transform/scale = Vector2( 0.567782, 0.567782 )
+texture = ExtResource( 52 )
+
+[node name="box2" type="Sprite" parent="Warehouse/Wall1"]
+
+transform/pos = Vector2( -544.936, 427.956 )
+transform/scale = Vector2( 0.567782, 0.567782 )
+texture = ExtResource( 52 )
+
+[node name="Study" type="Node2D" parent="."]
+
+editor/display_folded = true
+z/z = 1
+
+[node name="Wall2" type="Node2D" parent="Study"]
+
+editor/display_folded = true
+visibility/visible = false
+z/z = 1
+
+[node name="biuro" type="Sprite" parent="Study/Wall2"]
+
+transform/pos = Vector2( 512.153, -269.512 )
+transform/scale = Vector2( 0.291087, 0.291087 )
+texture = ExtResource( 53 )
+
+[node name="desk-sm" type="Sprite" parent="Study/Wall2"]
+
+editor/display_folded = true
+transform/pos = Vector2( 493.306, 126.063 )
+texture = ExtResource( 33 )
+
+[node name="chair2" type="Sprite" parent="Study/Wall2/desk-sm"]
+
+transform/pos = Vector2( -178.618, 156.34 )
+transform/scale = Vector2( 0.425082, 0.425082 )
+texture = ExtResource( 54 )
+
+[node name="doc" type="Sprite" parent="Study/Wall2"]
+
+transform/pos = Vector2( 601.676, 434.128 )
+transform/scale = Vector2( 0.425082, 0.425082 )
+texture = ExtResource( 55 )
+
+[node name="doc1" type="Sprite" parent="Study/Wall2"]
+
+transform/pos = Vector2( 495.507, 454.677 )
+transform/scale = Vector2( 0.425082, 0.425082 )
+texture = ExtResource( 55 )
+
+[node name="doc2" type="Sprite" parent="Study/Wall2"]
+
+transform/pos = Vector2( 587.977, 485.5 )
+transform/rot = 12.6788
+transform/scale = Vector2( 0.425082, 0.425082 )
+texture = ExtResource( 55 )
+
+[node name="doc3" type="Sprite" parent="Study/Wall2"]
+
+transform/pos = Vector2( 550.304, 437.553 )
+transform/rot = 44.7408
+transform/scale = Vector2( 0.425082, 0.425082 )
+texture = ExtResource( 55 )
+modulate = Color( 0.933746, 0.96875, 0.688721, 1 )
+
+[node name="doc4" type="Sprite" parent="Study/Wall2"]
+
+transform/pos = Vector2( 658.212, 492.164 )
+transform/rot = 44.7408
+transform/scale = Vector2( 0.290575, 0.712442 )
+texture = ExtResource( 55 )
+modulate = Color( 0.933746, 0.96875, 0.688721, 1 )
+
+[node name="shelf3" type="Sprite" parent="Study/Wall2"]
+
+transform/pos = Vector2( -491.852, 43.8434 )
+transform/scale = Vector2( 0.733671, 0.733671 )
+texture = ExtResource( 56 )
+
+[node name="Wall3" type="Node2D" parent="Study"]
+
+editor/display_folded = true
+visibility/visible = false
+z/z = 1
+
+[node name="biuro" type="Sprite" parent="Study/Wall3"]
+
+transform/pos = Vector2( 512.153, -269.512 )
+transform/scale = Vector2( 0.291087, 0.291087 )
+texture = ExtResource( 53 )
+
+[node name="papers3" type="Sprite" parent="Study/Wall3"]
+
+transform/pos = Vector2( -526.1, -160.788 )
+transform/scale = Vector2( 0.319841, 0.319841 )
+texture = ExtResource( 57 )
+
+[node name="papers4" type="Sprite" parent="Study/Wall3"]
+
+transform/pos = Vector2( -461.029, -102.566 )
+transform/rot = -17.9142
+transform/scale = Vector2( 0.319841, 0.319841 )
+texture = ExtResource( 57 )
+
+[node name="papers5" type="Sprite" parent="Study/Wall3"]
+
+transform/pos = Vector2( -354.86, -201.886 )
+transform/rot = 20.4436
+transform/scale = Vector2( 0.319841, 0.319841 )
+texture = ExtResource( 57 )
+
+[node name="papers6" type="Sprite" parent="Study/Wall3"]
+
+transform/pos = Vector2( -293.214, -85.4425 )
+transform/rot = 6.12012
+transform/scale = Vector2( 0.319841, 0.319841 )
+texture = ExtResource( 57 )
+
+[node name="papers7" type="Sprite" parent="Study/Wall3"]
+
+transform/pos = Vector2( -409.657, 20.7262 )
+transform/rot = 6.12012
+transform/scale = Vector2( 0.319841, 0.319841 )
+texture = ExtResource( 57 )
+
+[node name="papers2" type="Sprite" parent="Study/Wall3"]
+
+transform/pos = Vector2( -538.95, 29.9625 )
+transform/rot = 6.12012
+transform/scale = Vector2( 0.319841, 0.319841 )
+texture = ExtResource( 58 )
+
+[node name="papers3 2" type="Sprite" parent="Study/Wall3"]
+
+transform/pos = Vector2( -230.718, -199.499 )
+transform/rot = 6.12012
+transform/scale = Vector2( 0.319841, 0.319841 )
+texture = ExtResource( 58 )
+
+[node name="papers4 2" type="Sprite" parent="Study/Wall3"]
+
+transform/pos = Vector2( -254.692, 47.0864 )
+transform/rot = 6.12012
+transform/scale = Vector2( 0.319841, 0.319841 )
+texture = ExtResource( 58 )
+
+[node name="box" type="Sprite" parent="Study/Wall3"]
+
+transform/pos = Vector2( -503.274, 266.538 )
+transform/rot = 0.119364
+transform/scale = Vector2( 0.468848, 0.468848 )
+texture = ExtResource( 52 )
+
+[node name="Wall4" type="Node2D" parent="Study"]
+
+editor/display_folded = true
+visibility/visible = false
+z/z = 1
+
+[node name="biuro" type="Sprite" parent="Study/Wall4"]
+
+transform/pos = Vector2( 512.153, -269.512 )
+transform/scale = Vector2( 0.291087, 0.291087 )
+texture = ExtResource( 53 )
+
+[node name="Animal" type="Node2D" parent="."]
+
+editor/display_folded = true
+z/z = 1
+
+[node name="Wall2" type="Node2D" parent="Animal"]
+
+editor/display_folded = true
+visibility/visible = false
+z/z = 1
+
+[node name="alert_rabbit" type="Sprite" parent="Animal/Wall2"]
+
+transform/pos = Vector2( -534.677, -291.484 )
+transform/scale = Vector2( 0.491846, 0.491846 )
+texture = ExtResource( 10 )
+
+[node name="bed_table" type="Sprite" parent="Animal/Wall2"]
+
+transform/pos = Vector2( 537.3, 269.131 )
+transform/scale = Vector2( 0.532107, 0.532107 )
+texture = ExtResource( 30 )
+
+[node name="bottlecrashed" type="Sprite" parent="Animal/Wall2"]
+
+transform/pos = Vector2( 328.218, 415.564 )
+transform/scale = Vector2( 0.324491, 0.324491 )
+texture = ExtResource( 59 )
+
+[node name="bottlecrashed2" type="Sprite" parent="Animal/Wall2"]
+
+transform/pos = Vector2( 771.632, 418.227 )
+transform/rot = -2.45892
+transform/scale = Vector2( 0.662864, 0.662864 )
+texture = ExtResource( 60 )
+
+[node name="bottle" type="Sprite" parent="Animal/Wall2"]
+
+transform/pos = Vector2( 530.807, -35.4616 )
+transform/rot = -0.519381
+transform/scale = Vector2( 0.170576, 0.170576 )
+texture = ExtResource( 61 )
+
+[node name="bottle1" type="Sprite" parent="Animal/Wall2"]
+
+transform/pos = Vector2( 592.454, -11.4881 )
+transform/rot = -0.519381
+transform/scale = Vector2( 0.170576, 0.170576 )
+texture = ExtResource( 61 )
+
+[node name="box" type="Sprite" parent="Animal/Wall2"]
+
+transform/pos = Vector2( -574.047, 265.599 )
+transform/scale = Vector2( 0.747941, 0.747941 )
+texture = ExtResource( 52 )
+
+[node name="box1" type="Sprite" parent="Animal/Wall2"]
+
+transform/pos = Vector2( -529.524, 436.839 )
+transform/scale = Vector2( 0.747941, 0.747941 )
+texture = ExtResource( 52 )
+flip_h = true
+
+[node name="Wall4" type="Node2D" parent="Animal"]
+
+editor/display_folded = true
+visibility/visible = false
+z/z = 1
+
+[node name="alert_rabbit" type="Sprite" parent="Animal/Wall4"]
+
+transform/pos = Vector2( -534.677, -291.484 )
+transform/scale = Vector2( 0.491846, 0.491846 )
+texture = ExtResource( 10 )
+
+[node name="stain" type="Sprite" parent="Animal/Wall4"]
+
+transform/pos = Vector2( -9.46585, 557.08 )
+transform/rot = -89.0324
+transform/scale = Vector2( 0.791054, 1.64197 )
+texture = ExtResource( 9 )
+
+[node name="Wall5" type="Node2D" parent="Animal"]
+
+editor/display_folded = true
+visibility/visible = false
+z/z = 1
+
+[node name="alert_rabbit" type="Sprite" parent="Animal/Wall5"]
+
+transform/pos = Vector2( -534.677, -291.484 )
+transform/scale = Vector2( 0.491846, 0.491846 )
+texture = ExtResource( 10 )
+
+[node name="stain" type="Sprite" parent="Animal/Wall5"]
+
+transform/pos = Vector2( -9.46585, 557.08 )
+transform/rot = -89.0324
+transform/scale = Vector2( 0.791054, 1.64197 )
+texture = ExtResource( 9 )
+
+[node name="szczur" type="Sprite" parent="Animal/Wall5"]
+
+transform/pos = Vector2( 318.641, 280.179 )
+texture = ExtResource( 42 )
+
+[node name="hand" type="Sprite" parent="Animal/Wall5"]
+
+transform/pos = Vector2( -563.914, 466.661 )
+transform/rot = 6.86267
+transform/scale = Vector2( 0.190265, 0.190265 )
+texture = ExtResource( 62 )
+
+[node name="Wall3" type="Node2D" parent="Animal"]
+
+editor/display_folded = true
+visibility/visible = false
+z/z = 1
+
+[node name="alert_rabbit" type="Sprite" parent="Animal/Wall3"]
+
+transform/pos = Vector2( -534.677, -291.484 )
+transform/scale = Vector2( 0.491846, 0.491846 )
+texture = ExtResource( 10 )
+
+[node name="scratch" type="Sprite" parent="Animal/Wall3"]
+
+transform/pos = Vector2( -530.181, 241.305 )
+transform/scale = Vector2( 0.196763, 0.196763 )
+texture = ExtResource( 13 )
+
+[node name="scratch1" type="Sprite" parent="Animal/Wall3"]
+
+transform/pos = Vector2( -389.764, 145.41 )
+transform/scale = Vector2( 0.196763, 0.196763 )
+texture = ExtResource( 13 )
+flip_v = true
+
+[node name="scratch2" type="Sprite" parent="Animal/Wall3"]
+
+transform/pos = Vector2( -150.028, 234.455 )
+transform/rot = 24.9128
+transform/scale = Vector2( 0.196763, 0.196763 )
+texture = ExtResource( 13 )
+flip_v = true
+
+[node name="scratch3" type="Sprite" parent="Animal/Wall3"]
+
+transform/pos = Vector2( -43.8593, 162.534 )
+transform/rot = -88.6969
+transform/scale = Vector2( 0.196763, 0.196763 )
+texture = ExtResource( 13 )
+flip_v = true
+
+[node name="scratch4" type="Sprite" parent="Animal/Wall3"]
+
+transform/pos = Vector2( 69.1592, 255.004 )
+transform/rot = -4.10436
+transform/scale = Vector2( 0.196763, 0.196763 )
+texture = ExtResource( 13 )
+flip_v = true
+
+[node name="scratch5" type="Sprite" parent="Animal/Wall3"]
+
+transform/pos = Vector2( 209.576, 179.658 )
+transform/rot = -63.5881
+transform/scale = Vector2( 0.196763, 0.196763 )
+texture = ExtResource( 13 )
+flip_v = true
+
+[node name="scratch6" type="Sprite" parent="Animal/Wall3"]
+
+transform/pos = Vector2( 360.267, 255.004 )
+transform/rot = -22.9782
+transform/scale = Vector2( 0.196763, 0.196763 )
+texture = ExtResource( 13 )
+flip_v = true
+
+[node name="scratch7" type="Sprite" parent="Animal/Wall3"]
+
+transform/pos = Vector2( -239.073, 237.88 )
+transform/rot = -22.9782
+transform/scale = Vector2( 0.196763, 0.196763 )
+texture = ExtResource( 13 )
+flip_v = true
+
+[node name="scratch8" type="Sprite" parent="Animal/Wall3"]
+
+transform/pos = Vector2( 456.161, 165.959 )
+transform/rot = -87.1062
+transform/scale = Vector2( 0.196763, 0.196763 )
+texture = ExtResource( 13 )
+flip_v = true
+
+[node name="scratch9" type="Sprite" parent="Animal/Wall3"]
+
+transform/pos = Vector2( 576.029, 258.428 )
+transform/rot = -18.6678
+transform/scale = Vector2( 0.196763, 0.196763 )
+texture = ExtResource( 13 )
+flip_v = true
+
+[node name="scratch10" type="Sprite" parent="Animal/Wall3"]
+
+transform/pos = Vector2( 760.391, 256.868 )
+transform/rot = -18.6678
+transform/scale = Vector2( 0.120083, 0.200617 )
+texture = ExtResource( 13 )
+flip_v = true
+
+[node name="scratch13" type="Sprite" parent="Animal/Wall3"]
+
+transform/pos = Vector2( -859.538, 363.037 )
+transform/rot = -18.6678
+transform/scale = Vector2( 0.120083, 0.200617 )
+texture = ExtResource( 13 )
+flip_v = true
+
+[node name="scratch11" type="Sprite" parent="Animal/Wall3"]
+
+transform/pos = Vector2( 861.85, 313.488 )
+transform/rot = -18.6678
+transform/scale = Vector2( 0.136322, 0.194426 )
+texture = ExtResource( 13 )
+
+[node name="scratch12" type="Sprite" parent="Animal/Wall3"]
+
+transform/pos = Vector2( -747.805, 268.965 )
+transform/rot = -18.6678
+transform/scale = Vector2( 0.136322, 0.194426 )
+texture = ExtResource( 13 )
+
+[node name="scratch2 2" type="Sprite" parent="Animal/Wall3"]
+
+transform/pos = Vector2( 455.718, 529.126 )
+transform/rot = 83.0832
+transform/scale = Vector2( 0.361916, 0.361916 )
+texture = ExtResource( 6 )
+
+[node name="scratch23" type="Sprite" parent="Animal/Wall3"]
+
+transform/pos = Vector2( 116.663, 628.445 )
+transform/rot = 83.0832
+transform/scale = Vector2( 0.361916, 0.361916 )
+texture = ExtResource( 6 )
+flip_v = true
+
+[node name="scratch24" type="Sprite" parent="Animal/Wall3"]
+
+transform/pos = Vector2( -201.843, 546.25 )
+transform/rot = 64.9267
+transform/scale = Vector2( 0.361916, 0.361916 )
+texture = ExtResource( 6 )
+flip_v = true
+
+[node name="scratch25" type="Sprite" parent="Animal/Wall3"]
+
+transform/pos = Vector2( -558.022, 535.975 )
+transform/rot = 152.59
+transform/scale = Vector2( 0.361916, 0.361916 )
+texture = ExtResource( 6 )
+flip_v = true
+
+[node name="wall" type="Sprite" parent="."]
+
+visibility/visible = false
+texture = ExtResource( 63 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 
