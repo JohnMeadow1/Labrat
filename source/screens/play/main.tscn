@@ -361,7 +361,6 @@ texture = ExtResource( 6 )
 
 [node name="minimap" type="CanvasLayer" parent="."]
 
-editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -369,6 +368,7 @@ scale = Vector2( 1, 1 )
 
 [node name="map" parent="minimap" instance=ExtResource( 13 )]
 
+visibility/visible = false
 transform/pos = Vector2( 1585.81, 128.104 )
 transform/scale = Vector2( 0.4, 0.4 )
 z/z = 2
