@@ -136,17 +136,24 @@ func enter_the_room():
 			load_room( GLOBAL.map.grid[GLOBAL.map_pos.x][GLOBAL.map_pos.y] )
 	
 	check_trap()
-#	show_decor()
 	
 func show_decor():
 	var room = GLOBAL.map.grid[GLOBAL.map_pos.x][GLOBAL.map_pos.y]
+	print(room.decor)
 	
-	for d in room.values(): d.node.set_hidden(true)
+	for d in room.decor.values(): d.set_hidden(true)
 	
 	var side = 1
-	side >> GLOBAL.map_orientation
 	
-	room.decor[side].set_hidden(false)
+	if GLOBAL.map_orientation == 0: side = 1
+	elif GLOBAL.map_orientation == 1: side = 4
+	elif GLOBAL.map_orientation == 2: side = 8
+	elif GLOBAL.map_orientation == 3: side = 2
+	
+	print(side)
+	
+	if side == 4:
+		room.decor[side].set_hidden(false)
 
 #func reload_room():
 #	if GLOBAL.map.grid[GLOBAL.map_pos.x][GLOBAL.map_pos.y] != null:
@@ -165,19 +172,27 @@ func load_room(room):
 	load_door(room,get_node("room/walls/wall_top/Door")   , 4)
 	load_door(room,get_node("room/walls/wall_bottom/Door"), 8)
 	
-	load_furniture(room,get_node("room/walls/wall_left/Door"), 1)
+#	load_furniture(room,get_node("room/walls/wall_left/Door"), 1)
 	
 	set_trap(room)
 	
-#	load_decor(room, 1)
-#	load_decor(room, 2)
-#	load_decor(room, 4)
-#	load_decor(room, 8)
+	load_decor(room, 1)
+	load_decor(room, 2)
+	load_decor(room, 4)
+	load_decor(room, 8)
 
 func load_decor(room, side):
+	var wall_node = null
+	
+	if side == 1: wall_node = get_node("room/walls/wall_left/Decor")
+	if side == 2: wall_node = get_node("room/walls/wall_right/Decor")
+	if side == 4: wall_node = get_node("room/walls/wall_top/Decor")
+	if side == 8: wall_node = get_node("room/walls/wall_bottom/Decor")
+	
 	if room.get_room_type() == 0:
-		if room.get_doors() & side == side:
-			room.decors[side] = {node = get_node("room/HoldingCell/Door")}
+		if room.get_doors(side):
+			print(side)
+			wall_node.get_node("HoldingCell/Door").set_hidden(false)
 	pass
 
 func load_wall(room, node, side):
@@ -233,8 +248,8 @@ func _ready():
 	set_fixed_process(true)
 	set_process_input(true)
 	pick_start()
-	load_room( GLOBAL.map.grid[GLOBAL.map_pos.x][GLOBAL.map_pos.y] )
 	get_orientation_vector()
+	load_room( GLOBAL.map.grid[GLOBAL.map_pos.x][GLOBAL.map_pos.y] )
 	get_node("room/walls/wall_left/Area2D").connect("mouse_enter",self, 'mouse_enter')
 	get_node("room/walls/wall_left/Area2D").connect("mouse_exit",self, 'mouse_exit')
 	get_node("room/walls/wall_right/Area2D").connect("mouse_enter",self, 'mouse_enter')
