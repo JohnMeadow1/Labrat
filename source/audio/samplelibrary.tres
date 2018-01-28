@@ -1,5 +1,125 @@
-[gd_resource type="SampleLibrary" format=1]
+[gd_resource type="SampleLibrary" load_steps=18 format=1]
+
+[ext_resource path="res://audio/drapanie1.smp" type="Sample" id=1]
+[ext_resource path="res://audio/drapanie2.smp" type="Sample" id=2]
+[ext_resource path="res://audio/error1.smp" type="Sample" id=3]
+[ext_resource path="res://audio/error2.smp" type="Sample" id=4]
+[ext_resource path="res://audio/error3.smp" type="Sample" id=5]
+[ext_resource path="res://audio/iskrzenie.smp" type="Sample" id=6]
+[ext_resource path="res://audio/krzykbaba1.smp" type="Sample" id=7]
+[ext_resource path="res://audio/krzykchop1.smp" type="Sample" id=8]
+[ext_resource path="res://audio/krzykchop2.smp" type="Sample" id=9]
+[ext_resource path="res://audio/laboratorium1.smp" type="Sample" id=10]
+[ext_resource path="res://audio/laboratorium2.smp" type="Sample" id=11]
+[ext_resource path="res://audio/maszyna.smp" type="Sample" id=12]
+[ext_resource path="res://audio/maszynasteampunk.smp" type="Sample" id=13]
+[ext_resource path="res://audio/ogien.smp" type="Sample" id=14]
+[ext_resource path="res://audio/otwieraniedrzwi1.smp" type="Sample" id=15]
+[ext_resource path="res://audio/otwieraniedrzwi2.smp" type="Sample" id=16]
+[ext_resource path="res://audio/radio1.smp" type="Sample" id=17]
 
 [resource]
 
+samples/drapanie1 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 1 )
+}
+samples/drapanie2 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 2 )
+}
+samples/error1 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 3 )
+}
+samples/error2 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 4 )
+}
+samples/error3 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 5 )
+}
+samples/iskrzenie = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 6 )
+}
+samples/krzykbaba1 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 7 )
+}
+samples/krzykchop1 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 8 )
+}
+samples/krzykchop2 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 9 )
+}
+samples/laboratorium1 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 10 )
+}
+samples/laboratorium2 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 11 )
+}
+samples/maszyna = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 12 )
+}
+samples/maszynasteampunk = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 13 )
+}
+samples/ogien = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 14 )
+}
+samples/otwieraniedrzwi1 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 15 )
+}
+samples/otwieraniedrzwi2 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 16 )
+}
+samples/radio1 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 17 )
+}
 

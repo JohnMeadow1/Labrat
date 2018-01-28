@@ -16,7 +16,7 @@ var map_packed  = preload("res://screens/play/map/map.tscn")
 onready var map = map_packed.instance()
 
 var my_seed = null
-
+var audio = null
 func _ready():
 	
 	screen_res   = OS.get_window_size()
