@@ -20,7 +20,7 @@ var doors_state = 0
 var passwords = {}
 
 #var wall_textures = []
-var furnitures = []
+var decor = {}
 
 onready var coordinates = Vector2()
 func _init():

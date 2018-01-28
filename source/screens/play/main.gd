@@ -136,7 +136,18 @@ func enter_the_room():
 			load_room( GLOBAL.map.grid[GLOBAL.map_pos.x][GLOBAL.map_pos.y] )
 	
 	check_trap()
+#	show_decor()
 	
+func show_decor():
+	var room = GLOBAL.map.grid[GLOBAL.map_pos.x][GLOBAL.map_pos.y]
+	
+	for d in room.values(): d.node.set_hidden(true)
+	
+	var side = 1
+	side >> GLOBAL.map_orientation
+	
+	room.decor[side].set_hidden(false)
+
 #func reload_room():
 #	if GLOBAL.map.grid[GLOBAL.map_pos.x][GLOBAL.map_pos.y] != null:
 #		unload_room()
@@ -158,9 +169,17 @@ func load_room(room):
 	
 	set_trap(room)
 	
-func load_furniture(room, node, side):
-	
+#	load_decor(room, 1)
+#	load_decor(room, 2)
+#	load_decor(room, 4)
+#	load_decor(room, 8)
+
+func load_decor(room, side):
+	if room.get_room_type() == 0:
+		if room.get_doors() & side == side:
+			room.decors[side] = {node = get_node("room/HoldingCell/Door")}
 	pass
+
 func load_wall(room, node, side):
 #	print(room.get_name(), node.get_name(), side)
 	if room.get_wall(side):
@@ -249,7 +268,7 @@ func set_trap(room):
 			get_node("room/Trap/Sprite").set_texture(load("res://screens/play/map/decor/liquid.png"))
 			get_node("room/Trap/Sprite").set_modulate(Color(0.2,0.7,0.2))
 		elif room.get_trap_type() == 2:
-			get_node("room/Trap/Sprite").set_texture(load("res://screens/play/map/decor/stain.png"))
+			get_node("room/Trap/Sprite").set_texture(load("res://screens/play/map/decor/monsterl.png"))
 			get_node("room/Trap/Sprite").set_modulate(Color(0.7,0.2,0.5))
 	else:
 		get_node("room/Trap").set_hidden(true)
