@@ -194,6 +194,82 @@ func load_room(room):
 		load_decor(room, 4)
 		load_decor(room, 8)
 
+<<<<<<< HEAD
+=======
+func load_decor(room, side):
+	if !room.decor.has(side): init_decor(room, side)
+	
+	if room.decor.has(side) && room.decor[side] != null:
+		room.decor[side].set_hidden(false)
+
+func init_decor(room, side):
+	var wall_node = null
+	
+	if side == 1: wall_node = get_node("room/walls/wall_left/Decor")
+	if side == 2: wall_node = get_node("room/walls/wall_right/Decor")
+	if side == 4: wall_node = get_node("room/walls/wall_top/Decor")
+	if side == 8: wall_node = get_node("room/walls/wall_bottom/Decor")
+	
+	if room.get_room_type() == 0 && room.get_sector() == 0: #Isolation Cell
+		if room.get_doors(side):
+			room.decor[side] = wall_node.get_node("HoldingCell/Door")
+		else:
+			room.decor[side] = wall_node.get_node("HoldingCell").get_child(decor % 3)
+			decor += 1
+	elif room.get_room_type() == 1: #Corridor
+		if room.get_wall(side):
+			wall_node = wall_node.get_node("DecorWall")
+			var offset = decor % (wall_node.get_child_count ( ) + 10)
+			if offset < wall_node.get_child_count():
+				room.decor[side] = wall_node.get_child(offset)
+			elif decor % 3 == 0:
+				room.decor[side] = wall_node.get_node("../Sector").get_child((decor % 2) + 2 * (room.get_sector() -1 ))
+			else:
+				room.decor[side] = null
+			decor += 13
+	elif room.get_room_type() == 4: #Warehouse
+		if room.get_wall(side):
+			wall_node = wall_node.get_node("Warehouse")
+			if decor % 3 == 0:
+				room.decor[side] = wall_node.get_child(0)
+			else:
+				room.decor[side] = wall_node.get_child(1)
+		else:
+			room.decor[side] = null
+		decor += 1
+	elif room.get_room_type() == 5: #Lab
+		if room.get_wall(side):
+			wall_node = wall_node.get_node("Lab")
+			room.decor[side] = wall_node.get_child(decor % 2)
+		else:
+			room.decor[side] = null
+		decor += 1
+	elif room.get_room_type() == 6: #Animal
+		if room.get_wall(side):
+			wall_node = wall_node.get_node("Animal")
+			room.decor[side] = wall_node.get_child(decor % 4)
+		else:
+			room.decor[side] = null
+		decor += 1
+	elif room.get_room_type() == 7: #Study
+		if room.get_wall(side):
+			wall_node = wall_node.get_node("Study")
+			if decor % 4 == 0:
+				room.decor[side] = wall_node.get_child(0)
+			elif decor % 4 == 1:
+				room.decor[side] = wall_node.get_child(1)
+			else:
+				room.decor[side] = wall_node.get_child(2)
+		else:
+			room.decor[side] = null
+		decor += 1
+
+func clear_decor(decor_node):
+	for nodes in decor_node.get_children():
+		for decor in nodes.get_children():
+			decor.set_hidden(true);
+
+>>>>>>> 204f4bd47bd7d8e8125112043b1878851047d4f1
 func load_wall(room, node, side):
 #	print(room.get_name(), node.get_name(), side)
 	if room.get_wall(side):
