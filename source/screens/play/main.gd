@@ -216,12 +216,14 @@ func init_decor(room, side):
 	elif room.get_room_type() == 1:
 		if room.get_wall(side):
 			wall_node = wall_node.get_node("DecorWall")
-			var offset = decor % (wall_node.get_child_count ( ) + 5)
+			var offset = decor % (wall_node.get_child_count ( ) + 10)
 			if offset < wall_node.get_child_count():
 				room.decor[side] = wall_node.get_child(offset)
+			elif decor % 3 == 0:
+				room.decor[side] = wall_node.get_node("../Sector").get_child((decor % 2) + 2 * (room.get_sector() -1 ))
 			else:
 				room.decor[side] = null
-			decor += 7
+			decor += 13
 		else:
 			room.decor[side] = null
 
